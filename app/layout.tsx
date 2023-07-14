@@ -5,7 +5,7 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { PrimaryButton } from '@/components/PrimaryButton'
 import { NavItem } from '@/components/NavItem'
-import { useState } from 'react'
+import { lazy, useState } from 'react'
 import { SocialIcon } from '@/components/SocialIcon'
 import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
 import Link from 'next/link'
@@ -28,14 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='font-sans'>
-        <header className='h-[106px] bg-primaryBgColor flex justify-between'>
-          <Image src='/images/app_logo.png' alt='logo' width={243} height={91} className='ml-[177px] mt-auto mb-auto' />
-          <div className='flex items-center mr-[150px]'>
-            <button className='text-primary text-primaryButtonTextSize mr-[50px]'>Login</button>
+        <header className='h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]'>
+          <Image src='/images/app_logo.png' alt='logo' width={243} height={91} priority={true} className='mt-auto mb-auto' />
+          <div className='flex md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
+            <button className='text-primary text-bigPrimaryButtonTextSize mr-[50px] md:mr-0 sm:mr-0 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]'>Login</button>
             <PrimaryButton onClicked={() => { alert("Apply Clicked!"); }}>Apply</PrimaryButton>
           </div>
         </header>
-        <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-center'>
+        <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-between md:hidden sm:hidden 4xl:px-[129px] px-[50px]'>
           {
             navItems.map((navItem, idx) => {
               return <NavItem key={`navItem-${idx}`} isLast={idx == navItems.length - 1} isActive={idx == activeNavIndex} onClicked={() => { alert(`${navItem} Clicked!`) }}>{navItem}</NavItem>
@@ -45,22 +45,22 @@ export default function RootLayout({
         <main className='bg-primaryBgColor'>
           {children}
         </main>
-        <footer className='h-[220px] bg-primaryBgColor flex px-[171px]'>
-          <div className='flex flex-col justify-center items-center min-w-[243px]'>
+        <footer className='bg-primaryBgColor justify-between flex md:flex-col sm:flex-col 4xl:h-[220px] 3xl:h-[220px] 2xl:h-[220px] h-[auto] py-[50px] 4xl:px-[170px] px-[50px]'>
+          <div className='flex flex-col min-w-[243px]'>
             <Image src='/images/app_logo.png' alt='logo' width={243} height={91} className='mb-[16px]' />
-            <span className='text-center whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
+            <span className='text-center md:text-left sm:text-left whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
           </div>
-          <div className='flex flex-col justify-center ml-[100px]'>
+          <div className='flex flex-col 4xl:max-w-[919px] 3xl:max-w-[919px] 2xl:max-w-[800px] xl:max-w-[600px] lg:max-w-[400px] md:mt-[20px] sm:mt-[20px]'>
             <span className='text-footerDescSize text-footerDescColor leading-[23px]'>Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their own homes while receiving the care they need. Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides. Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides.</span>
-            <div className='flex mt-[40px]'>
+            <div className='4xl:flex 3xl:flex 2xl:flex xl:flex-col lg:flex-col md:flex-col sm:flex-col mt-[40px] xl:mt-[10px] md:mt-[10px] sm:mt-[10px]'>
               {
                 footerItems.map((footerItem, idx) => {
-                  return <div key={`footerItem-${idx}`} className='text-footerDescSize text-footerDescColor'>{idx != 0 ? <span className='mx-[30px]'>-</span> : <></>}<Link href={`/${footerItem.toLowerCase().replace(/ /g, "")}`}>{footerItem}</Link></div>;
+                  return <div key={`footerItem-${idx}`} className='text-footerDescSize text-footerDescColor'>{idx != 0 ? <span className='xl:hidden lg:hidden md:hidden sm:hidden 4xl:mx-[30px] 3xl:mx-[30px] 2xl:mx-[15px]'>-</span> : <></>} <span className='4xl:hidden 3xl:hidden 2xl:hidden'>-</span> <Link href={`/${footerItem.toLowerCase().replace(/ /g, "")}`}>{footerItem}</Link></div>;
                 })
               }
             </div>
           </div>
-          <div className='flex ml-[100px] justify-center items-center'>
+          <div className='flex md:mt-[20px] sm:mt-[20px]'>
             <SocialIcon><BsFacebook className='text-white'></BsFacebook></SocialIcon>
             <SocialIcon><BsTwitter className='text-white'></BsTwitter></SocialIcon>
             <SocialIcon><BsInstagram className='text-white'></BsInstagram></SocialIcon>

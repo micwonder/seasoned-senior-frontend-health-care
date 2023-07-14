@@ -12,8 +12,8 @@ const NavItem = ({
     onClicked: Function,
 }) => {
     return (
-        <button className={`${isLast ? '' : 'pr-[120px]'}`} onClick={() => onClicked()}>
-            <span className={`${!isActive ? 'text-navItemTextColor': 'text-primary underline underline-offset-8'} text-primaryButtonTextSize font-navItem`}>{children}</span>
+        <button onClick={() => onClicked()}>
+            <span className={`${!isActive ? 'text-navItemTextColor': 'text-primary underline underline-offset-8'} 4xl:text-bigPrimaryButtonTextSize 3xl:text-bigPrimaryButtonTextSize 2xl:text-bigPrimaryButtonTextSize text-smallPrimaryButtonTextSize font-navItem`}>{children}</span>
         </button>
     );
 };

@@ -4,7 +4,7 @@ import ServicesBanner from "@/components/services/ServicesBanner"
 const Services = () => {
 	return <>
 		<ServicesBanner></ServicesBanner>
-		<ServiceSection></ServiceSection>
+		{/* <ServiceSection></ServiceSection> */}
 	</>
 };
 
