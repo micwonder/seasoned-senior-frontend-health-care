@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from 'react'
 
 const NavItem = ({
     isLast,
@@ -18,6 +18,6 @@ const NavItem = ({
     );
 };
 
-NavItem.displayName = "NavItem";
+NavItem.displayName = 'NavItem';
 
 export { NavItem };
