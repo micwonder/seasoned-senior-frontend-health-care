@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from 'react'
 
 const SocialIcon = ({
     children,
@@ -12,6 +12,6 @@ const SocialIcon = ({
     );
 };
 
-SocialIcon.displayName = "SocialIcon";
+SocialIcon.displayName = 'SocialIcon';
 
 export { SocialIcon };

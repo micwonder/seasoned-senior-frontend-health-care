@@ -1,6 +1,6 @@
 'use client'
 
-import { PrimaryButton } from "../PrimaryButton"
+import { PrimaryButton } from '../PrimaryButton'
 
 const ServicesBanner = () => {
     return <div className='bg-services-banner bg-cover 2xl:ml-[-130px] xl:ml-[-130px] lg:ml-[-130px] h-[720px] 4xl:pl-[190px] 3xl:pl-[190px] 2xl:pl-[180px] xl:pl-[180px] lg:pl-[180px] pt-[114px]'>

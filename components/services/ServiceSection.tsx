@@ -1,7 +1,7 @@
 'use client'
 
-import Image from "next/image";
-import { PrimaryButton } from "../PrimaryButton";
+import Image from 'next/image';
+import { PrimaryButton } from '../PrimaryButton';
 
 const ServiceSection = () => {
 	return <section className='px-[227px] py-[41px]'>

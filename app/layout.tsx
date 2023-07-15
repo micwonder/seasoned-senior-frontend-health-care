@@ -10,7 +10,7 @@ import { SocialIcon } from '@/components/SocialIcon'
 import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: 'Seasoned Senior',
   description: 'The health care platform',
 }
@@ -26,13 +26,13 @@ export default function RootLayout({
   const [activeNavIndex, setActiveNavIndex] = useState(1);
 
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className='font-sans'>
         <header className='h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]'>
           <Image src='/images/app_logo.png' alt='logo' width={243} height={91} priority={true} className='mt-auto mb-auto' />
           <div className='flex md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
             <button className='text-primary text-bigPrimaryButtonTextSize mr-[50px] md:mr-0 sm:mr-0 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]'>Login</button>
-            <PrimaryButton onClicked={() => { alert("Apply Clicked!"); }}>Apply</PrimaryButton>
+            <PrimaryButton onClicked={() => { alert('Apply Clicked!'); }}>Apply</PrimaryButton>
           </div>
         </header>
         <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-between md:hidden sm:hidden 4xl:px-[129px] px-[50px]'>
@@ -55,7 +55,7 @@ export default function RootLayout({
             <div className='4xl:flex 3xl:flex 2xl:flex xl:flex-col lg:flex-col md:flex-col sm:flex-col mt-[40px] xl:mt-[10px] md:mt-[10px] sm:mt-[10px]'>
               {
                 footerItems.map((footerItem, idx) => {
-                  return <div key={`footerItem-${idx}`} className='text-footerDescSize text-footerDescColor'>{idx != 0 ? <span className='xl:hidden lg:hidden md:hidden sm:hidden 4xl:mx-[30px] 3xl:mx-[30px] 2xl:mx-[15px]'>-</span> : <></>} <span className='4xl:hidden 3xl:hidden 2xl:hidden'>-</span> <Link href={`/${footerItem.toLowerCase().replace(/ /g, "")}`}>{footerItem}</Link></div>;
+                  return <div key={`footerItem-${idx}`} className='text-footerDescSize text-footerDescColor'>{idx != 0 ? <span className='xl:hidden lg:hidden md:hidden sm:hidden 4xl:mx-[30px] 3xl:mx-[30px] 2xl:mx-[15px]'>-</span> : <></>} <span className='4xl:hidden 3xl:hidden 2xl:hidden'>-</span> <Link href={`/${footerItem.toLowerCase().replace(/ /g, '')}`}>{footerItem}</Link></div>;
                 })
               }
             </div>
