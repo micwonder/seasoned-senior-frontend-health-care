@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from "react";
+import React from 'react';
 
 const PrimaryButton = ({
     children,
@@ -16,6 +16,6 @@ const PrimaryButton = ({
     );
 };
 
-PrimaryButton.displayName = "PrimaryButton";
+PrimaryButton.displayName = 'PrimaryButton';
 
 export { PrimaryButton };
