@@ -11,6 +11,7 @@ module.exports = {
         primary: '#CB5A6F',
         primaryBgColor: '#EBEBEB',
         secondaryBgColor: '#FFFFFF',
+        sectionBgColor: '#F5F5F5',
         primaryButtonTextColor: '#F9F9F9',
         navItemTextColor: '#020202',
         bannerTextColor: '#5A5A5A',
@@ -35,17 +36,17 @@ module.exports = {
         'services-banner': 'url("/images/services_banner.png")',
       },
       screens: {
-        'sm': { 'min': '0px', 'max': '640px' },
+        'sm': { 'min': '0px', 'max': '639px' },
         // => @media (min-width: 640px and max-width: 767px) { ... }
 
-        'md': { 'min': '640px', 'max': '960px' },
+        'md': { 'min': '640px', 'max': '959px' },
         // => @media (min-width: 768px and max-width: 1023px) { ... }
 
-        'lg': { 'min': '960px', 'max': '1170px' },
+        'lg': { 'min': '960px', 'max': '1169px' },
         // => @media (min-width: 1024px and max-width: 1279px) { ... }
 
-        'xl': { 'min': '1170px', 'max': '1376px' },
-        '2xl': { 'min': '1376px', 'max': '1500px' },
+        'xl': { 'min': '1170px', 'max': '1375px' },
+        '2xl': { 'min': '1376px', 'max': '1499px' },
         '3xl': { 'min': '1500px', 'max': '1750px' },
         // => @media (min-width: 1280px and max-width: 1535px) { ... }
 
