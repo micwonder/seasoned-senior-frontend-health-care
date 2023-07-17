@@ -64,14 +64,14 @@ body {
 @font-face {
   font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Bold.otf') format('truetype');
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
  font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 
