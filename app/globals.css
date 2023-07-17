@@ -36,7 +36,7 @@ body {
 @font-face {
    font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: 250;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -57,7 +57,7 @@ body {
 @font-face {
   font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Black.otf') format('truetype');
-  font-weight: 250;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -78,7 +78,7 @@ body {
 @font-face {
  font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: 250;
+  font-weight: 200;
   font-style: normal;
 }
 
