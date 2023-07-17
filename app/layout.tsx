@@ -95,7 +95,7 @@ export default function RootLayout({
                         ? <span className='xl:hidden lg:hidden md:hidden sm:hidden 4xl:mx-[30px] 3xl:mx-[30px] 2xl:mx-[15px]'>-</span>
                         : <></>
                     }
-                    <span className='4xl:hidden 3xl:hidden 2xl:hidden'>-</span>
+                    <span className='4xl:hidden 3xl:hidden 2xl:hidden'>- </span>
                     <Link href={`/${footerItem.toLowerCase().replace(/ /g, '')}`}>{footerItem}</Link>
                   </div>;
                 })
