@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/material": "^5.14.0",
     "@supabase/supabase-js": "^2.26.0",
+    "@syncfusion/ej2-react-splitbuttons": "^22.1.37",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",

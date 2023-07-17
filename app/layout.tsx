@@ -1,14 +1,18 @@
 'use client'
 
 import './globals.css'
-import Image from 'next/image'
-import type { Metadata } from 'next'
-import { PrimaryButton } from '@/components/PrimaryButton'
-import { NavItem } from '@/components/NavItem'
-import { lazy, useState } from 'react'
-import { SocialIcon } from '@/components/SocialIcon'
-import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react'
+import type { Metadata } from 'next'
+import { useRouter } from 'next/navigation'
+import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
+
+import DropDown from '@/components/DropDown'
+import { NavItem } from '@/components/NavItem'
+import { SocialIcon } from '@/components/SocialIcon'
+import { useMediaQuery } from '@/utils/useMediaQuery'
+import { PrimaryButton } from '@/components/PrimaryButton'
 
 const metadata: Metadata = {
   title: 'Seasoned Senior',
@@ -23,22 +27,39 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const router = useRouter();
+  const isSM = useMediaQuery(1169);
   const [activeNavIndex, setActiveNavIndex] = useState(1);
 
   return (
-    <html lang='en'>
+    <html lang='en' >
       <body className='font-sans'>
-        <header className='h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]'>
-          <Image src='/images/app_logo.png' alt='logo' width={243} height={91} priority={true} className='mt-auto mb-auto' />
+        <header className='relative h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
+                          md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]'>
+          <Image
+            alt='logo'
+            src='/images/app_logo.png'
+            onClick={() => router.push('/')}
+            width={isSM ? 160 : 243} height={91} priority={true} className='mt-auto mb-auto' />
           <div className='flex md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
-            <button className='text-primary text-bigPrimaryButtonTextSize mr-[50px] md:mr-0 sm:mr-0 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]'>Login</button>
+            <button className='text-primary text-bigPrimaryButtonTextSize mr-[50px] md:mr-0 sm:mr-0 
+                              md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]'>
+              Login
+            </button>
             <PrimaryButton onClicked={() => { alert('Apply Clicked!'); }}>Apply</PrimaryButton>
           </div>
+          <DropDown menuItems={navItems} />
         </header>
         <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-between md:hidden sm:hidden 4xl:px-[129px] px-[50px]'>
           {
             navItems.map((navItem, idx) => {
-              return <NavItem key={`navItem-${idx}`} isLast={idx == navItems.length - 1} isActive={idx == activeNavIndex} onClicked={() => { alert(`${navItem} Clicked!`) }}>{navItem}</NavItem>
+              return <NavItem
+                key={`navItem-${idx}`}
+                isLast={idx == navItems.length - 1}
+                isActive={idx == activeNavIndex}
+                onClicked={() => { router.push(`/${navItem.replace(/\s/g, '').toLowerCase()}`); }}>
+                {navItem}
+              </NavItem>
             })
           }
         </nav>
@@ -47,11 +68,11 @@ export default function RootLayout({
         </main>
         <footer className='bg-primaryBgColor justify-between flex md:flex-col sm:flex-col 4xl:h-[220px] 3xl:h-[220px] 2xl:h-[220px] h-[auto] py-[50px] 4xl:px-[170px] px-[50px]'>
           <div className='flex flex-col min-w-[243px]'>
-            <Image src='/images/app_logo.png' alt='logo' width={243} height={91} className='mb-[16px]' />
+            <Image src='/images/app_logo.png' alt='logo' width={isSM? 160 :243} height={91} className='mb-[16px]' />
             <span className='text-center md:text-left sm:text-left whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
           </div>
           <div className='flex flex-col 4xl:max-w-[919px] 3xl:max-w-[919px] 2xl:max-w-[800px] xl:max-w-[600px] lg:max-w-[400px] md:mt-[20px] sm:mt-[20px]'>
-            <span className='text-footerDescSize text-footerDescColor leading-[23px]'>Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their own homes while receiving the care they need. Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides. Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides.</span>
+            <span className='text-footerDescSize text-footerDescColor leading-[23px]'>Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their own homes while receiving the care they need. <br /> Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides.</span>
             <div className='4xl:flex 3xl:flex 2xl:flex xl:flex-col lg:flex-col md:flex-col sm:flex-col mt-[40px] xl:mt-[10px] md:mt-[10px] sm:mt-[10px]'>
               {
                 footerItems.map((footerItem, idx) => {
@@ -67,6 +88,6 @@ export default function RootLayout({
           </div>
         </footer>
       </body>
-    </html>
+    </html >
   )
 }
