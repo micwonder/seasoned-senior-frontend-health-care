@@ -42,7 +42,8 @@ export default function RootLayout({
             alt='logo'
             src='/images/app_logo.png'
             onClick={() => router.push('/')}
-            width={isSM ? 160 : 243} height={91} priority={true} className='mt-auto mb-auto h-auto' />
+            className='mt-auto mb-auto h-auto cursor-pointer'
+            width={isSM ? 160 : 243} height={91} priority={true} />
           <div className='flex md:hidden sm:hidden md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
             <button className={`text-primary text-bigPrimaryButtonTextSize sm:text-[25px] mr-[50px] md:mr-0 sm:mr-0 
                                 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}>
@@ -77,7 +78,12 @@ export default function RootLayout({
                       md:flex-col sm:flex-col 4xl:h-[220px] 3xl:h-[220px] 
                       2xl:h-[220px] h-[auto] py-[50px] 4xl:px-[170px] px-[50px]`}>
           <div className='flex flex-col min-w-[243px]'>
-            <Image src='/images/app_logo.png' alt='logo' width={isSM ? 160 : 243} height={91} className='mb-[16px] h-auto' />
+            <Image
+              alt='logo'
+              src='/images/app_logo.png'
+              className='mb-[16px] h-auto cursor-pointer'
+              onClick={() => router.push('/')}
+              width={isSM ? 160 : 243} height={91} />
             <span className='text-center md:text-left sm:text-left whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
           </div>
           <div
