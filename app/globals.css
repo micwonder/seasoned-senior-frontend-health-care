@@ -27,22 +27,22 @@ body {
 }
 
 @font-face {
-   font-family: 'FrutigerLTStd';
-  src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-   font-family: 'FrutigerLTStd';
-  src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: 200;
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu/Ubuntu-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-   font-family: 'FrutigerLTStd';
-  src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
+  font-family: 'Ubuntu';
+  src: url('/fonts/Ubuntu/Ubuntu-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
@@ -50,41 +50,41 @@ body {
 @font-face {
   font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: bold;
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Black.otf') format('truetype');
-  font-weight: 200;
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Bold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
- font-family: 'FrutigerLTStd';
-  src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: normal;
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
- font-family: 'FrutigerLTStd';
-  src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
- font-family: 'FrutigerLTStd';
-  src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: normal;
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }

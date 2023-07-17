@@ -28,22 +28,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const router = useRouter();
-  const isSM = useMediaQuery(1169);
+  const isSM = useMediaQuery(640);
   const [activeNavIndex, setActiveNavIndex] = useState(1);
 
   return (
     <html lang='en' >
       <body className='font-sans'>
-        <header className='relative h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
-                          md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]'>
+        <header className={`relative h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
+                            md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
           <Image
             alt='logo'
             src='/images/app_logo.png'
             onClick={() => router.push('/')}
-            width={isSM ? 160 : 243} height={91} priority={true} className='mt-auto mb-auto' />
+            width={isSM ? 160 : 243} height={91} priority={true} className='mt-auto mb-auto h-auto' />
           <div className='flex md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
-            <button className='text-primary text-bigPrimaryButtonTextSize sm:text-[25px] mr-[50px] md:mr-0 sm:mr-0 
-                              md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]'>
+            <button className={`text-primary text-bigPrimaryButtonTextSize sm:text-[25px] mr-[50px] md:mr-0 sm:mr-0 
+                                md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}>
               Login
             </button>
             <PrimaryButton onClicked={() => { alert('Apply Clicked!'); }}>Apply</PrimaryButton>
@@ -67,24 +67,24 @@ export default function RootLayout({
           {children}
         </main>
         <footer
-          className='bg-primaryBgColor justify-between flex 
+          className={`bg-primaryBgColor justify-between flex 
                       md:flex-col sm:flex-col 4xl:h-[220px] 3xl:h-[220px] 
-                      2xl:h-[220px] h-[auto] py-[50px] 4xl:px-[170px] px-[50px]'>
+                      2xl:h-[220px] h-[auto] py-[50px] 4xl:px-[170px] px-[50px]`}>
           <div className='flex flex-col min-w-[243px]'>
-            <Image src='/images/app_logo.png' alt='logo' width={isSM ? 160 : 243} height={91} className='mb-[16px]' />
+            <Image src='/images/app_logo.png' alt='logo' width={isSM ? 160 : 243} height={91} className='mb-[16px] h-auto' />
             <span className='text-center md:text-left sm:text-left whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
           </div>
           <div
-            className='flex flex-col 4xl:max-w-[919px] 3xl:max-w-[919px] 
-                      2xl:max-w-[800px] xl:max-w-[600px] lg:max-w-[400px] md:mt-[20px] sm:mt-[20px]'>
+            className={`flex flex-col 4xl:max-w-[919px] 3xl:max-w-[919px] 
+                        2xl:max-w-[800px] xl:max-w-[600px] lg:max-w-[400px] md:mt-[20px] sm:mt-[20px]`}>
             <span className='text-footerDescSize text-footerDescColor leading-[23px]'>
               Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their
               own homes while receiving the care they need. <br /> Our services are delivered by trained professionals, such as caregivers,
               nurses, or home health aides.
             </span>
             <div
-              className='4xl:flex 3xl:flex 2xl:flex xl:flex-col lg:flex-col md:flex-col 
-                        sm:flex-col mt-[40px] xl:mt-[10px] md:mt-[10px] sm:mt-[10px]'>
+              className={`4xl:flex 3xl:flex 2xl:flex xl:flex-col lg:flex-col md:flex-col 
+                          sm:flex-col mt-[40px] xl:mt-[10px] md:mt-[10px] sm:mt-[10px]`}>
               {
                 footerItems.map((footerItem, idx) => {
                   return <div

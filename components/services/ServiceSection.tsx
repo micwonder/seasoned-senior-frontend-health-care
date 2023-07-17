@@ -19,7 +19,9 @@ const ServiceSection = ({
 						4xl:justify-between 3xl:justify-between 2xl:justify-between justify-between`}>
 			<p className='absolute text-[24px] text-bannerTextColor text-right font-[300] right-0 top-[-60px]'>Services</p>
 			{
-				align == 'left' || isLG ? <Image className='float-right' src={photoUrl} alt="service_ad_photo" width={478} height={488} /> : <></>
+				align == 'left' || isLG
+					? <Image className='float-right h-auto' src={photoUrl} alt="service_ad_photo" width={478} height={488} />
+					: <></>
 			}
 			<div className={`4xl:max-w-[700px] 3xl:max-w-[600px] 2xl:max-w-[700px] 
 							xl:max-w-[550px] lg:w-full md:w-full sm:w-full flex flex-col 
@@ -44,8 +46,10 @@ const ServiceSection = ({
 			{
 				align == 'right' && !isLG
 					? <Image
-						className='float-right lg:mt-[50px] md:mt-[50px] sm:mt-[50px]' src={photoUrl}
-						alt="service_ad_photo" width={478} height={488} />
+						src={photoUrl}
+						alt="service_ad_photo"
+						width={478} height={488}
+						className='float-right h-auto lg:mt-[50px] md:mt-[50px] sm:mt-[50px]' />
 					: <></>
 			}
 		</div>
