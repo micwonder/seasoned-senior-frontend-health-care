@@ -13,6 +13,7 @@ import { NavItem } from '@/components/NavItem'
 import { SocialIcon } from '@/components/SocialIcon'
 import { useMediaQuery } from '@/utils/useMediaQuery'
 import { PrimaryButton } from '@/components/PrimaryButton'
+import ToogleButton from '@/components/ToogleButton'
 
 const metadata: Metadata = {
   title: 'Seasoned Senior',
@@ -29,27 +30,29 @@ export default function RootLayout({
 }) {
   const router = useRouter();
   const isSM = useMediaQuery(640);
+  const [showDropMenu, setShowDropMenu] = useState(false);
   const [activeNavIndex, setActiveNavIndex] = useState(1);
 
   return (
     <html lang='en' >
       <body className='font-sans'>
         <header className={`relative h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
-                            md:flex-col sm:flex-col 4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
+                            4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
           <Image
             alt='logo'
             src='/images/app_logo.png'
             onClick={() => router.push('/')}
             width={isSM ? 160 : 243} height={91} priority={true} className='mt-auto mb-auto h-auto' />
-          <div className='flex md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
+          <div className='flex md:hidden sm:hidden md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
             <button className={`text-primary text-bigPrimaryButtonTextSize sm:text-[25px] mr-[50px] md:mr-0 sm:mr-0 
                                 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}>
               Login
             </button>
             <PrimaryButton onClicked={() => { alert('Apply Clicked!'); }}>Apply</PrimaryButton>
           </div>
-          <DropDown menuItems={navItems} />
+          <ToogleButton onClicked={() => setShowDropMenu(!showDropMenu)} />
         </header>
+
         <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-between md:hidden sm:hidden 4xl:px-[129px] px-[50px]'>
           {
             navItems.map((navItem, idx) => {
@@ -63,6 +66,9 @@ export default function RootLayout({
             })
           }
         </nav>
+
+        {showDropMenu && <DropDown menuItems={navItems} onClicked={() => setShowDropMenu(false)} />}
+
         <main className='bg-primaryBgColor'>
           {children}
         </main>
