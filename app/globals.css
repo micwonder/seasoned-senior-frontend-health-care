@@ -71,7 +71,7 @@ body {
 @font-face {
  font-family: 'FrutigerLTStd';
   src: url('/fonts/FrutigerLTStd/FrutigerLTStd-Light.otf') format('truetype');
-  font-weight: normal;
+  font-weight: bold;
   font-style: normal;
 }
 
