@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import type { Metadata } from 'next'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
 
 import DropDown from '@/components/DropDown'
@@ -31,12 +31,11 @@ export default function RootLayout({
   const router = useRouter();
   const isSM = useMediaQuery(640);
   const [showDropMenu, setShowDropMenu] = useState(false);
-  const [activeNavIndex, setActiveNavIndex] = useState(1);
 
   return (
     <html lang='en' >
       <body className='font-sans'>
-        <header className={`relative h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
+        <header className={`h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
                             4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
           <Image
             alt='logo'
@@ -57,11 +56,14 @@ export default function RootLayout({
         <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-between md:hidden sm:hidden 4xl:px-[129px] px-[50px]'>
           {
             navItems.map((navItem, idx) => {
+              const isActive = usePathname().endsWith(navItem.replace(/\s/g, '').toLowerCase());
               return <NavItem
                 key={`navItem-${idx}`}
                 isLast={idx == navItems.length - 1}
-                isActive={idx == activeNavIndex}
-                onClicked={() => { router.push(`/${navItem.replace(/\s/g, '').toLowerCase()}`); }}>
+                isActive={isActive}
+                onClicked={() => {
+                  router.push(`/dashboard/${navItem.replace(/\s/g, '').toLowerCase()}`);
+                }}>
                 {navItem}
               </NavItem>
             })

@@ -16,6 +16,8 @@ module.exports = {
         navItemTextColor: '#020202',
         bannerTextColor: '#5A5A5A',
         footerDescColor: '#8D8D8D',
+        dashboardBgColor: '#F2F1F1',
+        dashboardDecColor: '#D2D2D2',
       },
       fontSize: {
         bigPrimaryButtonTextSize: '32px',
