@@ -29,6 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const isSM = useMediaQuery(640);
   const [showDropMenu, setShowDropMenu] = useState(false);
 
@@ -56,7 +57,7 @@ export default function RootLayout({
         <nav className='h-[81px] bg-secondaryBgColor flex items-center justify-between md:hidden sm:hidden 4xl:px-[129px] px-[50px]'>
           {
             navItems.map((navItem, idx) => {
-              const isActive = usePathname().endsWith(navItem.replace(/\s/g, '').toLowerCase());
+              const isActive = pathname.endsWith(navItem.replace(/\s/g, '').toLowerCase());
               return <NavItem
                 key={`navItem-${idx}`}
                 isLast={idx == navItems.length - 1}
