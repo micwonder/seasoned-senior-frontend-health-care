@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { PrimaryButton } from '../PrimaryButton';
 import { useMediaQuery } from '@/utils/useMediaQuery';
 
-const ServiceSection = ({
+const HomeServiceSection = ({
 	align, title, description, photoUrl
 }: {
 	align: string, title: string, description: string, photoUrl: string
@@ -12,12 +12,12 @@ const ServiceSection = ({
 	const isLG = useMediaQuery(1169);
 
 	return <section
-		className={
-			`${align == "right" ? 'bg-sectionBgColor' : 'bg-secondaryBgColor'} 
-			4xl:px-[190px] 3xl:px-[190px] 2xl:px-[50px] px-[50px] pt-[122px] pb-[41px]`}>
-		<div className={`relative flex lg:flex-col md:flex-col sm:flex-col 
-						4xl:justify-between 3xl:justify-between 2xl:justify-between justify-between`}>
-			<p className='absolute text-[24px] text-bannerTextColor text-right font-[300] right-0 top-[-60px]'>Services</p>
+		className={`${align == "right" ? 'bg-sectionBgColor' : 'bg-secondaryBgColor'} 
+								4xl:px-[190px] 3xl:px-[190px] 2xl:px-[50px] px-[50px] pt-[122px] pb-[41px]`}>
+		<div className={`relative flex lg:flex-col md:flex-col sm:flex-col justify-between`}>
+			<p className={`absolute text-[24px] text-bannerTextColor text-right font-[300] ${align == 'left' || isLG ? 'right-0' : 'left-0'} top-[-60px]`}>
+				Services
+			</p>
 			{
 				align == 'left' || isLG
 					? <Image className='float-right h-auto' src={photoUrl} alt="service_ad_photo" width={478} height={488} />
@@ -39,7 +39,7 @@ const ServiceSection = ({
 						</span>
 					</div>
 				</div>
-				<div className='text-right lg:text-right md:text-right sm:text-center lg:mt-[20px] md:mt-[20px] sm:mt-[20px]'>
+				<div className={`${align == 'left' && !isLG ? 'text-right' : 'text-left'} lg:text-right md:text-right sm:text-center mt-[20px]`}>
 					<PrimaryButton onClicked={() => { }}>Learn More</PrimaryButton>
 				</div>
 			</div>
@@ -56,4 +56,4 @@ const ServiceSection = ({
 	</section>
 };
 
-export default ServiceSection;
+export default HomeServiceSection;

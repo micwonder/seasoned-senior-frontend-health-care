@@ -31,12 +31,12 @@ export default function RootLayout({
   const router = useRouter();
   const isSM = useMediaQuery(640);
   const [showDropMenu, setShowDropMenu] = useState(false);
-  const [activeNavIndex, setActiveNavIndex] = useState(1);
+  const [activeNavIndex, setActiveNavIndex] = useState(-1);
 
   return (
     <html lang='en' >
       <body className='font-sans'>
-        <header className={`relative h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
+        <header className={`h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
                             4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
           <Image
             alt='logo'
@@ -61,7 +61,7 @@ export default function RootLayout({
                 key={`navItem-${idx}`}
                 isLast={idx == navItems.length - 1}
                 isActive={idx == activeNavIndex}
-                onClicked={() => { router.push(`/${navItem.replace(/\s/g, '').toLowerCase()}`); }}>
+                onClicked={() => { router.push(`/dashboard/${navItem.replace(/\s/g, '').toLowerCase()}`); }}>
                 {navItem}
               </NavItem>
             })

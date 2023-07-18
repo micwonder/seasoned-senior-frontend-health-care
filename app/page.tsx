@@ -1,7 +1,7 @@
-import ServiceSection from '@/components/services/ServiceSection'
-import ServicesBanner from '@/components/services/ServicesBanner'
-import { ServiceAd } from '@/types/service_ad'
 import supabase from '@/utils/supabase'
+import { ServiceAd } from '@/types/service_ad'
+import ServicesBanner from '@/components/services/ServicesBanner'
+import HomeServiceSection from '@/components/services/HomeServiceSection'
 
 const getServiceAds = async (): Promise<Array<ServiceAd>> => {
 	const { data, error } = await supabase.from('service_ads').select('*').order('id', { ascending: true });
@@ -30,7 +30,7 @@ const Services = async () => {
 		<ServicesBanner></ServicesBanner>
 		{
 			serviceAds.map((serviceAd: ServiceAd, idx: number) => {
-				return <ServiceSection
+				return <HomeServiceSection
 					key={`service_section_${idx}`}
 					align={idx % 2 == 0 ? 'left' : 'right'}
 					title={serviceAd.title ?? ""}
