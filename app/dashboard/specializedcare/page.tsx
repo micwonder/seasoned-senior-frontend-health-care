@@ -41,7 +41,7 @@ const Specializedcare = async () => {
           <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
             At Seasoned Senior Home Care Agency, we are committed to providing specialized care for our clients based on their unique needs and
             circumstances. We understand that each individual requires personalized attention and support to maintain their well-being and independence.
-            Here's how we ensure specialized care for our clients:
+            Here`&apos;`s how we ensure specialized care for our clients:
           </span>
         </div>
         {

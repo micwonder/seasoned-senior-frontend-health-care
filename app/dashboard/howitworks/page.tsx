@@ -33,7 +33,7 @@ const Howitworks = async () => {
 			<div className='text-justify'>
 				<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
 					At Seasoned Senior Home Care Agency, we have a well-defined process for providing care to our seniors.
-					Here's how our agency works and how we implement our care services:
+					Here`&apos;`s how our agency works and how we implement our care services:
 				</span>
 			</div>
 			<Image
