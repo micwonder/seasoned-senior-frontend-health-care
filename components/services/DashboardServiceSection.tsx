@@ -28,7 +28,7 @@ const DashboardServiceSection = ({
 						className='font-arial font-[700] text-bannerTextColor text-[36px] lg:text-[30px] sm:text-[30px]'>
 						{title}
 					</p>
-					<div>
+					<div className='text-justify'>
 						<span className={`font-arial font-[300] text-[32px] lg:text-[26px] sm:text-[26px] 
 														text-bannerTextColor leading-[38px] lg:leading-[30px] sm:leading-[30px]`}>
 							{description}
