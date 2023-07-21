@@ -27,7 +27,7 @@ const Aboutus = async () => {
           Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides.
           <br />
           <br />
-          Here are some common senior home care services offered by our agency
+      
         </span>
       </div>
       <div className='text-center mt-[140px]'>
