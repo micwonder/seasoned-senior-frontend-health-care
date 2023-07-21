@@ -47,7 +47,7 @@ const Contactus = async () => {
           <br />
           <br />
           We value your feedback and are committed to continually improving our services. If you have any suggestions, concerns, or comments,
-          please don`&apos;`t hesitate to let us know. Your input is invaluable to us.
+          please don&apos;t hesitate to let us know. Your input is invaluable to us.
           <br />
           <br />
           Thank you for considering Seasoned Senior Home Care Agency. We look forward to assisting you and providing exceptional care for your loved ones.
