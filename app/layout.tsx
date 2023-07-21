@@ -20,7 +20,7 @@ const metadata: Metadata = {
   description: 'The health care platform',
 }
 
-const navItems = ['About', 'Services', 'Senior Events', 'Specialized care', 'How it works', 'Schedule a meeting'];
+const navItems = ['About Us', 'Services', 'Senior Events', 'Specialized care', 'How it works', 'Schedule a meeting'];
 const footerItems = ['Term of Use', 'Privacy Policy', 'Background Checks', 'Blog', 'Code of Conduct', 'Contact Us'];
 
 export default function RootLayout({
