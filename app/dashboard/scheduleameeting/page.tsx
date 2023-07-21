@@ -38,7 +38,7 @@ const Schedulemetting = async () => {
       <div className='text-justify mt-[50px]'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
           At Seasoned Senior Care Agency, we make it easy for seniors and their families to schedule a meeting with our senior care representatives.
-          Here`&apos;`s how seniors looking for care can schedule a meeting to speak with a representative from our agency:
+          Here&apos;s how seniors looking for care can schedule a meeting to speak with a representative from our agency:
         </span>
       </div>
       <div>

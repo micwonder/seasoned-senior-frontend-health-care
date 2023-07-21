@@ -38,8 +38,8 @@ const Seniorevents = async () => {
       <div className='text-justify mt-[50px]'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
           At Seasoned Senior, we understand the importance of providing engaging and enjoyable experiences for seniors.
-          That`&apos;`s why we organize outdoor events within various locations, creating opportunities for seniors to connect,
-          socialize, and participate in activities that promote well-being and a sense of community. Here`&apos;`s how we organize outdoor events for seniors:
+          That&apos;s why we organize outdoor events within various locations, creating opportunities for seniors to connect,
+          socialize, and participate in activities that promote well-being and a sense of community. Here&apos;s how we organize outdoor events for seniors:
         </span>
       </div>
       <div>
@@ -58,8 +58,8 @@ const Seniorevents = async () => {
         }
         <div className='mt-[50px] text-justify'>
           <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
-            At Seasoned Senior, we believe in the power of outdoor events to enrich seniors`&apos;` lives, foster social connections, and promote overall well-being.
-            Through meticulous planning, engaging activities, and a focus on seniors`&apos;` needs, we strive to create memorable and meaningful experiences that enhance
+            At Seasoned Senior, we believe in the power of outdoor events to enrich seniors&apos; lives, foster social connections, and promote overall well-being.
+            Through meticulous planning, engaging activities, and a focus on seniors&apos; needs, we strive to create memorable and meaningful experiences that enhance
             their quality of life and bring joy to their journey.
             <br />
             <br />
