@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { PrimaryButton } from '@/components/PrimaryButton'
 
-const Aboutus = async () => {
+const Aboutus = () => {
   return <>
     <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
       About us
@@ -21,7 +21,7 @@ const Aboutus = async () => {
         className='mx-auto mt-[50px]'
         width={940} height={350}
       />
-      <div className='mt-[50px] text-justify'>
+      <div className='mt-[50px] text-justify sm:text-left'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
           Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their own homes while receiving the care they need.
           Our services are delivered by trained professionals, such as caregivers, nurses, or home health aides.
@@ -30,7 +30,7 @@ const Aboutus = async () => {
       
         </span>
       </div>
-      <div className='text-center mt-[140px]'>
+      <div className='text-center mt-[50px]'>
         <PrimaryButton onClicked={() => { }}>Apply For Care</PrimaryButton>
       </div>
     </div>

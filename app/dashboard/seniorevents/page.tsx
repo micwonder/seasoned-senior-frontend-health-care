@@ -67,7 +67,7 @@ const Seniorevents = async () => {
           </span>
         </div>
       </div>
-      <div className='text-center mt-[100px]'>
+      <div className='text-center mt-[50px]'>
         <PrimaryButton>Apply for Care</PrimaryButton>
       </div>
     </div>
