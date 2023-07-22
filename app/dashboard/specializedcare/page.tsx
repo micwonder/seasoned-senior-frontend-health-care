@@ -91,7 +91,7 @@ const Specializedcare = async () => {
           </span>
         </div>
       </div>
-      <div className='text-center mt-[100px]'>
+      <div className='text-center mt-[50px]'>
         <PrimaryButton>Learn More</PrimaryButton>
       </div>
     </div>

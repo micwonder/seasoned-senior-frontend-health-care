@@ -27,8 +27,8 @@ module.exports = {
         footerDescSize: '16px',
         adTitleBigSize: '45px',
         adTitleSmallSize: '35px',
-        adDescBigSize: '36px',
-        adDescSmallSize: '30px',
+        adDescBigSize: '32px',
+        adDescSmallSize: '20px',
       },
       fontFamily: {
         'sans': ['Ubuntu', 'Helvetica', 'Arial', 'sans-serif'],

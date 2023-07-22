@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import { PrimaryButton } from '@/components/PrimaryButton'
 
-const Contactus = async () => {
+const Contactus = () => {
   return <>
     <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
       Contact us
@@ -15,32 +14,35 @@ const Contactus = async () => {
         src='/images/contactus.png'
         className='w-full mt-[50px]'
       />
-      <div className='mt-[50px] text-justify'>
+      <div className='mt-[50px] text-justify sm:text-left'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
           Thank you for your interest in Seasoned Senior Home Care Agency. We are here to assist you and provide the best possible care for your loved ones.
           Please feel free to reach out to us using the following contact information:
           <br />
           <br />
-          General Inquiries: For general inquiries, questions, or information about our services, you can contact us through:
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+            General Inquiries:
+          </span> <br className='hidden md:block sm:block' /> For general inquiries, questions, or information about our services, you can contact us through,
           <br />
           <br />
           <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
-            Phone: 
-          </span> +1 347-866-1828
+            Phone:
+          </span><br className='hidden sm:block' /> +1 347-866-1828
           <br />
           <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
-            Email: 
-          </span> care@seasonedsenior.com
+            Email:
+          </span><br className='hidden sm:block' /> care@seasonedsenior.com
           <br />
           <br />
-          Client Services: If you are an existing client or have inquiries regarding care services, scheduling, or specific client-related matters,
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+            Client Services:
+          </span> <br className='hidden md:block sm:block' /> If you are an existing client or have inquiries regarding care services, scheduling, or specific client-related matters,
           please login to your portal to start a chat with a caregiver support agent.
           <br />
           <br />
           <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
             Caregiver Opportunities:
           </span>
-          <br />
           <br />
           If you are interested in joining our team of compassionate caregivers and want to learn more about career opportunities,
           please use the Apply Button to start a caregiver application.
@@ -53,7 +55,7 @@ const Contactus = async () => {
           Thank you for considering Seasoned Senior Home Care Agency. We look forward to assisting you and providing exceptional care for your loved ones.
         </span>
       </div>
-      <div className='text-center mt-[140px]'>
+      <div className='text-center mt-[50px]'>
         <PrimaryButton onClicked={() => { }}>Apply For Care</PrimaryButton>
       </div>
     </div>

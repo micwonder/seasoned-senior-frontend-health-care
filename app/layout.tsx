@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 import { useRouter, usePathname } from 'next/navigation'
 import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs'
 
-import DropDown from '@/components/DropDown'
+import DropDownMenu from '@/components/DropDownMenu'
 import { NavItem } from '@/components/NavItem'
 import { SocialIcon } from '@/components/SocialIcon'
 import { useMediaQuery } from '@/utils/useMediaQuery'
@@ -71,7 +71,7 @@ export default function RootLayout({
           }
         </nav>
 
-        {showDropMenu && <DropDown menuItems={navItems} onClicked={() => setShowDropMenu(false)} />}
+        {showDropMenu && <DropDownMenu menuItems={navItems} onClicked={() => setShowDropMenu(false)} />}
 
         <main className='bg-primaryBgColor'>
           {children}
