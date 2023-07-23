@@ -35,6 +35,13 @@ export default function RootLayout({
 
   return (
     <html lang='en' >
+      <head>
+        <title>Seasoned Senior</title>
+        <meta
+          name="description"
+          content="Seasoned senior is a platform that provides senior care and connects caregivers with seniors looking for care.">
+        </meta>
+      </head>
       <body className='font-sans'>
         <header className={`h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
                             4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
@@ -107,11 +114,13 @@ export default function RootLayout({
                     className='text-footerDescSize text-footerDescColor'>
                     {
                       idx != 0
-                        ? <span className='xl:hidden lg:hidden md:hidden sm:hidden 4xl:mx-[30px] 3xl:mx-[30px] 2xl:mx-[15px]'>-</span>
+                        ? <span className='font-[700] xl:hidden lg:hidden md:hidden sm:hidden 4xl:mx-[30px] 3xl:mx-[30px] 2xl:mx-[15px]'>
+                          -
+                        </span>
                         : <></>
                     }
-                    <span className='4xl:hidden 3xl:hidden 2xl:hidden'>- </span>
-                    <Link href={`/dashboard/${footerItem.toLowerCase().replace(/ /g, '')}`}>{footerItem}</Link>
+                    <span className='font-[700] 4xl:hidden 3xl:hidden 2xl:hidden'>- </span>
+                    <Link className='font-[600]' href={`/dashboard/${footerItem.toLowerCase().replace(/ /g, '')}`}>{footerItem}</Link>
                   </div>;
                 })
               }

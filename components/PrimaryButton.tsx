@@ -10,8 +10,8 @@ const PrimaryButton = ({
     onClicked?: Function,
 }) => {
     return (
-        <button className='px-[57px] py-[5px] bg-primary rounded-[5px]' onClick={() => onClicked()}>
-            <span className='text-primaryButtonTextColor text-bigPrimaryButtonTextSize sm:text-[25px]'>{children}</span>
+        <button className='px-[57px] sm:px-[37px] py-[5px] bg-primary rounded-[5px]' onClick={() => onClicked()}>
+            <span className='text-primaryButtonTextColor text-bigPrimaryButtonTextSize sm:text-[20px]'>{children}</span>
         </button >
     );
 };
