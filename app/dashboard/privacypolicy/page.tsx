@@ -39,7 +39,7 @@ const Privacypolicy = async () => {
       <div className='text-justify mt-[50px]'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
           This Privacy Policy (&quot;Policy&quot;) explains how Seasoned Senior Home Care Agency (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, discloses, and protects
-          the personal information of individuals (&quot;you&quot; or &quot;users&quot;) who access or use our website and services (collectively referred to as the "Services").
+          the personal information of individuals (&quot;you&quot; or &quot;users&quot;) who access or use our website and services (collectively referred to as the &quot;Services&quot;).
           We are committed to protecting your privacy and ensuring the security of your personal information. By accessing or using our Services, you agree to
           the terms and practices described in this Policy.
         </span>
