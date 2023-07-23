@@ -26,7 +26,7 @@ module.exports = {
         footerTextSize: '17px',
         footerDescSize: '16px',
         adTitleBigSize: '45px',
-        adTitleSmallSize: '35px',
+        adTitleSmallSize: '25px',
         adDescBigSize: '32px',
         adDescSmallSize: '20px',
       },

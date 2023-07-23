@@ -21,7 +21,7 @@ const metadata: Metadata = {
 }
 
 const navItems = ['About Us', 'Services', 'Senior Events', 'Specialized care', 'How it works', 'Schedule a meeting'];
-const footerItems = ['Term of Use', 'Privacy Policy', 'Background Checks', 'Blog', 'Code of Conduct', 'Contact Us'];
+const footerItems = ['Terms of Use', 'Privacy Policy', 'Background Checks', 'Blog', 'Code of Conduct', 'Contact Us'];
 
 export default function RootLayout({
   children,
@@ -97,7 +97,7 @@ export default function RootLayout({
             <span className='text-center md:text-left sm:text-left whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
           </div>
           <div
-            className={`flex flex-col 4xl:max-w-[919px] 3xl:max-w-[919px] 
+            className={`flex flex-col 4xl:max-w-[930px] 3xl:max-w-[930px] 
                         2xl:max-w-[800px] xl:max-w-[600px] lg:max-w-[400px] md:mt-[20px] sm:mt-[20px]`}>
             <span className='text-footerDescSize text-footerDescColor leading-[23px]'>
               Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their

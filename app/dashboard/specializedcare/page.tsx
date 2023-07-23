@@ -32,7 +32,7 @@ const Specializedcare = async () => {
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
       <img
-        alt='aboutus'
+        alt='specializedcare'
         src='/images/specializedcare.png'
         className='w-full mt-[50px]'
       />
@@ -46,7 +46,7 @@ const Specializedcare = async () => {
         </div>
         {
           specializedcareAds_1.map((specializedcareAd, idx) => {
-            return <div key={`howitworks_paragraph_${idx}`} className='mt-[50px] text-justify'>
+            return <div key={`specializedcare_paragraph_${idx}`} className='mt-[50px] text-justify'>
               <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
                 {`${specializedcareAd.title}: `}
               </span>
