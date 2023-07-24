@@ -3,7 +3,7 @@ import { ServiceAd } from '@/types/service_ad'
 import BlogSection from '@/components/blog/BlogSection'
 
 const getServiceAds = async (): Promise<Array<ServiceAd>> => {
-	const { data, error } = await supabase.from('service_ads').select('*').order('id', { ascending: true });
+	const { data, error } = await supabase.from('services').select('*').order('id', { ascending: true });
 	if (error) {
 		console.log(error);
 		return [{

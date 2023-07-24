@@ -1,5 +1,3 @@
-'use client'
-
 import { PrimaryButton } from '@/components/PrimaryButton'
 
 const Contactus = () => {
