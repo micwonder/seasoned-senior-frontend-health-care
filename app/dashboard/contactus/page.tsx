@@ -56,7 +56,7 @@ const Contactus = () => {
         </span>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton onClicked={() => { }}>Apply For Care</PrimaryButton>
+        <PrimaryButton href='/apply'>Apply For Care</PrimaryButton>
       </div>
     </div>
   </>

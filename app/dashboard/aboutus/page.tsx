@@ -31,7 +31,7 @@ const Aboutus = () => {
         </span>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton onClicked={() => { }}>Apply For Care</PrimaryButton>
+        <PrimaryButton href='/'>Learn More</PrimaryButton>
       </div>
     </div>
   </>

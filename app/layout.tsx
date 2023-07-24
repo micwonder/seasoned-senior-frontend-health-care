@@ -56,7 +56,7 @@ export default function RootLayout({
                                 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}>
               Login
             </button>
-            <PrimaryButton onClicked={() => { alert('Apply Clicked!'); }}>Apply</PrimaryButton>
+            <PrimaryButton href='/apply'>Apply</PrimaryButton>
           </div>
           <ToogleButton onClicked={() => setShowDropMenu(!showDropMenu)} />
         </header>

@@ -32,6 +32,7 @@ const Services = async () => {
 			serviceAds.map((serviceAd: ServiceAd, idx: number) => {
 				return <HomeServiceSection
 					key={`service_section_${idx}`}
+					id={serviceAd.id ?? 0}
 					align={idx % 2 == 0 ? 'left' : 'right'}
 					title={serviceAd.title ?? ""}
 					description={serviceAd.description ?? ""}
