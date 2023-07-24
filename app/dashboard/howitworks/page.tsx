@@ -65,7 +65,7 @@ const Howitworks = async () => {
 				</div>
 			</div>
 			<div className='text-center mt-[50px]'>
-				<PrimaryButton>Learn More</PrimaryButton>
+				<PrimaryButton href='/'>Learn More</PrimaryButton>
 			</div>
 		</div>
 	</>

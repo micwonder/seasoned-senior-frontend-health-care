@@ -1,5 +1,3 @@
-'use client'
-
 import { PrimaryButton } from '../PrimaryButton'
 
 const ServicesBanner = () => {
@@ -11,7 +9,7 @@ const ServicesBanner = () => {
             <span className='font-serif text-[#2F2F2F] text-[20px] leading-[28px]'>Our services are delivered by trained professionals</span>
         </div>
         <div className='mt-[43px]'>
-            <PrimaryButton onClicked={() => { alert("Apply Clicked!"); }}>Apply For Care</PrimaryButton>
+            <PrimaryButton href='/apply'>Apply For Care</PrimaryButton>
         </div>
     </div>
 };

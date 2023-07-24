@@ -5,9 +5,9 @@ import { PrimaryButton } from '../PrimaryButton';
 import { useMediaQuery } from '@/utils/useMediaQuery';
 
 const DashboardServiceSection = ({
-	align, title, description, photoUrl
+	id, align, title, description, photoUrl
 }: {
-	align: string, title: string, description: string, photoUrl: string
+	id:number, align: string, title: string, description: string, photoUrl: string
 }) => {
 	const isMD = useMediaQuery(959);
 
@@ -36,7 +36,7 @@ const DashboardServiceSection = ({
 					</div>
 				</div>
 				<div className={`${align == 'left' && !isMD ? 'text-right' : 'text-left'} md:text-right sm:text-center mt-[20px]`}>
-					<PrimaryButton onClicked={() => { }}>Learn More</PrimaryButton>
+					<PrimaryButton href={`/dashboard/services/${id}`}>Learn More</PrimaryButton>
 				</div>
 			</div>
 			{

@@ -4,7 +4,7 @@ import ServicesBanner from '@/components/services/ServicesBanner'
 import HomeServiceSection from '@/components/services/HomeServiceSection'
 
 const getServiceAds = async (): Promise<Array<ServiceAd>> => {
-	const { data, error } = await supabase.from('service_ads').select('*').order('id', { ascending: true });
+	const { data, error } = await supabase.from('services').select('*').order('id', { ascending: true });
 	if (error) {
 		console.log(error);
 		return [{
@@ -32,6 +32,7 @@ const Services = async () => {
 			serviceAds.map((serviceAd: ServiceAd, idx: number) => {
 				return <HomeServiceSection
 					key={`service_section_${idx}`}
+					id={serviceAd.id ?? 0}
 					align={idx % 2 == 0 ? 'left' : 'right'}
 					title={serviceAd.title ?? ""}
 					description={serviceAd.description ?? ""}
