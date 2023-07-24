@@ -101,7 +101,7 @@ export default function RootLayout({
                         2xl:max-w-[800px] xl:max-w-[600px] lg:max-w-[400px] md:mt-[20px] sm:mt-[20px]`}>
             <span className='text-footerDescSize text-footerDescColor leading-[23px]'>
               Senior care services designed to support and assist elderly individuals who wish to remain in the comfort of their
-              own homes while receiving the care they need. <br /> Our services are delivered by trained professionals, such as caregivers,
+              own homes while receiving the care they need. <br /> Care services are delivered by trained professionals, such as caregivers,
               nurses, or home health aides.
             </span>
             <div
