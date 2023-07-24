@@ -20,14 +20,14 @@ module.exports = {
         dashboardDecColor: '#D2D2D2',
       },
       fontSize: {
-        bigPrimaryButtonTextSize: '32px',
+        bigPrimaryButtonTextSize: '30px',
         smallPrimaryButtonTextSize: '20px',
         bannerTextSize: '60px',
         footerTextSize: '17px',
         footerDescSize: '16px',
         adTitleBigSize: '45px',
         adTitleSmallSize: '25px',
-        adDescBigSize: '32px',
+        adDescBigSize: '30px',
         adDescSmallSize: '20px',
       },
       fontFamily: {
