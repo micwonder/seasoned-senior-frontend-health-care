@@ -9,6 +9,8 @@ module.exports = {
     extend: {
       colors: {
         primary: '#CB5A6F',
+        primaryHover: '#C75167',
+        primaryDisabled: '#F4AAB7',
         primaryBgColor: '#EBEBEB',
         secondaryBgColor: '#FFFFFF',
         sectionBgColor: '#F5F5F5',
@@ -18,6 +20,11 @@ module.exports = {
         footerDescColor: '#8D8D8D',
         dashboardBgColor: '#F2F1F1',
         dashboardDecColor: '#D2D2D2',
+        textdarkColor: '#282828',
+        forgotColor: '#4285F4',
+        loginBtnColor: '#F7F7F7',
+        signinTextColor: '#121212',
+        
       },
       fontSize: {
         bigPrimaryButtonTextSize: '30px',
@@ -29,11 +36,15 @@ module.exports = {
         adTitleSmallSize: '25px',
         adDescBigSize: '30px',
         adDescSmallSize: '20px',
+        loginBtnTextSize: '16px'
+
       },
       fontFamily: {
         'sans': ['Ubuntu', 'Helvetica', 'Arial', 'sans-serif'],
         'serif': ['Roboto', 'Helvetica', 'Arial', 'sans-serif'],
         'arial': ['FrutigerLTStd', 'Helvetica', 'Arial', 'sans-serif'],
+        'yamamoto': ['Yantramanav', 'Arial', 'sans-serif'],
+        'SFProDisplay': ['SF Pro Display', 'Arial', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
