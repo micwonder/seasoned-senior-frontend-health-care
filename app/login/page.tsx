@@ -17,7 +17,6 @@ import VerifyMailBox from '@/components/auth/VerifyMailBox';
 const Login = () => {
   const router = useRouter();
   const [showVerifyBox, setShowVerifyBox] = useState(false);
-  const [showCongBox, setShowcongBox] = useState(false);
 
   return <>
     <WithRightBG imgpathname='/images/login.png'>
