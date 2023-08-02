@@ -21,10 +21,13 @@ module.exports = {
         dashboardBgColor: '#F2F1F1',
         dashboardDecColor: '#D2D2D2',
         textdarkColor: '#282828',
+        distlineColor: '#828282',
         forgotColor: '#4285F4',
         loginBtnColor: '#F7F7F7',
         signinTextColor: '#121212',
-        
+        borderGreyColor: '#c4c4c4',
+        borderSelectColor: '#DA123B',
+
       },
       fontSize: {
         bigPrimaryButtonTextSize: '30px',

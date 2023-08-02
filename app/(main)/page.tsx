@@ -27,7 +27,7 @@ const getServiceAds = async (): Promise<Array<ServiceAd>> => {
 const Services = async () => {
 	const serviceAds: Array<ServiceAd> = await getServiceAds();
 	return <>
-		<ServicesBanner></ServicesBanner>
+		<ServicesBanner />
 		{
 			serviceAds.map((serviceAd: ServiceAd, idx: number) => {
 				return <HomeServiceSection
