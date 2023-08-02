@@ -1,6 +1,5 @@
 'use client'
 
-import '../globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -14,6 +13,8 @@ import { SocialIcon } from '@/components/SocialIcon'
 import { useMediaQuery } from '@/utils/useMediaQuery'
 import { PrimaryButton } from '@/components/PrimaryButton'
 import ToogleButton from '@/components/ToogleButton'
+
+import '@/app/globals.css'
 
 const metadata: Metadata = {
   title: 'Seasoned Senior',

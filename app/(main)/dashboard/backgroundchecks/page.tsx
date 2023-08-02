@@ -1,4 +1,5 @@
 import supabase from '@/utils/supabase'
+import Image from 'next/image';
 import { Backgroundchecks_Ad } from '@/types/backgroundchecks_ad'
 import { PrimaryButton } from '@/components/PrimaryButton'
 
@@ -29,7 +30,7 @@ const Backgroundchecks = async () => {
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
-      <img
+      <Image
         alt='backgroundchecks'
         src='/images/backgroundchecks.png'
         className='w-full mt-[50px]'
