@@ -27,6 +27,8 @@ module.exports = {
         signinTextColor: '#121212',
         borderGreyColor: '#c4c4c4',
         borderSelectColor: '#DA123B',
+        passwordMediumColor: '#FFDB72',
+        passwordStrongColor: '#2BFA62'
 
       },
       fontSize: {

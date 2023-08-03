@@ -48,14 +48,14 @@ export default function RootLayout({
                             4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}>
           <Image
             alt='logo'
-            src='/images/app_logo.png'
+            src='/icons/app_logo.svg'
             onClick={() => router.push('/')}
             className='mt-auto mb-auto h-auto cursor-pointer'
-            width={isSM ? 160 : 243} height={91} priority={true} />
+            width={isSM ? 120 : 160} height={60} priority={true} />
           <div className='flex md:hidden sm:hidden md:flex-col sm:flex-col items-center md:items-start sm:items-start'>
             <button className={`text-primary text-bigPrimaryButtonTextSize sm:text-[25px] mr-[50px] md:mr-0 sm:mr-0 
-                                md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}>
-              Login
+                                md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`} >
+              <Link  href='/login'>Login</Link>
             </button>
             <PrimaryButton href='/apply'>Apply</PrimaryButton>
           </div>
@@ -91,10 +91,10 @@ export default function RootLayout({
           <div className='flex flex-col min-w-[243px]'>
             <Image
               alt='logo'
-              src='/images/app_logo.png'
+              src='/icons/app_logo.svg'
               className='mb-[16px] h-auto cursor-pointer'
               onClick={() => router.push('/')}
-              width={isSM ? 160 : 243} height={91} />
+              width={isSM ? 120 : 160} height={160} />
             <span className='text-center md:text-left sm:text-left whitespace-nowrap text-footerTextSize'>Senior Home Care Agency</span>
           </div>
           <div
