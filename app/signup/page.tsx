@@ -35,7 +35,7 @@ const Login = () => {
           </div>
           <DistLine />
           <SocialAuth />
-          <AuthConvert experssion='Already have an account' action='Sign in' />
+          <AuthConvert experssion='Already have an account' action='Sign in' href = '/login' />
         </div>
 
       </div>

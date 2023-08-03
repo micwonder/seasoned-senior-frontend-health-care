@@ -18,7 +18,7 @@ const CongBox = ({
                 <div className="flex items-center justify-center mt-2">
                     <Image
                         alt='logo'
-                        src={app_logo}
+                        src={app_logo} 
                         className='cursor-pointer z-10 align-middle'
                         width={143} height={56} priority={true} />
                 </div>

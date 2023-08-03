@@ -40,7 +40,7 @@ const Login = () => {
             </div>
             <DistLine />
             <SocialAuth />
-            <AuthConvert experssion='Don’t have an account ' action='Create account'/>
+            <AuthConvert experssion='Don’t have an account ' action='Create account' href='/signup'/>
           </div>
           <p className="text-[12px] text-gray-600 text-center w-full">
             By creating an account you agree with our Terms of Service, Privacy Policy, and our default Notification Settings. You also agree to the &nbsp;
