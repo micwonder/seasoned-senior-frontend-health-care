@@ -114,8 +114,8 @@ const Login = () => {
                 Add another Emergency Contact +
             </div>
             <div className='flex justify-between mx-8 my-auto '>
-                <SaveExitBtn onClicked={() => { }} />
-                <ContinueBtn onClicked={() => { }} />
+                <SaveExitBtn onClicked={() => {}} />
+                <ContinueBtn onClicked={() => router.push('/Registration/2')} />
             </div>
 
         </WithRightBG>

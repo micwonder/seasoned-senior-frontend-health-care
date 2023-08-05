@@ -123,7 +123,7 @@ const Login = () => {
         <>
             <LogoImg onClicked={() => router.push('/')} />
             <div className='flex ml-8 mt-[65px] absolute'>
-                <BackBtn onClicked={() => router.push('/')} />
+                <BackBtn onClicked={() => router.push('/Registration/1')} />
             </div>
             <ProgressStatusBar completeness={5} hasBack={true} />
             <div className='text-center'>
@@ -154,7 +154,7 @@ const Login = () => {
             </div >
             <div className='flex justify-between mx-8 my-4'>
                 <SaveExitBtn onClicked={() => { }} />
-                <ContinueBtn onClicked={() => { }} />
+                <ContinueBtn onClicked={() => router.push('/Registration/3')} />
             </div>
         </>
     )

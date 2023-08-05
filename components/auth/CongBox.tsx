@@ -8,8 +8,10 @@ import '@/app/globals.css';
 import app_logo from "@/public/icons/app_logo.svg";
 const CongBox = ({
     href,
+    onClicked,
 }: {
     href: string,
+    onClicked: Function
 }) => {
     return (
         <div className="modal-overlay">
@@ -25,14 +27,14 @@ const CongBox = ({
                     <div className='w-[299px] mt-8 mx-auto text-center text-[24px] font-arial font-[700] leading-5'>
                         Congratulation, your account has been created successfully
                     </div>
-                    <div className=' mt-4 text-center text-[12px] font-arial text-primary font-[700] leading-3'>
+                    <div className=' mt-4 text-center text-[12px] font-arial text-primary font-[700] leading-3' onClick={()=>onClicked}>
                         Go back to browser to access dashboard
                     </div>
                     <div className="my-8 mx-auto w-[328px] border-b text-center text-textdarkColor">
                     </div>
                     <div className='mx-auto mt-6 w-[270px] text-[12px] font-[300] leading-6 font-arial text-textdarkColor'>
                         Not sure why you received this email?
-                        <a href="#" className="border-b border-solid font-[400] border-primary text-primary">
+                        <a href={href} className="border-b border-solid font-[400] border-primary text-primary">
                             Learn more
                         </a>
                         &nbsp; Copyright © 2023 Seasonsenior All rights reserved.

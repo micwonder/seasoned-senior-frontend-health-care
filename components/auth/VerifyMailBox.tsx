@@ -7,9 +7,9 @@ import Link from 'next/link';
 import '@/app/globals.css';
 import app_logo from "@/public/icons/app_logo.svg";
 const VerifyMailBox = ({
-  href,
+  onClicked,
 }: {
-  href: string,
+  onClicked: Function,
 }) => {
   return (
     <div className="modal-overlay">
@@ -35,8 +35,9 @@ const VerifyMailBox = ({
             <div className=' text-center text-[14px] font-arial text-distlineColor font-[400] mt-3'>
               Click the button below to verify your account
             </div>
-            <button className=' mt-4 px-[13px] py-[10px] bg-primary rounded-[4px] mx-5'>
-              <Link className=' text-center text-textdarkColor text-[14px]  font-[700] leading-5' href={href}>Verify e-mail</Link>
+            <button className=' mt-4 px-[13px] py-[10px] bg-primary rounded-[4px] mx-5 text-center text-textdarkColor 
+                              text-[14px]  font-[700] leading-5' onClick={()=>onClicked}>
+              Verify e-mail
             </button>
             <div className="my-5 mx-auto w-[328px] border-b text-center text-distlineColor">
             </div>
