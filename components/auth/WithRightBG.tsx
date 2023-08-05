@@ -9,8 +9,8 @@ const WithRightBG = ({
     children: React.ReactNode,
 }) => {
     return (
-        <div className={`grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1 min-h-screen`}>
-            <div className='w-full'>
+        <div className={`grid grid-cols-2 sm:grid-cols-1 md:grid-cols-1`}>
+            <div className='w-full h-screen flex flex-col overflow-y-auto'>
                 {children}
             </div>
             <div

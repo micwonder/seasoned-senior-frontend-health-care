@@ -1,37 +1,23 @@
 'use client'
 
-import { useEffect } from 'react';
-
-import '@/app/globals.css';
-
 const ProgressStatusBar = ({
+    hasBack,
     completeness,
 }: {
     completeness: number,
+    hasBack: boolean
 }) => {
-
-    const renderProgressBar = () => {
-        let elements = [];
-        for (var i = 0; i < 11; i++) {
-            if (i < completeness)
-                elements.push(<><div className='w-full mx-1  h-[6px] rounded-lg bg-borderGreyColor'></div></>)
-            else if (i == completeness)
-                elements.push(<><div className='w-full mx-1  h-[6px] rounded-lg bg-primaryDisabled'></div></>)
-            else
-                elements.push(<><div className='w-full mx-1  h-[6px] rounded-lg bg-primary'></div></>)
-        }
-        return elements;
-    }
-
     return (
-        <>
-            <div className="mt-[146px] flex justify-between max-w-[436px]">
+        <div className={`${hasBack ? 'ml-[135px]' : 'ml-0'}`}>
+            <div className="mt-[146px] ml-8 flex justify-between max-w-[436px]">
                 {
-                    renderProgressBar()
+                    Array.from(Array(11)).map((value, idx) => {
+                        return <div key={'progress_' + idx} className={`w-full mx-1  h-[6px] rounded-lg ${idx == completeness ? 'bg-primaryDisabled' : idx > completeness ? 'bg-primary' : 'bg-borderGreyColor'}`}></div>;
+                    })
                 }
             </div>
-
-        </>
+            <div className='ml-8  mt-2'>{completeness} of 11</div>
+        </div>
     );
 };
 
