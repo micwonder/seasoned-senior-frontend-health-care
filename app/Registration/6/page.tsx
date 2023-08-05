@@ -59,7 +59,7 @@ const Login = () => {
                         Communication and Family Involvement
                     </div >
                     <div className='text-[16px] text-[#828282] font-arial font-[400] mt-[16px] mx-[100px]'>
-                        &nbsp;&nbsp;&nbsp; How would you prefer to stay informed about the senior's well-being and care updates? (Choose one or specify any additional preferences)
+                        &nbsp;&nbsp;&nbsp; How would you prefer to stay informed about the senior&apos;s well-being and care updates? (Choose one or specify any additional preferences)
                     </div>
                     <div className='text-[16px] text-textdarkColor font-arial font-[700] mt-[36px]'>
                         Choose preferred method of communication

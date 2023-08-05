@@ -42,7 +42,7 @@ const Login = () => {
                         Daily Routine and Schedule
                     </div >
                     <div className='text-[16px] text-[#828282] font-arial font-[400] mt-[16px] mx-20'>
-                        Please provide information about the senior's typical daily routine, including preferred waking and sleeping times, meal times, and any specific activities or routines that are important to them
+                        Please provide information about the senior&apos;s typical daily routine, including preferred waking and sleeping times, meal times, and any specific activities or routines that are important to them
                     </div>
                 </div>
             </div>
