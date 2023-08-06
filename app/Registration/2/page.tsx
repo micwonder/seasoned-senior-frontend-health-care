@@ -136,6 +136,7 @@ const Login = () => {
                   Pick from the provided services listed and mark all that are applicable.   
                     
                 </div>
+                </div>
             </div>
             
             <div className="grid grid-cols-3 gap-4 sm:grid-cols-2 md:grid-cols-2 mx-9">
