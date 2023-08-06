@@ -128,12 +128,16 @@ const Login = () => {
             <ProgressStatusBar completeness={5} hasBack={true} />
             <div className='text-center'>
                 <div className=' text-[32px] text-textdarkColor font-arial font-[700]'>
-                    Care Plan
+                   Create Care Plan
                 </div >
+                
                 <div className='text-[16px] text-[#828282] font-arial font-[400] mt-[16px]'>
+                    
                     Select from the services below to create a care plan
+                    
                 </div>
             </div>
+            
             <div className="grid grid-cols-3 gap-4 sm:grid-cols-2 md:grid-cols-2 mx-9">
                 {
                     carePlanData.map((item, index) => (
