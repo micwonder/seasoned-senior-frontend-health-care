@@ -11,8 +11,6 @@ import LogoImg from '@/components/auth/LogoImg'
 import FormPrimaryBtn from '@/components/auth/FormPrimaryBtn'
 import ResetPassword from '@/components/auth/ResetPassword';
 import SentMailBox from '@/components/auth/SentMailBox';
-import VerifyMailBox from '@/components/auth/VerifyMailBox';;
-import CongBox from '@/components/auth/CongBox';
 const Forgotpassword = () => {
   const router = useRouter();
   const [showModal, setShowModal] = useState(false);
@@ -44,7 +42,7 @@ const Forgotpassword = () => {
             <div className="mt-11">
               <FormPrimaryBtn onClicked={() => setShowModal(true)}> Reset password</FormPrimaryBtn>
               {showModal &&
-                <CongBox href='#'/>
+                <SentMailBox onClicked={() => router.push('/')} />
               }
             </div>
           </div>

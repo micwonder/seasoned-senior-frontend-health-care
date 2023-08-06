@@ -16,7 +16,6 @@ import VerifyMailBox from '@/components/auth/VerifyMailBox';
 
 const Login = () => {
   const router = useRouter();
-  const [showVerifyBox, setShowVerifyBox] = useState(false);
 
   return <>
     <WithRightBG imgpathname='/images/login.png'>
@@ -34,12 +33,9 @@ const Login = () => {
             <EmailLogin />
             <div className="relative">
               <FormPrimaryBtn onClicked={() => { alert("Login Btn Clicked!") }}>Sign In</FormPrimaryBtn>
-              {showVerifyBox &&
-                <VerifyMailBox href='#'/>
-              }
             </div>
             <DistLine />
-            <SocialAuth />
+            <SocialAuth onClickedAppleBtn={()=>{}} onClickedGoogleBtn={()=>{}}/>
             <AuthConvert experssion='Don’t have an account ' action='Create account' href='/signup'/>
           </div>
           <p className="text-[12px] text-gray-600 text-center w-full">

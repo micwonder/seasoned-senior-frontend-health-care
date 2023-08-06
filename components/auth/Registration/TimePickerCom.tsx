@@ -15,7 +15,7 @@ const TimePickerCom = ({ title }: { title: string }) => {
       <div className='peer w-full'>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DemoContainer components={['TimePicker']}>
-            <TimePicker label="Basic time picker"
+            <TimePicker label="Select time"
             />
           </DemoContainer>
         </LocalizationProvider>

@@ -14,28 +14,18 @@ import GenderSelection from '@/components/auth/Registration/GenderSelection';
 import Relationship from '@/components/auth/Registration/RelationshipSelection';
 import TimePickerCom from '@/components/auth/Registration/TimePickerCom';
 import DatePickerCom from '@/components/auth/Registration/DatePickerCom';
+import BackBtn from '@/components/auth/Registration/BackBtn';
 
 const Login = () => {
     const router = useRouter();
-    const [isYourself, setIsYourself] = useState<boolean>(true);
-    const [name, setName] = useState<string>('');
     const [date, setDate] = useState<string>('');
-    const [gender, setGender] = useState<string>('');
-    const [relationship, setRelationship] = useState<string>('');
-    const [address, setAddress] = useState<string>('');
-    const [mail, setMail] = useState<string>('');
-    const [phone, setPhone] = useState<string>('');
-
-    const [emergencyName, setEmergencyName] = useState<string>('');
-    const [emergencyAddress, setEmergencyAddress] = useState<string>('');
-    const [emergencyMail, setEmergencyMail] = useState<string>('');
-    const [emergencyPhone, setEmergencyPhone] = useState<string>('');
-    const [formIndex, setFormIndex] = useState<number>(1);
-
     return <>
         <WithRightBG imgpathname='/images/registration_img_1.png'>
             <LogoImg onClicked={() => router.push('/')} />
-            <ProgressStatusBar completeness={5} hasBack={false} />
+            <div className='flex ml-8 mt-[145px] absolute'>
+                <BackBtn onClicked={() => router.push('/Registration/5')} />
+            </div>
+            <ProgressStatusBar completeness={5} hasBack={true} />
             <div className="w-[370x] mx-auto mt-[52px] sm:w-full">
                 <div className='text-center'>
                     <div className=' text-[32px] text-textdarkColor font-arial font-[700]'>
@@ -46,7 +36,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <div className='mx-[65px] pl-[40px] mt-5' onFocus={() => setFormIndex(1)}>
+            <div className='mx-[65px] pl-[40px] mt-5'>
                 <div className="text-center text-[16px] font-[700] font-arial text-textdarkColor">
                     <label>Tell us about the senior routine and schedule</label>
                 </div>
@@ -107,7 +97,7 @@ const Login = () => {
             </div>
             <div className='flex justify-between mx-8 my-auto '>
                 <SaveExitBtn onClicked={() => { }} />
-                <ContinueBtn onClicked={() => { }} />
+                <ContinueBtn onClicked={() => router.push('/Registration/6')} />
             </div>
 
         </WithRightBG>

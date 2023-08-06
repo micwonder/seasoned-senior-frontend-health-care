@@ -4,16 +4,18 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import Image from "next/image";
 import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation'
 
 import '@/app/globals.css';
 import mail_box from "@/public/gifs/mail_box.gif";
 
 const SentMailBox = ({
-  href,
+  onClicked,
 }: {
-  href: string,
+  onClicked: Function
 }) => {
-  // const modalContent = (
+  const router = useRouter();
+
   return (
     <div className="modal-overlay">
       <div className="modal-wrapper">
@@ -32,19 +34,16 @@ const SentMailBox = ({
             Please open email to verify account
           </div>
           <div className="flex justify-center items-center">
-            <button className=' mt-10 px-[13px] py-[10px] bg-white  border-primary border-solid border-2 rounded-[4px]'>
-              <Link className=' text-center text-primary text-bigPrimaryButtonTextSize sm:text-[20px]' href={href}>Open mail</Link>
+            <button className=' mt-10 px-[13px] py-[10px] bg-white  border-primary border-solid border-2 rounded-[4px] text-center
+                               text-primary text-bigPrimaryButtonTextSize sm:text-[20px]'
+                               onClick={() => router.push('/')}>
+              Open mail
             </button>
           </div>
         </div>
       </div>
     </div>
   );
-  // );
-  // return ReactDOM.createPortal(
-  //   modalContent,
-  //   document.getElementById("modal-root")
-  // );
 };
 
 SentMailBox.displayName = 'SentMailBox';
