@@ -128,12 +128,12 @@ const Login = () => {
             <ProgressStatusBar completeness={5} hasBack={true} />
             <div className='text-center'>
                 <div className=' text-[32px] text-textdarkColor font-arial font-[700]'>
-                   Create Care Plan
+                   Create a Care Plan
                 </div >
                 
                 <div className='text-[16px] text-[#828282] font-arial font-[400] mt-[16px]'>
                     
-                    Select from the services below to create a care plan
+                  Pick from the provided services listed and mark all that are applicable.   
                     
                 </div>
             </div>
