@@ -25,10 +25,10 @@ const CarePlanBox = ({
                 src={thumbnail}
                 className='my-auto ml-2 h-auto'
                 width={70} height={70} />
-            <p className='text-[14px] font-arial font-[700] text-textdarkColor mt-5'>
+            <p className='text-sm font-arial font-bold text-textdarkColor mt-5'>
                 {title}
             </p>
-            <p className='text-[12px] font-arial font-[300] leading-5 text-textdarkColor mt-1'>
+            <p className='text-xs font-arial font-light leading-5 text-textdarkColor mt-1'>
                 {description}
             </p>
         </div>

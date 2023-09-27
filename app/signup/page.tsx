@@ -24,10 +24,10 @@ const Login = () => {
       <LogoImg onClicked={() => router.push('/')} />
       <div className="w-[370px] mx-auto mt-[186px] sm:w-full">
         <div className='text-center'>
-          <div className=' text-[32px] text-textdarkColor font-arial font-[700]'>
+          <div className=' text-[32px] text-textdarkColor font-arial font-bold'>
             Create your account
           </div >
-          <div className='text-[16px] text-[#828282] font-arial font-[400] mt-[16px]'>
+          <div className='text-base text-distlineColor font-arial font-normal mt-4 font-normal'>
             Its free and easy
           </div>
         </div>

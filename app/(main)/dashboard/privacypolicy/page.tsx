@@ -26,7 +26,7 @@ const Privacypolicy = async () => {
   const privacypolicyAds: Array<PrivacypolicyAd> = await getParagraphs();
 
   return <>
-    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
       Privacy Policy
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
@@ -37,7 +37,7 @@ const Privacypolicy = async () => {
         className='w-full mt-[50px]'
       />
       <div className='text-justify mt-[50px]'>
-        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
           This Privacy Policy (&quot;Policy&quot;) explains how Seasoned Senior Home Care Agency (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, discloses, and protects
           the personal information of individuals (&quot;you&quot; or &quot;users&quot;) who access or use our website and services (collectively referred to as the &quot;Services&quot;).
           We are committed to protecting your privacy and ensuring the security of your personal information. By accessing or using our Services, you agree to
@@ -66,23 +66,23 @@ const Privacypolicy = async () => {
 
             return <div key={`privacypolicy_paragraph_${idx}`} className={`${isFirst ? 'mt-[50px]' : ''} text-justify`}>
               {
-                isFirst && <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+                isFirst && <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                   {`${privacypolicyAd.title}: `}
                   <br />
                 </span>
               }
               <br />
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                 {prefix}
               </span>
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
                 {privacypolicyAd.description}
               </span>
             </div>
           })
         }
         <div className='mt-[50px] text-justify'>
-          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
             By using our Services, you acknowledge that you have read, understood, and agreed to the terms and practices described in this Privacy Policy.
           </span>
         </div>

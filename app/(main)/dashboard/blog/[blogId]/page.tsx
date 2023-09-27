@@ -26,7 +26,7 @@ const getContent = async (serviceId: number): Promise<Service> => {
 const BlogDetail = async ({ params }: { params: { blogId: number } }) => {
   const curBlog: Service = await getContent(params.blogId);
   return <>
-    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
       {curBlog.title}
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
@@ -37,7 +37,7 @@ const BlogDetail = async ({ params }: { params: { blogId: number } }) => {
         className='w-full mt-[50px]'
       />
       <div className='text-left mt-[50px]'>
-        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
           {curBlog.content?.header + ":"}
         </span>
       </div>
@@ -45,18 +45,18 @@ const BlogDetail = async ({ params }: { params: { blogId: number } }) => {
         {
           curBlog.content?.content.map((subService, idx) => {
             return <div key={`seniorevents_paragraph_${idx}`} className='mt-[50px] text-justify'>
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                 {`${subService.subtitle}: `}
               </span>
               <br className='hidden md:block sm:block' />
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
                 {subService.description}
               </span>
             </div>
           })
         }
         <div className='mt-[50px] text-justify'>
-          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
             {curBlog.content?.footer}
           </span>
         </div>

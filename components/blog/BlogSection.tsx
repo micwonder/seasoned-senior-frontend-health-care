@@ -13,7 +13,7 @@ const BlogSection = ({
 
 	return <section className='mt-[110px]'>
 		<div className={`relative flex justify-between lg:justify-normal md:flex-col sm:flex-col`}>
-			<p className={`absolute text-[24px] text-bannerTextColor text-right font-[300] ${align == 'left' || isMD ? 'right-0' : 'left-0'} top-[-60px]`}>
+			<p className={`absolute text-[24px] text-bannerTextColor text-right font-light ${align == 'left' || isMD ? 'right-0' : 'left-0'} top-[-60px]`}>
 				Blog
 			</p>
 			{
@@ -25,11 +25,11 @@ const BlogSection = ({
 											md:mt-[30px] sm:mt-[30px] ${align == 'left' && !isMD ? 'lg:ml-[50px]' : ''}`}>
 				<div>
 					<p
-						className='font-arial font-[700] text-bannerTextColor text-[36px] lg:text-[30px] sm:text-[30px]'>
+						className='font-arial font-bold text-bannerTextColor text-[36px] lg:text-[30px] sm:text-[30px]'>
 						{title}
 					</p>
 					<div className='text-justify'>
-						<span className={`font-arial font-[300] text-[32px] lg:text-[26px] sm:text-[26px] 
+						<span className={`font-arial font-light text-[32px] lg:text-[26px] sm:text-[26px] 
 														text-bannerTextColor leading-[38px] lg:leading-[30px] sm:leading-[30px]`}>
 							{description}
 						</span>

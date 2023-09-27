@@ -26,7 +26,7 @@ const Codeofconduct = async () => {
   const codeofconductAds: Array<CodeofconductAd> = await getParagraphs();
 
   return <>
-    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
       Code of Conduct for
       <br />
       Seasoned Senior Home Care Agency
@@ -60,23 +60,23 @@ const Codeofconduct = async () => {
 
             return <div key={`codeofconduct_paragraph_${idx}`} className={`${isFirst ? 'mt-[50px]' : ''} text-justify`}>
               {
-                isFirst && <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+                isFirst && <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                   {`${codeofconductAd.title}: `}
                   <br />
                 </span>
               }
               <br />
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                 {prefix}
               </span>
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
                 {codeofconductAd.description}
               </span>
             </div>
           })
         }
         <div className='mt-[50px] text-justify'>
-          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
             Adherence to this Code of Conduct is a condition of employment and engagement with Seasoned Senior Home Care Agency. Violations may
             result in disciplinary action, up to and including termination or legal consequences.
             By acknowledging this Code, we commit to upholding its principles and fostering a culture of excellence, compassion, and integrity

@@ -12,6 +12,7 @@ import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import BackBtn from "@/components/auth/Registration/BackBtn";
 import ComMethodSel from "@/components/auth/Registration/ComMethodSel";
+import DatePickerCom from "@/components/auth/Registration/DatePickerCom";
 type comMethodDataType = {
   id: number;
   title: string;
@@ -52,44 +53,27 @@ const Login = () => {
         >
           <div className="text-center">
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
-              Additional Information
+              Start Date and Duration
             </div>
-            <div className="text-[18px] text-textdarkColor font-arial font-normal mt-6 mx-7">
-              &nbsp;&nbsp;&nbsp; Are there any cultural or religious
-              considerations we should be aware of in providing care for the
-              senior?
+            <div className="text-base text-distlineColor font-arial font-normal mt-6 mx-7">
+              &nbsp;&nbsp;&nbsp; When would you like the senior home care
+              services to begin? You may also choose your preferred payment
+              method for the care services. Adding a debit card on file is
+              optional, and rest assured, you will not be charged until you hire
+              and approve working hours for the care services
             </div>
           </div>
-          <div className="mt-4 w-[60%]">
-            {comMethodData.map((item, index) => (
-              <ComMethodSel
-                key={index.toString()}
-                title={item.title}
-                status={item.id === selectedComMethodID ? true : false}
-                onClick={(e) => {
-                  if (
-                    e.type === "click" &&
-                    e.clientX !== 0 &&
-                    e.clientY !== 0
-                  ) {
-                    setComMethodId(item.id);
-                  }
-                }}
-              />
-            ))}
+          <div>
+            <div className="text-base text-distlineColor font-arial font-normal mt-6 mx-7">
+              Set up when you would like to start
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-[18px] wh-10">
+              <div><DatePickerCom title="Desired Start Date"/></div>
+              <div><DatePickerCom title="Desired End Date (optional)"/></div>
+            </div>
           </div>
-          <div className="text-center text-base text-textdarkColor font-arial font-normal mt-8 mx-[58px]">
-            Is there any additional information or specific requests you would
-            like to share with us to ensure the best possible care for the
-            senior?
-            <textarea
-              name="detail_note"
-              id="detail_note"
-              cols={30}
-              rows={10}
-              placeholder="Leave a detailed note"
-              className="font-arial border w-full mt-4 h-[152px] rounded-md px-4"
-            ></textarea>
+          <div className="text-center text-base text-distlineColor font-arial font-normal mt-8 mx-[58px]">
+            Please indicate if there is an estimated duration or end date for the care services required.
           </div>
         </div>
         <div className="flex justify-between mx-8 mt-auto">
