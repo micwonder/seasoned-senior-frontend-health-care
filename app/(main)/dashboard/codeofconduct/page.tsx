@@ -85,7 +85,7 @@ const Codeofconduct = async () => {
         </div>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton href='/apply'>Apply for Care</PrimaryButton>
+        <PrimaryButton href='/Registration/1'>apply for care</PrimaryButton>
       </div>
     </div >
   </>

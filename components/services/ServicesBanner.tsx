@@ -9,7 +9,7 @@ const ServicesBanner = () => {
             <span className='font-serif text-[#2F2F2F] text-[20px] leading-[28px]'>Our services are delivered by trained professionals</span>
         </div>
         <div className='mt-[43px]'>
-            <PrimaryButton href='/apply'>Apply For Care</PrimaryButton>
+            <PrimaryButton href='/Registration/1'>apply for care</PrimaryButton>
         </div>
     </div>
 };

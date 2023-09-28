@@ -54,7 +54,7 @@ const Contactus = () => {
         </span>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton href='/apply'>Apply For Care</PrimaryButton>
+        <PrimaryButton href='/Registration/1'>apply for care</PrimaryButton>
       </div>
     </div>
   </>

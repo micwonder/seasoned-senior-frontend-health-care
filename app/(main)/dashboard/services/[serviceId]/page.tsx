@@ -62,7 +62,7 @@ const ServiceDetail = async ({ params }: { params: { serviceId: number } }) => {
         </div>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton href='/apply'>Apply for Care</PrimaryButton>
+        <PrimaryButton href='/Registration/1'>apply for care</PrimaryButton>
       </div>
     </div>
   </>
