@@ -17,23 +17,23 @@ const Forgotpassword = () => {
   return <>
     <WithRightBG imgpathname='/images/login.png'>
         <LogoImg onClicked={() => router.push('/')} />
-        <div className='absolute top-[159px] left-[40px] flex justify-center items-center'>
+        <div className='absolute top-[159px] left-8 flex justify-center items-center'>
           <Image
           alt='logo'
           src={ArrowBack}
           className=' h-auto cursor-pointer z-10'
           width={16} height={16} priority={true}
           />
-          <div className=' text-[16px], text-distlineColor'>
+          <div className=' text-base, text-distlineColor'>
             Go back to log in
           </div>
         </div>
         <div className="w-[370px] mx-auto mt-[250px] sm:w-full">
           <div className='text-center'>
-            <div className=' text-[32px] text-textdarkColor font-arial font-[700]'>
+            <div className=' text-[32px] text-textdarkColor font-arial font-bold'>
               Forgot password?
             </div >
-            <div className='text-[16px] text-[#828282] font-arial font-[400] mt-[16px]'>
+            <div className='text-base text-distlineColor font-arial font-normal mt-4'>
               No worries, we’ll send you reset instructions
             </div>
           </div>

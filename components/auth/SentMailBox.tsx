@@ -30,7 +30,7 @@ const SentMailBox = ({
             className=' mx-auto'
             width={250} height={100} priority={true}
           />
-          <div className='text-center text-[16px] font-arial text-distlineColor'>
+          <div className='text-center text-base font-arial text-distlineColor'>
             Please open email to verify account
           </div>
           <div className="flex justify-center items-center">

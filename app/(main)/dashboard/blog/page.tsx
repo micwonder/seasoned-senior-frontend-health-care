@@ -26,7 +26,7 @@ const getServiceAds = async (): Promise<Array<ServiceAd>> => {
 const Blog = async () => {
 	const serviceAds: Array<ServiceAd> = await getServiceAds();
 	return <>
-		<p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+		<p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
 			Blog
 		</p>
 		<div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />

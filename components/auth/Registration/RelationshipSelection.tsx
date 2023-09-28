@@ -39,7 +39,7 @@ const Relationship: FC = () => {
 
     return (
         <div>
-            <div className='text-[12px] font-arial font-[400] text-distlineColor'>
+            <div className='text-xs font-arial font-normal text-distlineColor'>
                 {'Relationship'}
             </div>
             <div>

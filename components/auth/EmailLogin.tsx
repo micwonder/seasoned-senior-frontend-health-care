@@ -32,8 +32,8 @@ const EmailLogin = () => {
         </div>
       </div>
       <div className='grid grid-cols-2 sm:grid-cols-1'>
-        <p className=" text-[#797979] sm:text-center text-[12px]">Must be at least 8 characters</p>
-        <div className="text-right text-[12px] sm:text-center text-forgotColor hover:underline hover:text-gray-500">
+        <p className=" text-[#797979] sm:text-center text-xs">Must be at least 8 characters</p>
+        <div className="text-right text-xs sm:text-center text-forgotColor hover:underline hover:text-gray-500">
           <a href="/forgotpassword">Forgot your password?</a>
         </div>
       </div>

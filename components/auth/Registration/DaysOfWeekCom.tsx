@@ -9,8 +9,13 @@ type OptionType = {
 };
 
 const options: OptionType[] = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
+    { value: 'mon', label: 'Monday' },
+    { value: 'tue', label: 'Tuesday' },
+    { value: 'wed', label: 'Wednesday' },
+    { value: 'thu', label: 'Thursday' },
+    { value: 'fri', label: 'Friday' },
+    { value: 'sat', label: 'Saturday' },
+    { value: 'sun', label: 'Sunday' },
 ];
 
 const Option: FC<any> = (props) => {
@@ -23,7 +28,7 @@ const Option: FC<any> = (props) => {
     );
 };
 
-const GenderSelection: FC = () => {
+const DaysSelection: FC = () => {
     const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
 
     const handleChange = (selectedOption: OptionType | null) => {
@@ -34,7 +39,7 @@ const GenderSelection: FC = () => {
     return (
         <div>
             <div className='text-xs font-arial font-normal text-distlineColor'>
-                {'Gender'}
+                {'Days of the Week'}
             </div>
             <div>
                 <Select
@@ -58,6 +63,7 @@ const GenderSelection: FC = () => {
                     value={selectedOption}
                     onChange={handleChange}
                     options={options}
+                    placeholder="Select days"
                     components={{ IndicatorSeparator: () => null, Option }}
 
                 />
@@ -66,6 +72,6 @@ const GenderSelection: FC = () => {
     );
 }
 
-GenderSelection.displayName = 'GenderSelection';
+DaysSelection.displayName = 'DaysSelection';
 
-export default GenderSelection;
+export default DaysSelection;

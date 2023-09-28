@@ -15,7 +15,7 @@ const HomeServiceSection = ({
 		className={`${align == "right" ? 'bg-sectionBgColor' : 'bg-secondaryBgColor'} 
 								4xl:px-[190px] 3xl:px-[190px] 2xl:px-[50px] px-[50px] pt-[122px] pb-[41px]`}>
 		<div className={`relative flex lg:flex-col md:flex-col sm:flex-col justify-between`}>
-			<p className={`absolute text-[24px] text-bannerTextColor text-right font-[300] ${align == 'left' || isLG ? 'right-0' : 'left-0'} top-[-60px]`}>
+			<p className={`absolute text-[24px] text-bannerTextColor text-right font-light ${align == 'left' || isLG ? 'right-0' : 'left-0'} top-[-60px]`}>
 				Services
 			</p>
 			{
@@ -28,13 +28,13 @@ const HomeServiceSection = ({
 							justify-between lg:mt-[50px] md:mt-[50px] sm:mt-[50px]`}>
 				<div>
 					<p
-						className='font-arial font-[700] text-bannerTextColor 
-								4xl:text-[45px] 3xl:text-[40px] 2xl:text-[45px] sm:text-[30px] text-[40px] '>
+						className='font-arial font-bold text-bannerTextColor 
+								4xl:text-[45px] 3xl:text-[32px] 2xl:text-[45px] sm:text-[30px] text-[32px] '>
 						{title}
 					</p>
 					<div>
-						<span className={`font-arial font-[300] 4xl:text-[40px] 3xl:text-[35px] 
-										2xl:text-[40px] sm:text-[25px] text-[35px] text-bannerTextColor leading-[50px]`}>
+						<span className={`font-arial font-light 4xl:text-[32px] 3xl:text-[35px] 
+										2xl:text-[32px] sm:text-[25px] text-[35px] text-bannerTextColor leading-[50px]`}>
 							{description}
 						</span>
 					</div>

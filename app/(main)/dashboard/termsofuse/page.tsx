@@ -26,7 +26,7 @@ const Termsofuse = async () => {
   const termsofuseAds: Array<Termsofuse_Ad> = await getParagraphs();
 
   return <>
-    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
       Terms of Use
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
@@ -37,7 +37,7 @@ const Termsofuse = async () => {
         className='w-full mt-[50px]'
       />
       <div className='text-justify mt-[50px]'>
-        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
           These Terms of Use (&quot;Agreement&quot;) govern your access and use of the Seasoned Senior Home Care Agency website, services, and any related
           content or materials (collectively referred to as the &quot;Services&quot;). By accessing or using our Services, you agree to be bound by this Agreement.
           If you do not agree with any provision of this Agreement, please refrain from using our Services.
@@ -65,23 +65,23 @@ const Termsofuse = async () => {
 
             return <div key={`termsofuse_paragraph_${idx}`} className={`${isFirst ? 'mt-[50px]' : ''} text-justify`}>
               {
-                isFirst && <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+                isFirst && <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                   {`${termsofuseAd.title}: `}
                   <br />
                 </span>
               }
               <br />
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                 {prefix}
               </span>
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
                 {termsofuseAd.description}
               </span>
             </div>
           })
         }
         <div className='mt-[50px] text-justify'>
-          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
             If you have any questions or concerns about these Terms of Use, please [Link to the contact us page].
             <br />
             <br />
@@ -90,7 +90,7 @@ const Termsofuse = async () => {
         </div>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton href='/apply'>Apply for Care</PrimaryButton>
+        <PrimaryButton href='/Registration/1'>apply for care</PrimaryButton>
       </div>
     </div >
   </>

@@ -18,7 +18,7 @@ const DropDownMenu = ({ menuItems, onClicked }: { menuItems: Array<string>, onCl
 							key={`dropdown_menu_item_${idx}`}
 							href={'/dashboard/' + menuItem.replace(/\s/g, '').toLowerCase()}
 							onClick={() => onClicked()}
-							className={`block md:inline-block px-3 py-2 rounded-md text-[20px] font-arial font-[400] ${isActive && 'text-primary'}`}>
+							className={`block md:inline-block px-3 py-2 rounded-md text-[20px] font-arial font-normal ${isActive && 'text-primary'}`}>
 							{menuItem}
 						</Link>
 					})
@@ -27,12 +27,12 @@ const DropDownMenu = ({ menuItems, onClicked }: { menuItems: Array<string>, onCl
 			<div className='flex flex-col'>
 				<Link
 					href=''
-					className='block md:inline-block px-3 py-2 rounded-md text-[20px] font-arial font-[500]'>
+					className='block md:inline-block px-3 py-2 rounded-md text-[20px] font-arial font-medium'>
 					Login
 				</Link>
 				<Link
 					href=''
-					className='block md:inline-block px-3 py-2 rounded-md text-[20px] font-arial font-[500] text-primary'>
+					className='block md:inline-block px-3 py-2 rounded-md text-[20px] font-arial font-medium text-primary'>
 					Apply
 				</Link>
 			</div>

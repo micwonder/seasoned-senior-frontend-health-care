@@ -25,13 +25,13 @@ const getParagraphs = async (): Promise<Array<HowitworksAd>> => {
 const Howitworks = async () => {
 	const howitworksAds: Array<HowitworksAd> = await getParagraphs();
 	return <>
-		<p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+		<p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
 			How it works
 		</p>
 		<div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
 		<div className='mt-[25px]'>
 			<div className='text-justify'>
-				<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+				<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
 					At Seasoned Senior Home Care Agency, we have a well-defined process for providing care to our seniors.
 					Here&apos;s how our agency works and how we implement our care services:
 				</span>
@@ -46,18 +46,18 @@ const Howitworks = async () => {
 				{
 					howitworksAds.map((howitworksAd, idx) => {
 						return <div key={`howitworks_paragraph_${idx}`} className='mt-[50px] text-justify'>
-							<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+							<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
 								{`${howitworksAd.title}: `}
 							</span>
 							<br className='hidden md:block sm:block' />
-							<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+							<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
 								{howitworksAd.description}
 							</span>
 						</div>
 					})
 				}
 				<div className='mt-[50px] text-justify'>
-					<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+					<span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
 						At Seasoned Senior Home Care Agency, our priority is to provide compassionate, personalized, and professional care to our seniors.
 						Through our well-defined process, trained caregivers, and ongoing monitoring, we ensure that our seniors receive the highest quality
 						of care that promotes their independence, well-being, and overall quality of life.

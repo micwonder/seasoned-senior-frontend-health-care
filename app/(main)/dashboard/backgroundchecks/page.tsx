@@ -25,7 +25,7 @@ const getParagraphs = async (): Promise<Array<Backgroundchecks_Ad>> => {
 const Backgroundchecks = async () => {
   const backgroundchecksAds: Array<Backgroundchecks_Ad> = await getParagraphs();
   return <>
-    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-[700]'>
+    <p className='text-center text-bannerTextColor text-adTitleBigSize md:text-adTitleSmallSize sm:text-adTitleSmallSize font-arial font-bold'>
       Background checks
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
@@ -36,7 +36,7 @@ const Backgroundchecks = async () => {
         className='w-full mt-[50px]'
       />
       <div className='text-justify mt-[50px]'>
-        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+        <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
           At Seasoned Senior Home Care Agency, we prioritize the safety and well-being of our clients. As part of our commitment to providing exceptional care,
           we conduct thorough background checks on all our employees to ensure their suitability for working in a senior care environment. Here&apos;s an overview of
           how we conduct background checks:
@@ -46,19 +46,19 @@ const Backgroundchecks = async () => {
         {
           backgroundchecksAds.map((backgroundchecksAd, idx) => {
             return <div key={`backgroundchecks_paragraph_${idx}`} className='mt-[50px] text-justify'>
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[700]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-bold'>
                 {`${backgroundchecksAd.title}: `}
               </span>
               <br />
               <br />
-              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+              <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
                 {backgroundchecksAd.description}
               </span>
             </div>
           })
         }
         <div className='mt-[50px] text-justify'>
-          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-[300]'>
+          <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
             We encourage clients and their families to provide feedback on the caregivers&apos; performance, allowing us to address any concerns promptly.
             <br />
             <br />
@@ -77,7 +77,7 @@ const Backgroundchecks = async () => {
         </div>
       </div>
       <div className='text-center mt-[50px]'>
-        <PrimaryButton href='/apply'>Apply for Care</PrimaryButton>
+        <PrimaryButton href='/Registration/1'>apply for care</PrimaryButton>
       </div>
     </div>
   </>
