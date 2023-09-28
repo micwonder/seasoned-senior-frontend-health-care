@@ -222,24 +222,22 @@ const SelectOption = () => {
                 </div>
               </div>
               <div className="mt-8">Preferred Payment Plan</div>
-              <div className="justify-center gap-[39px] grid grid-cols-3 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1">
+              <div className="justify-center gap-[39px] grid grid-cols-3 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1 mt-[-11px] my-[-15px]">
                 {comMethodData.map((item, index) => (
-                  <div className="mt-[-11px] my-[-15px]">
-                    <ComMethodSel
-                      key={index.toString()}
-                      title={item.title}
-                      status={item.id === selectedComMethodID ? true : false}
-                      onClick={(e) => {
-                        if (
-                          e.type === "click" &&
-                          e.clientX !== 0 &&
-                          e.clientY !== 0
-                        ) {
-                          setComMethodId(item.id);
-                        }
-                      }}
-                    />
-                  </div>
+                  <ComMethodSel
+                    key={index.toString()}
+                    title={item.title}
+                    status={item.id === selectedComMethodID ? true : false}
+                    onClick={(e) => {
+                      if (
+                        e.type === "click" &&
+                        e.clientX !== 0 &&
+                        e.clientY !== 0
+                      ) {
+                        setComMethodId(item.id);
+                      }
+                    }}
+                  />
                 ))}
               </div>
               <div
