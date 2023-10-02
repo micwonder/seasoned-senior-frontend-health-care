@@ -69,7 +69,7 @@ const Login = () => {
             </div>
             <div className="text-[20px] text-distlineColor font-arial mt-[14px] mx-7">
               1.1 The Agency agrees to provide senior home care services as
-              outlined in the client's individualized care plan, which will be
+              outlined in the client&#39;s individualized care plan, which will be
               developed and agreed upon between the Agency and the Client. These
               services may include but are not limited to, assistance with
               activities of daily living, medication reminders, meal
@@ -149,7 +149,7 @@ const Login = () => {
             </div>
             <div className="text-[20px] text-distlineColor font-arial mt-[14px] mx-7">
               5.1 Either party may terminate this Contract by providing written
-              notice to the other party with a minimum of five days' notice.
+              notice to the other party with a minimum of five days&#39; notice.
               <br />
               <br />
               5.2 The Client acknowledges that termination of services may
@@ -180,7 +180,7 @@ const Login = () => {
               three (3) months following the termination of Seasoned senior LLC
               services for any reason. In the event I employ a Seasoned senior
               LLC nurse or employee in violation of this agreement, I shall pay
-              Seasoned Senior a finder's fee of $10,000.00 for each nurse I
+              Seasoned Senior a finder&#39;s fee of $10,000.00 for each nurse I
               employ and $5,000.00 for each non-licensed employee I employ.
             </div>
           </div>
