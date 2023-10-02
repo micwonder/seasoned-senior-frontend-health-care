@@ -1,6 +1,7 @@
 import supabase from '@/utils/supabase'
 import { Termsofuse_Ad } from '@/types/termsofuse_ad'
 import { PrimaryButton } from '@/components/PrimaryButton'
+import Image from "next/image";
 
 const getParagraphs = async (): Promise<Array<Termsofuse_Ad>> => {
   const { data, error } = await supabase.from('termsofuse_ads').select('*').order('id', { ascending: true });
@@ -31,7 +32,7 @@ const Termsofuse = async () => {
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
-      <img
+      <Image
         alt='termsofuse'
         src='/images/termsofuse.png'
         className='w-full mt-[50px]'

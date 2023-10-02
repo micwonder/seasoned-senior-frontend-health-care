@@ -1,4 +1,5 @@
 import { PrimaryButton } from '@/components/PrimaryButton'
+import Image from "next/image";
 
 const Contactus = () => {
   return <>
@@ -7,7 +8,7 @@ const Contactus = () => {
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
-      <img
+      <Image
         alt='contactus'
         src='/images/contactus.png'
         className='w-full mt-[50px]'

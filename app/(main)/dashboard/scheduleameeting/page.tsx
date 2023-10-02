@@ -2,7 +2,6 @@ import Image from 'next/image'
 import supabase from '@/utils/supabase'
 import { ScheduleAd } from '@/types/schedule_ad'
 import { PrimaryButton } from '@/components/PrimaryButton'
-
 const getParagraphs = async (): Promise<Array<ScheduleAd>> => {
   const { data, error } = await supabase.from('schedule_ads').select('*').order('id', { ascending: true });
   if (error) {
@@ -30,7 +29,7 @@ const Schedulemetting = async () => {
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
-      <img
+      <Image
         alt='scheduleameeting'
         src='/images/scheduleameeting.png'
         className='w-full mt-[50px]'
