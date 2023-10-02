@@ -6,7 +6,7 @@ import { TextField } from "@mui/material";
 
 const DateDisplay = styled(DatePicker)(({ theme }) => ({
   "& input": {
-    padding: 0,
+    padding: 10,
   },
 }));
 const DatePickerCom = ({ title }: { title: string }) => {
@@ -16,11 +16,11 @@ const DatePickerCom = ({ title }: { title: string }) => {
         {title}
       </div>
 
-      <div className="peer w-full">
+      <div className="peer w-full wh-10">
         <LocalizationProvider dateAdapter={AdapterDateFns}>
           <DateDisplay
-            value={new Date()}
-            onChange={() => {}}
+            // value={new Date()}
+            // onChange={() => {}}
             // renderInput={(params) => <TextField {...params} />}
           ></DateDisplay>
         </LocalizationProvider>

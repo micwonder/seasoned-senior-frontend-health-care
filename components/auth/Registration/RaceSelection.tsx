@@ -9,8 +9,10 @@ type OptionType = {
 };
 
 const options: OptionType[] = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
+    { value: 'Caucasoid', label: 'Caucasoid' },
+    { value: 'Negrioid ', label: 'Negrioid ' },
+    { value: 'Mongoloid ', label: 'Mongoloid ' },
+    { value: 'Australoid ', label: 'Australoid ' },
 ];
 
 const Option: FC<any> = (props) => {
@@ -23,7 +25,7 @@ const Option: FC<any> = (props) => {
     );
 };
 
-const GenderSelection: FC = () => {
+const RaceSelection: FC = () => {
     const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
 
     const handleChange = (selectedOption: OptionType | null) => {
@@ -34,7 +36,7 @@ const GenderSelection: FC = () => {
     return (
         <div>
             <div className='text-xs font-arial font-normal text-distlineColor'>
-                {'Gender'}
+                {'Race'}
             </div>
             <div>
                 <Select
@@ -77,6 +79,6 @@ const GenderSelection: FC = () => {
     );
 }
 
-GenderSelection.displayName = 'GenderSelection';
+RaceSelection.displayName = 'RaceSelection';
 
-export default GenderSelection;
+export default RaceSelection;

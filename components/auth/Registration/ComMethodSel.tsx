@@ -21,7 +21,7 @@ const ComMethodSel = ({
             </p>
             <input
                 type="radio"
-                className="w-4 h-4 text-textdarkColor bg-gray-100 border-gray-300 mr-5"
+                className="w-4 h-4 text-textdarkColor accent-[#CB5A6F] bg-gray-100 border-gray-300 mr-5"
                 name="planradio"
                 checked={status}
                 onChange={(val) => {

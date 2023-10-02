@@ -16,6 +16,7 @@ import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import ComMethodSel from "@/components/auth/Registration/ComMethodSel";
 import RangeSlider from "@/components/auth/SliderCom";
+import MyRangeSlider from "@/components/auth/SliderCom";
 
 type comMethodDataType = {
   id: number;
@@ -248,7 +249,7 @@ const SelectOption = () => {
                 }}
                 className="mt-20"
               >
-                <RangeSlider />
+                <MyRangeSlider />
               </div>
             </div>
           </div>

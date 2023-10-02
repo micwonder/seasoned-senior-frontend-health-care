@@ -38,7 +38,7 @@ const DaysSelection: FC = () => {
 
     return (
         <div>
-            <div className='text-xs font-arial font-normal text-distlineColor'>
+            <div className='text-left text-xs font-arial font-normal text-distlineColor'>
                 {'Days of the Week'}
             </div>
             <div>
@@ -50,7 +50,7 @@ const DaysSelection: FC = () => {
                             borderRadius: '6px',
                             boxShadow: 'none',
                             outline: state.menuIsOpen ? 'none' : 'none',
-                            paddingLeft: 4,
+                            paddingLeft: 0,
                             paddingRight: 4,
                             paddingTop: 5,
                             paddingBottom: 5,
@@ -58,8 +58,19 @@ const DaysSelection: FC = () => {
                                 borderColor: '#828282'
                             }
                         }),
+                        option: (provided, state) => ({
+                            ...provided,
+                            // Change background color for selected option
+                            backgroundColor: state.isSelected ? '#CB5A6F' : 'white',
+                            color: state.isSelected ? 'white' : 'black',
+                            '&:hover': {
+                                // Change background color on hover
+                                backgroundColor: '#E5ACB7',
+                                color: 'white',
+                            },
+                        }),
                     }}
-                    className='mt-2 font-arial text-sm'
+                    className='text-left mt-2 font-arial text-sm'
                     value={selectedOption}
                     onChange={handleChange}
                     options={options}
