@@ -95,7 +95,7 @@ const Login = () => {
           <div className="mt-5 ml-4 px-7 pb-7 border-l-2 border-distlineColor">
             <InputField
               type="text"
-              title="Full Name of Senior"
+              title="Full Name of Caregiver"
               placholder="Enter Full Name"
               value={name}
               handleChange={setName}

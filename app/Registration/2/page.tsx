@@ -148,7 +148,7 @@ const Login = () => {
         </div>
 
         <div className="text-base text-distlineColor font-arial font-normal mt-4">
-          Select from the services below to create a care plan
+          Select from the services below to create your care experience profile
         </div>
       </div>
 

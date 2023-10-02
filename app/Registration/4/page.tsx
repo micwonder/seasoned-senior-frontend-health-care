@@ -29,11 +29,14 @@ const Login = () => {
         <div className="px-8 mx-auto mt-8 sm:w-full">
           <div className="text-center">
             <div className=" text-[32px] leading-normal text-textdarkColor font-arial font-bold">
-              Dietary Restrictions and Preferences
+              Caregiver Qualification
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-4 mx-7">
-              &nbsp;&nbsp;&nbsp; Are there any specific dietary restrictions,
-              preferences, or allergies we should be aware of?
+              &nbsp;&nbsp;&nbsp; Please provide detailed information about your
+              qualifications, education, certifications, and specialized skills
+              relevant to caregiving. You can also upload supporting documents,
+              such as your resume and certificates, to showcase your expertise
+              and experience
             </div>
             <div className="text-base text-textdarkColor font-arial font-bold mt-6">
               What allergies or restrictions does the person have?

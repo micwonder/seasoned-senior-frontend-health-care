@@ -54,12 +54,10 @@ const Login = () => {
             }}
           >
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
-              Care Schedule
+            Caregiver Schedule
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-4">
-              &nbsp;&nbsp;&nbsp; What is your preferred care schedule? (Please
-              specify days of the week, hours per day, and any specific timing
-              requirements)
+              &nbsp;&nbsp;&nbsp; What is your preferred care schedule? (Please specify days of the week, hours per day, and any specific timing requirements)
             </div>
             <div className="text-base text-textdarkColor font-arial font-bold mt-6">
               Set up your schedule

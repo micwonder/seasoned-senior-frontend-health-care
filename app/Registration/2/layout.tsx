@@ -2,7 +2,7 @@ import '@/app/globals.css';
 
 export const metadata = {
   title: 'Seasoned Senior LLC',
-  description: 'Care Plan',
+  description: 'Care Experience and Skills',
 }
 
 export default function RootLayout({

@@ -33,18 +33,16 @@ const Login = () => {
               Mobility and Physical Assistance
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-4 mx-7">
-              &nbsp;&nbsp;&nbsp; Does the senior require assistance with
-              walking, transfers, or the use of mobility aids (such as a
-              wheelchair, walker, or cane)? Please provide details.
+              &nbsp;&nbsp;&nbsp; Can you provide assistance with mobility and physical assistance?
             </div>
             <div className="text-base text-textdarkColor font-arial font-bold mt-6">
-              What sort of assistance is required?
+              What sort of assistance can you provide?
             </div>
           </div>
           <div className="mx-5 mt-6 px-7 pb-7">
             <InputField
               type="text"
-              title="List of services required by senior"
+              title="List of services you can offer"
               placholder="Walking, Transfer"
               value={name}
               handleChange={setName}

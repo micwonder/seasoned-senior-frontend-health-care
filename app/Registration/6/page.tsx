@@ -56,14 +56,21 @@ const Login = () => {
         <ProgressStatusBar completeness={6} hasBack={true} />
         <OptionalLbl />
         <div className="px-8 mx-auto mt-8 sm:w-full">
-          <div className="text-center" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+          <div
+            className="text-center"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
               Communication and Family Involvement
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-4 mx-7">
               &nbsp;&nbsp;&nbsp; How would you prefer to stay informed about the
-              senior&apos;s well-being and care updates? (Choose one or specify
-              any additional preferences)
+              senior's well-being and care updates? (Choose one or specify any
+              additional preferences)
             </div>
             <div
               className="text-base text-textdarkColor font-arial font-bold mt-6"

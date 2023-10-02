@@ -60,7 +60,7 @@ const Login = () => {
         <div className="px-8 mx-auto mt-8 sm:w-full">
           <div className="text-center">
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
-              Daily Routine and Schedule
+            Caregiver Availability
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-4 mx-7">
               Please provide information about the senior&apos;s typical daily

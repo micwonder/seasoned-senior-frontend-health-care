@@ -62,13 +62,13 @@ const SelectOption = () => {
             }}
           >
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
-              Care-Budget
+              Caregivers Rates
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-4 mx-7">
-              &nbsp;&nbsp;&nbsp; Please indicate your budget for the care
-              services on a [weekly/monthly] basis. Your input will help us
-              tailor our care options to align with your preferences and
-              financial requirements
+              &nbsp;&nbsp;&nbsp; Please specify your hourly, daily or bi-weekly
+              rate for caregiving services. Your rates are crucial for matching
+              you with clients, so feel free to provide different rates for
+              various care types or shifts.
             </div>
             <div
               className="text-base text-textdarkColor font-arial font-bold mt-6"

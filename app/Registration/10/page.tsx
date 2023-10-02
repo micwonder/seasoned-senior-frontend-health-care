@@ -60,10 +60,8 @@ const Login = () => {
             </div>
             <div className="text-base text-distlineColor font-arial font-normal mt-6 mx-7">
               &nbsp;&nbsp;&nbsp; When would you like the senior home care
-              services to begin? You may also choose your preferred payment
-              method for the care services. Adding a debit card on file is
-              optional, and rest assured, you will not be charged until you hire
-              and approve working hours for the care services
+              services to begin? You can also specify your preferred method of
+              receiving payment for your care services.
             </div>
           </div>
           <div>
@@ -106,7 +104,9 @@ const Login = () => {
           <div className="text-center text-base text-textdarkColor font-arial font-normal mt-4">
             Add payment method (optional)
           </div>
-          <div className="text-[18px] bg-primary text-white rounded-lg py-4 w-[50%] text-center">ADD PAYMENT METHOD</div>
+          <div className="text-[18px] bg-primary text-white rounded-lg py-4 w-[50%] text-center">
+            ADD PAYMENT METHOD
+          </div>
         </div>
         <div className="flex justify-between mx-8 mt-auto">
           <SaveExitBtn onClicked={() => {}} />

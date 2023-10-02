@@ -201,7 +201,10 @@ const Login = () => {
           </div>
           <br />
           <br />
-          <div className="w-full" style={{display:"flex", justifyContent:"center"}}>
+          <div
+            className="w-full"
+            style={{ display: "flex", justifyContent: "center" }}
+          >
             {/* <SaveExitBtn onClicked={() => {}} /> */}
             <button
               type="submit"
