@@ -54,7 +54,7 @@ const Login = () => {
                   type="radio"
                   value=""
                   name="role-radio"
-                  className="w-4 h-4 text-primary bg-white focus:ring-red-500 dark:border-distlineColor"
+                  className="accent-[#CB5A6F] w-4 h-4 text-primary bg-white focus:ring-red-500 dark:border-distlineColor"
                   onChange={() => setIsYourself(!isYourself)}
                 />
                 <label className="ml-2 text-xs text-distlineColor dark:text-gray-300 font-arial">
@@ -68,7 +68,7 @@ const Login = () => {
                   type="radio"
                   value=""
                   name="role-radio"
-                  className="w-4 h-4 text-primary bg-white focus:ring-primary  dark:border-distlineColor"
+                  className="accent-[#CB5A6F] w-4 h-4 text-primary bg-white focus:ring-primary  dark:border-distlineColor"
                   onChange={() => setIsYourself(!isYourself)}
                 />
                 <label className="ml-2 text-xs text-distlineColor dark:text-gray-300 font-arial">
@@ -79,10 +79,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div
-          className="mx-5 pl-8 mt-5"
-          onFocus={() => setFormIndex(1)}
-        >
+        <div className="mx-5 pl-8 mt-5" onFocus={() => setFormIndex(1)}>
           <div className="flex items-center gap-x-2">
             <span
               className={`left-[7px] top-[38px] w-8 h-8 border border-1 ${
@@ -147,10 +144,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div
-          className="mx-5 pl-8 mt-5"
-          onFocus={() => setFormIndex(2)}
-        >
+        <div className="mx-5 pl-8 mt-5" onFocus={() => setFormIndex(2)}>
           <div className="flex items-center gap-x-2">
             <span
               className={`left-[7px] top-[38px] w-8 h-8 border border-1 ${

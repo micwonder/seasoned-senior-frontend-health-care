@@ -9,8 +9,36 @@ type OptionType = {
 };
 
 const options: OptionType[] = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
+    { value: 'day1', label: '1 day' },
+    { value: 'day2', label: '2 days' },
+    { value: 'day3', label: '3 days' },
+    { value: 'day4', label: '4 days' },
+    { value: 'day5', label: '5 days' },
+    { value: 'day6', label: '6 days' },
+    { value: 'day7', label: '7 days' },
+    { value: 'day8', label: '8 days' },
+    { value: 'day9', label: '9 days' },
+    { value: 'day10', label: '10 days' },
+    { value: 'day11', label: '11 days' },
+    { value: 'day12', label: '12 days' },
+    { value: 'day13', label: '13 days' },
+    { value: 'day14', label: '14 days' },
+    { value: 'day15', label: '15 days' },
+    { value: 'day16', label: '16 days' },
+    { value: 'day17', label: '17 days' },
+    { value: 'day18', label: '18 days' },
+    { value: 'day19', label: '19 days' },
+    { value: 'day20', label: '20 days' },
+    { value: 'day21', label: '21 days' },
+    { value: 'day22', label: '22 days' },
+    { value: 'day23', label: '23 days' },
+    { value: 'day24', label: '24 days' },
+    { value: 'day25', label: '25 days' },
+    { value: 'day26', label: '26 days' },
+    { value: 'day27', label: '27 days' },
+    { value: 'day28', label: '28 days' },
+    { value: 'day29', label: '29 days' },
+    { value: 'day30', label: '30 days' },
 ];
 
 const Option: FC<any> = (props) => {
@@ -23,7 +51,7 @@ const Option: FC<any> = (props) => {
     );
 };
 
-const GenderSelection: FC = () => {
+const DaySelection: FC = () => {
     const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
 
     const handleChange = (selectedOption: OptionType | null) => {
@@ -34,7 +62,7 @@ const GenderSelection: FC = () => {
     return (
         <div>
             <div className='text-xs font-arial font-normal text-distlineColor'>
-                {'Gender'}
+                {'Days'}
             </div>
             <div>
                 <Select
@@ -77,6 +105,6 @@ const GenderSelection: FC = () => {
     );
 }
 
-GenderSelection.displayName = 'GenderSelection';
+DaySelection.displayName = 'DaySelection';
 
-export default GenderSelection;
+export default DaySelection;

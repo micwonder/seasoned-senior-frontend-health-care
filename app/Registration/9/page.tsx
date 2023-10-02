@@ -12,6 +12,8 @@ import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import BackBtn from "@/components/auth/Registration/BackBtn";
 import ComMethodSel from "@/components/auth/Registration/ComMethodSel";
+import ReligionSelection from "@/components/auth/Registration/ReligionSelection";
+import RaceSelection from "@/components/auth/Registration/RaceSelection";
 type comMethodDataType = {
   id: number;
   title: string;
@@ -78,6 +80,26 @@ const Login = () => {
               />
             ))}
           </div>
+          <div
+            style={{
+              display: selectedComMethodID === 1 ? "flex" : "none",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+            className="font-arial"
+          >
+            <div className="mt-4 text-textdarkColor font-[16px] ledding-[400]">
+              You selected yes, please specify
+            </div>
+            <div className="mt-2 font-[14px] text-distlineColor ledding-[400]">
+              This will help us match you with caregivers based on cultural
+              preference
+            </div>
+            <div className="w-full mt-6 grid grid-cols-2 gap-[24px] wh-10">
+              <ReligionSelection />
+              <RaceSelection />
+            </div>
+          </div>
           <div className="text-center text-base text-textdarkColor font-arial font-normal mt-8 mx-[58px]">
             Is there any additional information or specific requests you would
             like to share with us to ensure the best possible care for the
@@ -88,7 +110,7 @@ const Login = () => {
               cols={30}
               rows={10}
               placeholder="Leave a detailed note"
-              className="font-arial border w-full mt-4 h-[152px] rounded-md px-4"
+              className="font-arial border w-full mt-4 h-[152px] rounded-md px-4 border-distlineColor"
             ></textarea>
           </div>
         </div>

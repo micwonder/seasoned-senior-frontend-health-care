@@ -9,8 +9,18 @@ type OptionType = {
 };
 
 const options: OptionType[] = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
+    { value: 'Month1', label: '1 Month' },
+    { value: 'Month2', label: '2 Months' },
+    { value: 'Month3', label: '3 Months' },
+    { value: 'Month4', label: '4 Months' },
+    { value: 'Month5', label: '5 Months' },
+    { value: 'Month6', label: '6 Months' },
+    { value: 'Month7', label: '7 Months' },
+    { value: 'Month8', label: '8 Months' },
+    { value: 'Month9', label: '9 Months' },
+    { value: 'Month10', label: '10 Months' },
+    { value: 'Month11', label: '11 Months' },
+    { value: 'Month12', label: '12 Months' },
 ];
 
 const Option: FC<any> = (props) => {
@@ -23,7 +33,7 @@ const Option: FC<any> = (props) => {
     );
 };
 
-const GenderSelection: FC = () => {
+const MonthSelection: FC = () => {
     const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
 
     const handleChange = (selectedOption: OptionType | null) => {
@@ -34,7 +44,7 @@ const GenderSelection: FC = () => {
     return (
         <div>
             <div className='text-xs font-arial font-normal text-distlineColor'>
-                {'Gender'}
+                {'Month'}
             </div>
             <div>
                 <Select
@@ -77,6 +87,6 @@ const GenderSelection: FC = () => {
     );
 }
 
-GenderSelection.displayName = 'GenderSelection';
+MonthSelection.displayName = 'MonthSelection';
 
-export default GenderSelection;
+export default MonthSelection;

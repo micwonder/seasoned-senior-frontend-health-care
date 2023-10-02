@@ -9,8 +9,11 @@ type OptionType = {
 };
 
 const options: OptionType[] = [
-    { value: 'male', label: 'Male' },
-    { value: 'female', label: 'Female' },
+    { value: 'week1', label: '1 week' },
+    { value: 'week2 ', label: '2 weeks ' },
+    { value: 'week3 ', label: '3 weeks ' },
+    { value: 'week4 ', label: '4 weeks ' },
+    { value: 'week5 ', label: '5 weeks ' },
 ];
 
 const Option: FC<any> = (props) => {
@@ -23,7 +26,7 @@ const Option: FC<any> = (props) => {
     );
 };
 
-const GenderSelection: FC = () => {
+const WeekSelection: FC = () => {
     const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
 
     const handleChange = (selectedOption: OptionType | null) => {
@@ -34,7 +37,7 @@ const GenderSelection: FC = () => {
     return (
         <div>
             <div className='text-xs font-arial font-normal text-distlineColor'>
-                {'Gender'}
+                {'Week'}
             </div>
             <div>
                 <Select
@@ -77,6 +80,6 @@ const GenderSelection: FC = () => {
     );
 }
 
-GenderSelection.displayName = 'GenderSelection';
+WeekSelection.displayName = 'WeekSelection';
 
-export default GenderSelection;
+export default WeekSelection;

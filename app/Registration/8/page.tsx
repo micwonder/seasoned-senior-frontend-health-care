@@ -15,6 +15,7 @@ import Relationship from "@/components/auth/Registration/RelationshipSelection";
 import BackBtn from "@/components/auth/Registration/BackBtn";
 import OptionalLbl from "@/components/auth/Registration/OptionalLbl";
 import DaysOfWeekCom from "@/components/auth/Registration/DaysOfWeekCom";
+import TimeEntryEditor from "@/components/auth/Registration/TimeEntryEditor";
 
 const Login = () => {
   const router = useRouter();
@@ -86,6 +87,7 @@ const Login = () => {
               >
                 Customize time
               </div>
+              <TimeEntryEditor />
             </div>
           </div>
         </div>

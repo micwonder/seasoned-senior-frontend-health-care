@@ -51,10 +51,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Seasoned Senior</title>
+        <title>Seasoned Senior LLC</title>
         <meta
           name="description"
-          content="Seasoned senior is a platform that provides senior care and connects caregivers with seniors looking for care."
+          content="Senior care services designed to support and assist you in the comfort of your home."
         ></meta>
       </head>
       <body className="font-sans">

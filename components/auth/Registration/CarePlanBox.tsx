@@ -44,7 +44,7 @@ const CarePlanBox = ({
       <div>
         <input
           type="radio"
-          className="w-4 h-4 text-textdarkColor bg-gray-100 border-gray-300 "
+          className="accent-[#CB5A6F] w-4 h-4 text-textdarkColor bg-gray-100 border-gray-300 "
           name="planradio"
           checked={status}
           onChange={(val) => {
