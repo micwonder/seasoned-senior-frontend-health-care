@@ -40,7 +40,7 @@ const Howitworks = async () => {
 				alt='howitworks'
 				src='/images/howitworks.png'
 				className='mx-auto mt-[50px]'
-				width={940} height={350}
+				width={934} height={350}
 			/>
 			<div>
 				{
