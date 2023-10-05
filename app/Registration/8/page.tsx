@@ -35,6 +35,8 @@ const Login = () => {
   const [emergencyPhone, setEmergencyPhone] = useState<string>("");
   const [formIndex, setFormIndex] = useState<number>(1);
 
+  const [timeEntryPickerBox, setTimeEntryPickerBox] = useState<boolean> (false)
+
   return (
     <>
       <WithRightBG imgpathname="/images/registration_img_1.png">
@@ -81,12 +83,13 @@ const Login = () => {
               >
                 Set up your schedule
               </div>
-              <div
-                style={{ textAlign: "left" }}
+              <button
+                style={{ display: "flex" }}
                 className="text-xs text-primary font-arial mt-[9px]"
+                // onClick={()=>{handleTimeEntryPickerBox()}}
               >
                 Customize time
-              </div>
+              </button>
               <TimeEntryEditor />
             </div>
           </div>

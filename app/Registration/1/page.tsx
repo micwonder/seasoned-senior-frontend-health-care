@@ -12,6 +12,7 @@ import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import GenderSelection from "@/components/auth/Registration/GenderSelection";
 import Relationship from "@/components/auth/Registration/RelationshipSelection";
+import DatePickerCom from "@/components/auth/Registration/DatePickerCom";
 
 const Login = () => {
   const router = useRouter();
@@ -101,14 +102,8 @@ const Login = () => {
               handleChange={setName}
             />
             <div className="grid grid-cols-2 mt-8 gap-7 items-center sm:grid-cols-1">
-              <InputField
-                type="date"
-                title="Birthday"
-                placholder=""
-                value={date}
-                handleChange={setDate}
-              />
-              <GenderSelection />
+              <DatePickerCom title="Desired Start Date" />
+              <div><GenderSelection /></div>
             </div>
             <div className="mt-7">
               <InputField
