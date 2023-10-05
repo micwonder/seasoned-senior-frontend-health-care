@@ -2,6 +2,7 @@ import { styled } from "@mui/material/styles";
 import {
   DesktopDatePicker,
   LocalizationProvider,
+  PickersActionBarProps,
   pickersLayoutClasses,
 } from "@mui/x-date-pickers";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
