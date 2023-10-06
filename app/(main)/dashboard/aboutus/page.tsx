@@ -17,7 +17,7 @@ const Aboutus = () => {
         alt='aboutus'
         src='/images/aboutus.png'
         className='mx-auto mt-[50px]'
-        width={940} height={350}
+        width={934} height={350}
       />
       <div className='mt-[50px] text-justify sm:text-left'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>

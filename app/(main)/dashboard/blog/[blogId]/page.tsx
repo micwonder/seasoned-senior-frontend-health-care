@@ -1,6 +1,7 @@
 import supabase from '@/utils/supabase'
 import { Service } from '@/types/service'
 import { PrimaryButton } from '@/components/PrimaryButton'
+import Image from 'next/image';
 
 const getContent = async (serviceId: number): Promise<Service> => {
   const { data, error } = await supabase.from('services').select('*').eq('id', serviceId);
@@ -31,10 +32,12 @@ const BlogDetail = async ({ params }: { params: { blogId: number } }) => {
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
-      <img
+      <Image
         alt='aboutus'
         src='/images/aboutus.png'
         className='w-full mt-[50px]'
+        width="1015"
+        height="500"
       />
       <div className='text-left mt-[50px]'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>

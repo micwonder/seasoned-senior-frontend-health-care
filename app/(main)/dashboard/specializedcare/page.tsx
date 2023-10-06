@@ -31,10 +31,12 @@ const Specializedcare = async () => {
     </p>
     <div className='border border-solid border-[#D9D9D9] mt-[90px] lg:mt-[50px] md:mt-[50px] sm:mt-[50px] mx-[5px]' />
     <div className='mt-[25px]'>
-      <img
+      <Image
         alt='specializedcare'
         src='/images/specializedcare.png'
         className='w-full mt-[50px]'
+        width="1015"
+        height="500"
       />
       <div>
         <div className='mt-[50px] text-justify'>

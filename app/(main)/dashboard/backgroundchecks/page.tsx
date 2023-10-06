@@ -34,6 +34,8 @@ const Backgroundchecks = async () => {
         alt='backgroundchecks'
         src='/images/backgroundchecks.png'
         className='w-full mt-[50px]'
+        width="1015"
+        height="500"
       />
       <div className='text-justify mt-[50px]'>
         <span className='text-adDescBigSize md:text-adDescSmallSize sm:text-adDescSmallSize text-bannerTextColor font-arial font-light'>
