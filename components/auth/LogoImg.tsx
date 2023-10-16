@@ -10,7 +10,7 @@ const LogoImg = ({ onClicked }: { onClicked: Function }) => {
 			alt='logo'
 			src={app_logo}
 			onClick={() => router.push('/')}
-			className='top-[27px] left-[41px] h-auto cursor-pointer absolute z-10'
+			className='top-[27px] left-[41px] h-auto cursor-pointer fixed z-10'
 			width={143} height={56} priority={true} />
 	);
 }

@@ -10,7 +10,6 @@ import ProgressStatusBar from "@/components/auth/Registration/ProgressStatusBar"
 import InputField from "@/components/auth/Registration/InputField";
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
-import GenderSelection from "@/components/auth/Registration/GenderSelection";
 import Relationship from "@/components/auth/Registration/RelationshipSelection";
 import TimePickerCom from "@/components/auth/Registration/TimePickerCom";
 import BackBtn from "@/components/auth/Registration/BackBtn";
@@ -51,9 +50,9 @@ const Login = () => {
 
   return (
     <>
-      <WithRightBG imgpathname="/images/registration_img_1.png">
+      <WithRightBG imgpathname="/images/registration_img_5.png">
         <LogoImg onClicked={() => router.push("/")} />
-        <div className="flex ml-8 mt-[145px] absolute">
+        <div className="flex ml-8 mt-[145px] fixed">
           <BackBtn onClicked={() => router.push("/Registration/4")} />
         </div>
         <ProgressStatusBar completeness={5} hasBack={true} />
@@ -78,7 +77,7 @@ const Login = () => {
             <p className=" text-textdarkColor text-base font-normal font-arial ml-2">
               Waking Time
             </p>
-            <div className="grid grid-cols-3 mt-4 gap-7 items-center sm:grid-cols-1">
+            <div className="grid grid-cols-3 mt-4 gap-7 items-center sm:grid-cols-1 sm:gap-0">
               <TimePickerCom title="Preferred waking time"/>
               <div className="col-span-2">
                 <InputField

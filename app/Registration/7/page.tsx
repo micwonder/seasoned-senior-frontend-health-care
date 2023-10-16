@@ -15,8 +15,7 @@ import OptionalLbl from "@/components/auth/Registration/OptionalLbl";
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import ComMethodSel from "@/components/auth/Registration/ComMethodSel";
-import RangeSlider from "@/components/auth/SliderCom";
-import MyRangeSlider from "@/components/auth/SliderCom";
+import MultiRangeSlider from "@/components/auth/MultiRangeSlider";
 
 type comMethodDataType = {
   id: number;
@@ -45,7 +44,7 @@ const SelectOption = () => {
 
   return (
     <>
-      <WithRightBG imgpathname="/images/login.png">
+      <WithRightBG imgpathname="/images/registration_img_7.png">
         <LogoImg onClicked={() => router.push("/")} />
         <div className="flex ml-8 mt-[145px] absolute">
           <BackBtn onClicked={() => router.push("/Registration/6")} />
@@ -223,7 +222,7 @@ const SelectOption = () => {
                 </div>
               </div>
               <div className="mt-8">Preferred Payment Plan</div>
-              <div className="justify-center gap-[39px] grid grid-cols-3 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1 mt-[-11px] my-[-15px]">
+              <div className="justify-center sm:gap-[10px] lg:gap-[10px] xl:gap-[10px] gap-[39px] grid grid-cols-3 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1 mt-[-11px] my-[-15px]">
                 {comMethodData.map((item, index) => (
                   <ComMethodSel
                     key={index.toString()}
@@ -248,13 +247,19 @@ const SelectOption = () => {
                   justifyContent: "center",
                 }}
                 className="mt-20"
-              >
-                <MyRangeSlider />
-              </div>
+              ></div>
+              <div>
+              <MultiRangeSlider
+                min={0}
+                max={200}
+                onChange={({ min, max }: { min: number; max: number }) =>
+                  console.log(`min = ${min}, max = ${max}`)
+                }
+              /></div>
             </div>
           </div>
         </div>
-        <div className="flex justify-between mx-8 mt-auto">
+        <div className="flex justify-between mx-8 mt-[50px]">
           <SaveExitBtn onClicked={() => {}} />
           <ContinueBtn onClicked={() => router.push("/Registration/8")} />
         </div>

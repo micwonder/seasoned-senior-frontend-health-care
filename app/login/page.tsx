@@ -20,36 +20,38 @@ const Login = () => {
     <>
       <WithRightBG imgpathname="/images/login.png">
         <LogoImg onClicked={() => router.push("/")} />
-        <div className="w-[370px] mx-auto mt-[186px] sm:w-full">
-          <div className="text-center">
-            <div className=" text-[32px] text-textdarkColor font-arial font-bold">
-              Welcome Back
+        <div className="font-arial w-[450px] mx-auto mt-[186px] sm:w-full">
+          <div className="w-[370px] ml-[40px]">
+            <div className="text-center">
+              <div className=" text-[32px] text-textdarkColor font-arial font-bold">
+                Welcome Back
+              </div>
+              <div className="text-base text-distlineColor font-arial font-normal mt-4">
+                Caring for our seniors, cherishing our community.
+              </div>
             </div>
-            <div className="text-base text-distlineColor font-arial font-normal mt-4">
-              Caring for our seniors, cherishing our community.
+            <div className="py-4 px-4 text-base leading-6 space-y-4 text-gray-700">
+              <EmailLogin />
+              <div className="relative">
+                <FormPrimaryBtn
+                  onClicked={() => {
+                    alert("Login Btn Clicked!");
+                  }}
+                >
+                  Sign In
+                </FormPrimaryBtn>
+              </div>
+              <DistLine />
+              <SocialAuth
+                onClickedAppleBtn={() => {}}
+                onClickedGoogleBtn={() => {}}
+              />
+              <AuthConvert
+                experssion="Don’t have an account "
+                action="Create account"
+                href="/signup"
+              />
             </div>
-          </div>
-          <div className="py-4 px-4 text-base leading-6 space-y-4 text-gray-700">
-            <EmailLogin />
-            <div className="relative">
-              <FormPrimaryBtn
-                onClicked={() => {
-                  alert("Login Btn Clicked!");
-                }}
-              >
-                Sign In
-              </FormPrimaryBtn>
-            </div>
-            <DistLine />
-            <SocialAuth
-              onClickedAppleBtn={() => {}}
-              onClickedGoogleBtn={() => {}}
-            />
-            <AuthConvert
-              experssion="Don’t have an account "
-              action="Create account"
-              href="/signup"
-            />
           </div>
           <p className="text-xs text-gray-600 text-center w-full">
             By creating an account you agree with our Terms of Service, Privacy

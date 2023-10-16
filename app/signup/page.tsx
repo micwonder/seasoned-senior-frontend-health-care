@@ -15,14 +15,14 @@ import CongBox from '@/components/auth/CongBox';
 import VerifyMailBox from '@/components/auth/VerifyMailBox';
 
 
-const Login = () => {
+const Signup = () => {
   const router = useRouter();
   const [showVerifyBox, setShowVerifyBox] = useState(false);
   const [showCongBox, setShowCongBox] = useState(false);
   return <>
-    <WithRightBG imgpathname='/images/login.png'>
+    <WithRightBG imgpathname='/images/signup.png'>
       <LogoImg onClicked={() => router.push('/')} />
-      <div className="w-[370px] mx-auto mt-[186px] sm:w-full">
+      <div className="font-arial w-[370px] mx-auto mt-[186px] sm:w-full">
         <div className='text-center'>
           <div className=' text-[32px] text-textdarkColor font-arial font-bold'>
             Create your account
@@ -52,4 +52,4 @@ const Login = () => {
   </>
 };
 
-export default Login;
+export default Signup;

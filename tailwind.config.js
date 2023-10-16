@@ -32,8 +32,8 @@ module.exports = {
 
       },
       fontSize: {
-        bigPrimaryButtonTextSize: '30px',
-        smallPrimaryButtonTextSize: '20px',
+        bigPrimaryButtonTextSize: '20px',
+        smallPrimaryButtonTextSize: '16px',
         bannerTextSize: '60px',
         footerTextSize: '17px',
         footerDescSize: '16px',

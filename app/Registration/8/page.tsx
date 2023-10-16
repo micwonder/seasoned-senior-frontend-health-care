@@ -10,12 +10,17 @@ import ProgressStatusBar from "@/components/auth/Registration/ProgressStatusBar"
 import InputField from "@/components/auth/Registration/InputField";
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
-import GenderSelection from "@/components/auth/Registration/GenderSelection";
 import Relationship from "@/components/auth/Registration/RelationshipSelection";
 import BackBtn from "@/components/auth/Registration/BackBtn";
 import OptionalLbl from "@/components/auth/Registration/OptionalLbl";
-import DaysOfWeekCom from "@/components/auth/Registration/DaysOfWeekCom";
 import TimeEntryEditor from "@/components/auth/Registration/TimeEntryEditor";
+import TimeEntryContext from "@/contexts/TimeEntryContext";
+import CustomSelection from "@/components/auth/Registration/CustomSelection";
+
+interface Time {
+  hour: string;
+  minute: string;
+}
 
 const Login = () => {
   const router = useRouter();
@@ -35,13 +40,32 @@ const Login = () => {
   const [emergencyPhone, setEmergencyPhone] = useState<string>("");
   const [formIndex, setFormIndex] = useState<number>(1);
 
-  const [timeEntryPickerBox, setTimeEntryPickerBox] = useState<boolean> (false)
+  const [timeEntryPickerBox, setTimeEntryPickerBox] = useState<boolean>(false);
+
+  const [isDisabled, setIsDisabled] = useState<boolean>(true);
+  const [dayOfWeek, setDayOfWeek] = useState<string>("");
+  const [timeFrom, setTimeFrom] = useState<string>("8:30");
+  const [timeTo, setTimeTo] = useState<string>("11:30");
+
+  const contextValue = {
+    dayOfWeek,
+    setDayOfWeek,
+    timeFrom,
+    setTimeFrom,
+    timeTo,
+    setTimeTo,
+  };
+
+  const handleSetIsDisabled = () => {
+    console.log(isDisabled);
+    setIsDisabled(!isDisabled);
+  };
 
   return (
-    <>
-      <WithRightBG imgpathname="/images/registration_img_1.png">
+    <TimeEntryContext.Provider value={contextValue}>
+      <WithRightBG imgpathname="/images/registration_img_8.png">
         <LogoImg onClicked={() => router.push("/")} />
-        <div className="flex ml-8 mt-[145px] absolute">
+        <div className="flex ml-8 mt-[145px] fixed">
           <BackBtn onClicked={() => router.push("/Registration/7")} />
         </div>
         <ProgressStatusBar completeness={8} hasBack={true} />
@@ -66,9 +90,21 @@ const Login = () => {
             <div className="text-base text-textdarkColor font-arial font-bold mt-6">
               Set up your schedule
             </div>
-            <div style={{ width: "60%" }}>
+            <div className="text-left" style={{ width: "60%" }}>
               <div className="w-full mt-6 grid gap-[14px] grid-cols-2 sm:grid-cols-1 lg:grid-cols-1">
-                <DaysOfWeekCom />
+                <CustomSelection
+                  name="Days of the Week"
+                  label="Select days"
+                  items={[
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                  ]}
+                />
                 <InputField
                   type="text"
                   title="Hours per Day"
@@ -84,13 +120,19 @@ const Login = () => {
                 Set up your schedule
               </div>
               <button
+                onClick={handleSetIsDisabled}
                 style={{ display: "flex" }}
-                className="text-xs text-primary font-arial mt-[9px]"
+                className={
+                  "text-xs font-arial mt-[9px] " +
+                  (isDisabled ? "text-primary" : "text-distlineColor")
+                }
                 // onClick={()=>{handleTimeEntryPickerBox()}}
               >
                 Customize time
               </button>
-              <TimeEntryEditor />
+              <div className={"mt-3 " + (isDisabled ? "hidden" : "")}>
+                <TimeEntryEditor />
+              </div>
             </div>
           </div>
         </div>
@@ -99,7 +141,7 @@ const Login = () => {
           <ContinueBtn onClicked={() => router.push("/Registration/9")} />
         </div>
       </WithRightBG>
-    </>
+    </TimeEntryContext.Provider>
   );
 };
 

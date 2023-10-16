@@ -45,7 +45,6 @@ const Login = () => {
           <BackBtn onClicked={() => router.push("/Registration/10")} />
         </div>
         <ProgressStatusBar completeness={11} hasBack={true} />
-        <OptionalLbl />
         <div
           style={{
             display: "flex",

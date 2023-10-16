@@ -62,23 +62,31 @@ export default function RootLayout({
           className={`h-[106px] md:h-auto sm:h-auto bg-primaryBgColor flex justify-between 
                             4xl:px-[150px] 3xl:px-[150px] px-[50px] md:py-[20px] sm:py-[20px]`}
         >
+          <div className="flex mt-auto mb-auto h-auto cursor-pointer">
           <Image
             alt="logo"
             src="/icons/app_logo.svg"
             onClick={() => router.push("/")}
-            className="mt-auto mb-auto h-auto cursor-pointer"
             width={isSM ? 120 : 160}
             height={60}
             priority={true}
           />
+          <div className="font-arial lg:hidden sm:hidden mt-[20px] ml-[20px]">Senior Home Care Agency..</div>
+          </div>
           <div className="flex md:hidden sm:hidden md:flex-col sm:flex-col items-center md:items-start sm:items-start">
             <button
               className={`text-primary text-bigPrimaryButtonTextSize sm:text-[25px] mr-[50px] md:mr-0 sm:mr-0 
                                 md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}
             >
+              <Link href="/signup">Apply as a caregiver</Link>
+            </button>
+            <PrimaryButton href="/Registration/1">Hire a Caregiver</PrimaryButton>
+            <button
+              className={`text-primary text-bigPrimaryButtonTextSize sm:text-[25px] ml-[50px] md:mr-0 sm:mr-0 
+                                md:mt-[20px] md:mb-[20px] sm:mt-[20px] sm:mb-[20px]`}
+            >
               <Link href="/login">Login</Link>
             </button>
-            <PrimaryButton href="/signup">Apply</PrimaryButton>
           </div>
           <ToogleButton onClicked={() => setShowDropMenu(!showDropMenu)} />
         </header>

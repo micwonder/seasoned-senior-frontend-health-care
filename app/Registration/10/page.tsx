@@ -16,11 +16,59 @@ import DatePickerCom from "@/components/auth/Registration/DatePickerCom";
 import DaySelection from "@/components/auth/Registration/DaySelection";
 import WeekSelection from "@/components/auth/Registration/WeekSelection";
 import MonthSelection from "@/components/auth/Registration/MonthSelection";
+import CustomSelection from "@/components/auth/Registration/CustomSelection";
 type comMethodDataType = {
   id: number;
   title: string;
 };
 
+const selectDaysItems = [
+  "1 day",
+  "2 days",
+  "3 days",
+  "4 days",
+  "5 days",
+  "6 days",
+  "7 days",
+  "8 days",
+  "9 days",
+  "10 days",
+  "11 days",
+  "12 days",
+  "13 days",
+  "14 days",
+  "15 days",
+  "16 days",
+  "17 days",
+  "18 days",
+  "19 days",
+  "20 days",
+  "21 days",
+  "22 days",
+  "23 days",
+  "24 days",
+  "25 days",
+  "26 days",
+  "27 days",
+  "28 days",
+  "29 days",
+  "30 days",
+];
+const selectWeekItems = ["1 week", "2 weeks", "3 weeks", "4 weeks"];
+const selectMonthItems = [
+  "1 month",
+  "2 months",
+  "3 months",
+  "4 months",
+  "5 months",
+  "6 months",
+  "7 months",
+  "8 months",
+  "9 months",
+  "10 months",
+  "11 months",
+  "12 months",
+];
 const comMethodData: comMethodDataType[] = [
   {
     id: 0,
@@ -39,7 +87,7 @@ const Login = () => {
   const [selectedComMethodID, setComMethodId] = useState<number>();
   return (
     <>
-      <WithRightBG imgpathname="/images/registration_img_3.png">
+      <WithRightBG imgpathname="/images/registration_img_10.png">
         <LogoImg onClicked={() => router.push("/")} />
         <div className="flex ml-8 mt-[145px] absolute">
           <BackBtn onClicked={() => router.push("/Registration/9")} />
@@ -99,14 +147,28 @@ const Login = () => {
             the care services required.
           </div>
           <div className="mt-4 w-[55%] grid grid-cols-3 gap-[14px] xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1">
-            <DaySelection />
-            <WeekSelection />
-            <MonthSelection />
+            <CustomSelection
+              name="Days"
+              label="1 day"
+              items={selectDaysItems}
+            />
+            <CustomSelection
+              name="Week"
+              label="3 weeks"
+              items={selectWeekItems}
+            />
+            <CustomSelection
+              name="Month"
+              label="5 months"
+              items={selectMonthItems}
+            />
           </div>
           <div className="text-center text-base text-textdarkColor font-arial font-normal mt-4">
             Add payment method (optional)
           </div>
-          <div className="text-[18px] bg-primary text-white rounded-lg py-4 w-[50%] text-center">ADD PAYMENT METHOD</div>
+          <div className="text-[18px] bg-primary text-white rounded-lg py-4 w-[50%] text-center">
+            ADD PAYMENT METHOD
+          </div>
         </div>
         <div className="flex justify-between mx-8 mt-auto">
           <SaveExitBtn onClicked={() => {}} />

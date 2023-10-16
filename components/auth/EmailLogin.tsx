@@ -28,7 +28,7 @@ const EmailLogin = () => {
               onChange={(e)=>setMyPassword(e.target.value)}
         />
         <div className="absolute inset-y-0 end-0 grid place-content-center px-5 mt-8">
-          <button onClick={()=>setshowPassword(!showPassword)}><Image alt='eye_icon' src={showPassword? eye_slash_icon: eye_icon} width={25} height={25} /></button>
+          <button onClick={()=>setshowPassword(!showPassword)}><Image alt='eye_icon' src={showPassword? eye_slash_icon: eye_icon} width={12} height={12} /></button>
         </div>
       </div>
       <div className='grid grid-cols-2 sm:grid-cols-1'>
