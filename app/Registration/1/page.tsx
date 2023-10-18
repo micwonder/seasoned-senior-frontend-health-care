@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
-import { Children, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import WithRightBG from "@/components/auth/WithRightBG";
 import LogoImg from "@/components/auth/LogoImg";

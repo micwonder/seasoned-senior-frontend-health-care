@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { Children, useState } from "react";
 
@@ -10,7 +9,6 @@ import ProgressStatusBar from "@/components/auth/Registration/ProgressStatusBar"
 import InputField from "@/components/auth/Registration/InputField";
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
-import Relationship from "@/components/auth/Registration/RelationshipSelection";
 import TimePickerCom from "@/components/auth/Registration/TimePickerCom";
 import BackBtn from "@/components/auth/Registration/BackBtn";
 import CustomSelection from "@/components/auth/Registration/CustomSelection";

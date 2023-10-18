@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
-import { Children, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import WithRightBG from "@/components/auth/WithRightBG";
 import LogoImg from "@/components/auth/LogoImg";
@@ -11,11 +10,7 @@ import ProgressStatusBar from "@/components/auth/Registration/ProgressStatusBar"
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import BackBtn from "@/components/auth/Registration/BackBtn";
-import ComMethodSel from "@/components/auth/Registration/ComMethodSel";
 import DatePickerCom from "@/components/auth/Registration/DatePickerCom";
-import DaySelection from "@/components/auth/Registration/DaySelection";
-import WeekSelection from "@/components/auth/Registration/WeekSelection";
-import MonthSelection from "@/components/auth/Registration/MonthSelection";
 import CustomSelection from "@/components/auth/Registration/CustomSelection";
 type comMethodDataType = {
   id: number;
@@ -69,6 +64,7 @@ const selectMonthItems = [
   "11 months",
   "12 months",
 ];
+
 const comMethodData: comMethodDataType[] = [
   {
     id: 0,
@@ -79,6 +75,7 @@ const comMethodData: comMethodDataType[] = [
     title: "Yes",
   },
 ];
+
 const StartDateandDuration = () => {
   const router = useRouter();
 
@@ -177,7 +174,7 @@ const StartDateandDuration = () => {
           <div className="text-center text-base text-textdarkColor font-arial font-normal mt-4">
             Add payment method (optional)
           </div>
-          <div className="text-[18px] bg-primary text-white rounded-lg py-4 w-[50%] text-center">
+          <div className="cursor-pointer text-[18px] bg-primary text-white rounded-lg py-4 w-[50%] text-center">
             ADD PAYMENT METHOD
           </div>
         </div>

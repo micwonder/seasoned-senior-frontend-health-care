@@ -64,7 +64,7 @@ const Login = () => {
   const [emergencyPhone, setEmergencyPhone] = useState<string>("");
   const [formIndex, setFormIndex] = useState<number>(1);
 
-  const [dayOfWeek, setDayOfWeek] = useState<string>("");
+  const [dayOfWeek, setDayOfWeek] = useState<string[]>([]);
   const [timeFrom, setTimeFrom] = useState<string>("");
   const [timeTo, setTimeTo] = useState<string>("");
 
