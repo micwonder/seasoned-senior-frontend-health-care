@@ -1,8 +1,10 @@
 "use client";
 
 import {
+  Checkbox,
   FormControl,
   InputLabel,
+  ListItemText,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -23,25 +25,27 @@ const theme = createTheme({
   },
 });
 
-type customSelectionProps = {
+type checkMarkSelectionProps = {
   name: string;
   label: string;
   items?: string[]; // Make the 'items' prop optional
-  onChange?: (value: string) => void; // Make this optional
+  onChange?: (value: string[]) => void; // Make this optional
 };
 
-const CustomSelection: FC<customSelectionProps> = ({
+const CheckMarkSelection: FC<checkMarkSelectionProps> = ({
   name,
   label,
   items,
   onChange = () => {}, // Provide a default empty function as the value
 }) => {
-  const [value, setValue] = React.useState("");
+  const [selectionValue, setSelectionValue] = React.useState<string[]>([]);
 
-  const handleChange = (event: SelectChangeEvent) => {
-    const selectedValue = event.target.value;
-    setValue(selectedValue);
-    onChange(selectedValue);
+  const handleChange = (event: SelectChangeEvent<typeof selectionValue>) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectionValue(typeof value === "string" ? value.split(",") : value);
+    onChange(typeof value === "string" ? value.split(",") : value);
     console.log(event.target.value);
   };
 
@@ -56,20 +60,25 @@ const CustomSelection: FC<customSelectionProps> = ({
           shrink={false}
           sx={{ "&.Mui-focused": { color: "transparent" } }}
         >
-          {value ? "" : label}
+          {selectionValue.length ? "" : label}
         </InputLabel>
         <ThemeProvider theme={theme}>
           <Select
-            value={value}
+            labelId="multiple-checkbox-label"
+            id="multiple-checkbox"
+            value={selectionValue}
+            renderValue={(selected) => selected.join(", ")}
             onChange={handleChange}
             displayEmpty
+            multiple
             inputProps={{ "aria-label": "Without label" }}
             style={{ borderRadius: "6px" }}
           >
             {Array.isArray(items) && // Check if 'items' is an array
               items.map((item) => (
                 <MenuItem key={item} value={item}>
-                  {item}
+                  <Checkbox checked={selectionValue.indexOf(item) > -1} />
+                  <ListItemText primary={item} />
                 </MenuItem>
               ))}
           </Select>
@@ -80,6 +89,6 @@ const CustomSelection: FC<customSelectionProps> = ({
   );
 };
 
-CustomSelection.displayName = "CustomSelection";
+CheckMarkSelection.displayName = "CheckMarkSelection";
 
-export default CustomSelection;
+export default CheckMarkSelection;

@@ -16,6 +16,7 @@ import DatePickerCom from "@/components/auth/Registration/DatePickerCom";
 import DaySelection from "@/components/auth/Registration/DaySelection";
 import WeekSelection from "@/components/auth/Registration/WeekSelection";
 import MonthSelection from "@/components/auth/Registration/MonthSelection";
+import BasicModal from "@/components/auth/Registration/BasicModal";
 type comMethodDataType = {
   id: number;
   title: string;
@@ -51,7 +52,7 @@ const Login = () => {
             flexDirection: "column",
             alignItems: "center",
           }}
-          className="px-8 mx-auto mt-8 sm:w-full"
+          className="px-8 mx-auto mt-8 sm:w-full font-arial"
         >
           <div className="text-center">
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
@@ -185,10 +186,10 @@ const Login = () => {
           </div>
           <br />
           <br />
-          <div className="text-distlineColor text-[20px] font-bold">
+          <div className="text-distlineColor text-[20px] font-bold" style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
             <input
               type="checkbox"
-              className="mt-2 accent-[#CB5A6F] w-5 h-5 text-textdarkColor bg-gray-100 border-gray-300 "
+              className="my-2 accent-[#CB5A6F] w-5 h-5 text-textdarkColor bg-gray-100 border-gray-300 "
               name="checkbox"
               // checked={status}
               onChange={(val) => {
@@ -200,16 +201,9 @@ const Login = () => {
           </div>
           <br />
           <br />
-          <div className="w-full" style={{display:"flex", justifyContent:"center"}}>
+          
             {/* <SaveExitBtn onClicked={() => {}} /> */}
-            <button
-              type="submit"
-              className="w-[20%] block bg-primary hover:bg-primaryHover focus:bg-primaryDisabled 
-                    text-white rounded-lg px-4 py-3 mt-4 mb-9 text-loginBtnTextSize font-arial border-2 border-primary"
-            >
-              FINISH
-            </button>
-          </div>
+            <BasicModal />
         </div>
       </div>
     </>

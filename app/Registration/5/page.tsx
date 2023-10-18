@@ -13,6 +13,7 @@ import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
 import Relationship from "@/components/auth/Registration/RelationshipSelection";
 import TimePickerCom from "@/components/auth/Registration/TimePickerCom";
 import BackBtn from "@/components/auth/Registration/BackBtn";
+import CustomSelection from "@/components/auth/Registration/CustomSelection";
 
 const Login = () => {
   type Dates = {
@@ -26,27 +27,29 @@ const Login = () => {
     date8: string;
     date9: string;
     date10: string;
-  }
+  };
   const router = useRouter();
   const [dates, setDates] = useState<Dates>({
-    date1: '',
-    date2: '',
-    date3: '',
-    date4: '',
-    date5: '',
-    date6: '',
-    date7: '',
-    date8: '',
-    date9: '',
-    date10: '',
+    date1: "",
+    date2: "",
+    date3: "",
+    date4: "",
+    date5: "",
+    date6: "",
+    date7: "",
+    date8: "",
+    date9: "",
+    date10: "",
   });
 
-  const handleSetDates = (name: keyof Dates) => (value: string): void => {
-    setDates((prevDates) => ({
-      ...prevDates,
-      [name]: value,
-    }));
-  };
+  const handleSetDates =
+    (name: keyof Dates) =>
+    (value: string): void => {
+      setDates((prevDates) => ({
+        ...prevDates,
+        [name]: value,
+      }));
+    };
 
   return (
     <>
@@ -78,14 +81,14 @@ const Login = () => {
               Waking Time
             </p>
             <div className="grid grid-cols-3 mt-4 gap-7 items-center sm:grid-cols-1 sm:gap-0">
-              <TimePickerCom title="Preferred waking time"/>
+              <TimePickerCom title="Preferred waking time" />
               <div className="col-span-2">
                 <InputField
                   type="text"
                   title="Note"
                   placholder=""
                   value={dates.date1}
-                  handleChange={handleSetDates('date1')}
+                  handleChange={handleSetDates("date1")}
                 />
               </div>
             </div>
@@ -102,7 +105,7 @@ const Login = () => {
                     title="Note"
                     placholder=""
                     value={dates.date2}
-                    handleChange={handleSetDates('date2')}
+                    handleChange={handleSetDates("date2")}
                   />
                 </div>
               </div>
@@ -124,7 +127,7 @@ const Login = () => {
                     title="Note"
                     placholder=""
                     value={dates.date3}
-                    handleChange={handleSetDates('date3')}
+                    handleChange={handleSetDates("date3")}
                   />
                 </div>
               </div>
@@ -139,14 +142,12 @@ const Login = () => {
                   title="Activity/Routine 1"
                   placholder="Name of Activity"
                   value={dates.date4}
-                  handleChange={handleSetDates('date4')}
+                  handleChange={handleSetDates("date4")}
                 />
-                <InputField
-                  type="text"
-                  title="Frequency"
-                  placholder="Daily/weekly"
-                  value={dates.date5}
-                  handleChange={handleSetDates('date5')}
+                <CustomSelection
+                  label="Daily/Weekly"
+                  items={["Daily", "Weekly", "Monthly"]}
+                  name="Frequency"
                 />
                 <TimePickerCom title="Time of the day" />
               </div>
@@ -155,7 +156,7 @@ const Login = () => {
                 title="Note"
                 placholder="Leave a detailed note"
                 value={dates.date6}
-                handleChange={handleSetDates('date6')}
+                handleChange={handleSetDates("date6")}
               />
               <div className="grid grid-cols-3 mt-4 gap-7 items-center sm:grid-cols-1">
                 <InputField
@@ -163,14 +164,12 @@ const Login = () => {
                   title="Activity/Routine 2"
                   placholder="Name of Activity"
                   value={dates.date7}
-                  handleChange={handleSetDates('date7')}
+                  handleChange={handleSetDates("date7")}
                 />
-                <InputField
-                  type="text"
-                  title="Frequency"
-                  placholder="Daily/weekly"
-                  value={dates.date8}
-                  handleChange={handleSetDates('date8')}
+                <CustomSelection
+                  label="Daily/Weekly"
+                  items={["Daily", "Weekly", "Monthly"]}
+                  name="Frequency"
                 />
                 <TimePickerCom title="Time of the day" />
               </div>
@@ -179,7 +178,7 @@ const Login = () => {
                 title="Note"
                 placholder="Leave a detailed note"
                 value={dates.date9}
-                handleChange={handleSetDates('date9')}
+                handleChange={handleSetDates("date9")}
               />
               <div className="grid grid-cols-3 mt-4 gap-7 items-center sm:grid-cols-1">
                 <TimePickerCom title="Snack time" />
@@ -189,7 +188,7 @@ const Login = () => {
                     title="Note"
                     placholder=""
                     value={dates.date10}
-                    handleChange={handleSetDates('date10')}
+                    handleChange={handleSetDates("date10")}
                   />
                 </div>
               </div>

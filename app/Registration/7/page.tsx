@@ -46,11 +46,11 @@ const SelectOption = () => {
     <>
       <WithRightBG imgpathname="/images/registration_img_7.png">
         <LogoImg onClicked={() => router.push("/")} />
-        <div className="flex ml-8 mt-[145px] absolute">
+        <div className="flex ml-8 mt-[145px] fixed">
           <BackBtn onClicked={() => router.push("/Registration/6")} />
         </div>
         <ProgressStatusBar completeness={7} hasBack={true} />
-        <OptionalLbl />
+        {/* <OptionalLbl /> */}
         <div className="px-8 mx-auto mt-8 sm:w-full">
           <div
             className="text-center"
@@ -249,13 +249,14 @@ const SelectOption = () => {
                 className="mt-20"
               ></div>
               <div>
-              <MultiRangeSlider
-                min={0}
-                max={200}
-                onChange={({ min, max }: { min: number; max: number }) =>
-                  console.log(`min = ${min}, max = ${max}`)
-                }
-              /></div>
+                <MultiRangeSlider
+                  min={0}
+                  max={200}
+                  onChange={({ min, max }: { min: number; max: number }) =>
+                    console.log(`min = ${min}, max = ${max}`)
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>

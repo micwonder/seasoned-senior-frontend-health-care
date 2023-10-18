@@ -95,9 +95,9 @@ const MultiRangeSlider: FC<MultiRangeSliderProps> = ({
       />
 
       <div className="slider">
-        <div className="slider__left-value">${minVal} - </div>
+        <div className="slider__left-value">${minVal}</div>
         <div className="slider__right-value" style={{ display: "flex" }}>
-          {maxVal}
+        - {maxVal}
           <div
             style={{
               margin: "3px",

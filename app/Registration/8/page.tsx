@@ -16,11 +16,35 @@ import OptionalLbl from "@/components/auth/Registration/OptionalLbl";
 import TimeEntryEditor from "@/components/auth/Registration/TimeEntryEditor";
 import TimeEntryContext from "@/contexts/TimeEntryContext";
 import CustomSelection from "@/components/auth/Registration/CustomSelection";
+import CheckMarkSelection from "@/components/auth/Registration/CheckMarkSelection";
 
 interface Time {
   hour: string;
   minute: string;
 }
+
+const hoursPerDayItems = [
+  "5 hrs",
+  "6 hrs",
+  "7 hrs",
+  "8 hrs",
+  "9 hrs",
+  "10 hrs",
+  "11 hrs",
+  "12 hrs",
+  "13 hrs",
+  "14 hrs",
+  "15 hrs",
+  "16 hrs",
+  "17 hrs",
+  "18 hrs",
+  "19 hrs",
+  "20 hrs",
+  "21 hrs",
+  "22 hrs",
+  "23 hrs",
+  "24 hrs",
+];
 
 const Login = () => {
   const router = useRouter();
@@ -40,12 +64,9 @@ const Login = () => {
   const [emergencyPhone, setEmergencyPhone] = useState<string>("");
   const [formIndex, setFormIndex] = useState<number>(1);
 
-  const [timeEntryPickerBox, setTimeEntryPickerBox] = useState<boolean>(false);
-
-  const [isDisabled, setIsDisabled] = useState<boolean>(true);
   const [dayOfWeek, setDayOfWeek] = useState<string>("");
-  const [timeFrom, setTimeFrom] = useState<string>("8:30");
-  const [timeTo, setTimeTo] = useState<string>("11:30");
+  const [timeFrom, setTimeFrom] = useState<string>("");
+  const [timeTo, setTimeTo] = useState<string>("");
 
   const contextValue = {
     dayOfWeek,
@@ -56,10 +77,6 @@ const Login = () => {
     setTimeTo,
   };
 
-  const handleSetIsDisabled = () => {
-    console.log(isDisabled);
-    setIsDisabled(!isDisabled);
-  };
 
   return (
     <TimeEntryContext.Provider value={contextValue}>
@@ -92,7 +109,7 @@ const Login = () => {
             </div>
             <div className="text-left" style={{ width: "60%" }}>
               <div className="w-full mt-6 grid gap-[14px] grid-cols-2 sm:grid-cols-1 lg:grid-cols-1">
-                <CustomSelection
+                <CheckMarkSelection
                   name="Days of the Week"
                   label="Select days"
                   items={[
@@ -105,12 +122,17 @@ const Login = () => {
                     "Sunday",
                   ]}
                 />
-                <InputField
+                {/* <InputField
                   type="text"
                   title="Hours per Day"
                   placholder="3hrs"
                   value={days}
                   handleChange={setDays}
+                /> */}
+                <CustomSelection
+                  label="5 hrs"
+                  name="Hours per Day"
+                  items={hoursPerDayItems}
                 />
               </div>
               <div
@@ -119,20 +141,7 @@ const Login = () => {
               >
                 Set up your schedule
               </div>
-              <button
-                onClick={handleSetIsDisabled}
-                style={{ display: "flex" }}
-                className={
-                  "text-xs font-arial mt-[9px] " +
-                  (isDisabled ? "text-primary" : "text-distlineColor")
-                }
-                // onClick={()=>{handleTimeEntryPickerBox()}}
-              >
-                Customize time
-              </button>
-              <div className={"mt-3 " + (isDisabled ? "hidden" : "")}>
-                <TimeEntryEditor />
-              </div>
+              <TimeEntryEditor />
             </div>
           </div>
         </div>

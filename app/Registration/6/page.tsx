@@ -54,7 +54,7 @@ const Login = () => {
           <BackBtn onClicked={() => router.push("/Registration/5")} />
         </div>
         <ProgressStatusBar completeness={6} hasBack={true} />
-        <OptionalLbl />
+        {/* <OptionalLbl /> */}
         <div className="px-8 mx-auto mt-8 sm:w-full">
           <div className="text-center" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">

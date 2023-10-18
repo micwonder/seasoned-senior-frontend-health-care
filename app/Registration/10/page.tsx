@@ -79,12 +79,11 @@ const comMethodData: comMethodDataType[] = [
     title: "Yes",
   },
 ];
-const Login = () => {
+const StartDateandDuration = () => {
   const router = useRouter();
-  const [name, setName] = useState<string>("");
-  const [address, setAddress] = useState<string>("");
-  const [mail, setMail] = useState<string>("");
-  const [selectedComMethodID, setComMethodId] = useState<number>();
+
+  const [show, setShow] = useState<boolean>(true);
+
   return (
     <>
       <WithRightBG imgpathname="/images/registration_img_10.png">
@@ -133,8 +132,8 @@ const Login = () => {
                     className="mt-2 accent-[#CB5A6F] w-5 h-5 text-textdarkColor bg-gray-100 border-gray-300 "
                     name="checkbox"
                     // checked={status}
-                    onChange={(val) => {
-                      console.log(val);
+                    onChange={(event) => {
+                      setShow(!event.target.checked);
                     }}
                   />
                   &nbsp;Ongoing
@@ -142,26 +141,38 @@ const Login = () => {
               </div>
             </div>
           </div>
-          <div className="text-center text-sm font-bold text-distlineColor font-arial mt-8 mx-[58px]">
-            Please indicate if there is an estimated duration or end date for
-            the care services required.
-          </div>
-          <div className="mt-4 w-[55%] grid grid-cols-3 gap-[14px] xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1">
-            <CustomSelection
-              name="Days"
-              label="1 day"
-              items={selectDaysItems}
-            />
-            <CustomSelection
-              name="Week"
-              label="3 weeks"
-              items={selectWeekItems}
-            />
-            <CustomSelection
-              name="Month"
-              label="5 months"
-              items={selectMonthItems}
-            />
+          <div
+            style={
+              show
+                ? {
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }
+                : { display: "none" }
+            }
+          >
+            <div className="text-center text-sm font-bold text-distlineColor font-arial mt-8 mx-[58px]">
+              Please indicate if there is an estimated duration or end date for
+              the care services required.
+            </div>
+            <div className="mt-4 w-[70%] grid grid-cols-3 gap-[14px] xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1">
+              <CustomSelection
+                name="Days"
+                label="1 day"
+                items={selectDaysItems}
+              />
+              <CustomSelection
+                name="Week"
+                label="3 weeks"
+                items={selectWeekItems}
+              />
+              <CustomSelection
+                name="Month"
+                label="5 months"
+                items={selectMonthItems}
+              />
+            </div>
           </div>
           <div className="text-center text-base text-textdarkColor font-arial font-normal mt-4">
             Add payment method (optional)
@@ -179,4 +190,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default StartDateandDuration;
