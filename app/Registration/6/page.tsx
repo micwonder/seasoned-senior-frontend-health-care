@@ -48,13 +48,13 @@ const Login = () => {
   const [selectedComMethodID, setComMethodId] = useState<number>(1);
   return (
     <>
-      <WithRightBG imgpathname="/images/registration_img_3.png">
+      <WithRightBG imgpathname="/images/registration_img_6.png">
         <LogoImg onClicked={() => router.push("/")} />
-        <div className="flex ml-8 mt-[145px] absolute">
+        <div className="flex ml-8 mt-[145px] fixed">
           <BackBtn onClicked={() => router.push("/Registration/5")} />
         </div>
         <ProgressStatusBar completeness={6} hasBack={true} />
-        <OptionalLbl />
+        {/* <OptionalLbl /> */}
         <div className="px-8 mx-auto mt-8 sm:w-full">
           <div className="text-center" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
@@ -67,7 +67,7 @@ const Login = () => {
             </div>
             <div
               className="text-base text-textdarkColor font-arial font-bold mt-6"
-              style={{ width: "max-content" }}
+              // style={{ width: "max-content" }}
             >
               Choose preferred method of communication
               <div className="mt-6">

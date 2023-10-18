@@ -16,7 +16,17 @@ const SelectOption = () => {
 
   return (
     <>
-      <WithRightBG imgpathname="/images/login.png">
+      <WithRightBG
+        imgpathname={
+          "/images/select_option_" +
+          (showRoleSelected === 0
+            ? "none"
+            : showRoleSelected === 1
+            ? "sicker"
+            : "caregiver") +
+          ".png"
+        }
+      >
         <LogoImg onClicked={() => router.push("/")} />
         <div className="mx-auto mt-[186px] sm:w-full">
           <div className="text-center text-[32px] text-textdarkColor font-arial font-bold">

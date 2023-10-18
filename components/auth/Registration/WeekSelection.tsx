@@ -1,85 +1,58 @@
-'use client'
+"use client";
 
-import React, { FC, useState } from 'react';
-import Select, { components } from 'react-select';
+import {
+  FormControl,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
+import React, { FC } from "react";
 
-type OptionType = {
-    label: string;
-    value: string;
-};
-
-const options: OptionType[] = [
-    { value: 'week1', label: '1 week' },
-    { value: 'week2 ', label: '2 weeks ' },
-    { value: 'week3 ', label: '3 weeks ' },
-    { value: 'week4 ', label: '4 weeks ' },
-    { value: 'week5 ', label: '5 weeks ' },
-];
-
-const Option: FC<any> = (props) => {
-    return (
-        <components.Option {...props}>
-            <p className='py-[7px] text-center'>
-                {props.data.label}
-            </p>
-        </components.Option>
-    );
-};
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#CB5A6F",
+      dark: "#CB5A6F",
+      // light: will be calculated from palette.primary.main,
+      // dark: will be calculated from palette.primary.main,
+      // contrastText: will be calculated to contrast with palette.primary.main
+    },
+  },
+});
 
 const WeekSelection: FC = () => {
-    const [selectedOption, setSelectedOption] = useState<OptionType | null>(null);
+  const [week, setWeek] = React.useState("20");
 
-    const handleChange = (selectedOption: OptionType | null) => {
-        setSelectedOption(selectedOption);
-        console.log(`Option selected:`, selectedOption);
-    }
+  const handleChange = (event: SelectChangeEvent) => {
+    setWeek(event.target.value);
+  };
 
-    return (
-        <div>
-            <div className='text-xs font-arial font-normal text-distlineColor'>
-                {'Week'}
-            </div>
-            <div>
-                <Select
-                    styles={{
-                        control: (baseStyles, state) => ({
-                            ...baseStyles,
-                            borderColor: '#828282',
-                            borderRadius: '6px',
-                            boxShadow: 'none',
-                            outline: state.menuIsOpen ? 'none' : 'none',
-                            paddingLeft: 4,
-                            paddingRight: 4,
-                            paddingTop: 5,
-                            paddingBottom: 5,
-                            '&:hover': {
-                                borderColor: '#828282'
-                            }
-                        }),
-                        option: (provided, state) => ({
-                            ...provided,
-                            // Change background color for selected option
-                            backgroundColor: state.isSelected ? '#CB5A6F' : 'white',
-                            color: state.isSelected ? 'white' : 'black',
-                            '&:hover': {
-                                // Change background color on hover
-                                backgroundColor: '#E5ACB7',
-                                color: 'white',
-                            },
-                        }),
-                    }}
-                    className='mt-2 font-arial text-sm'
-                    value={selectedOption}
-                    onChange={handleChange}
-                    options={options}
-                    components={{ IndicatorSeparator: () => null, Option }}
+  return (
+    <div>
+      <div className="text-xs font-arial font-normal text-distlineColor">
+        {"week"}
+      </div>
+      <FormControl fullWidth={true} sx={{ my: 1, minWidth: 120 }}>
+        <ThemeProvider theme={theme}>
+          <Select
+            value={week}
+            onChange={handleChange}
+            displayEmpty
+            inputProps={{ "aria-label": "Without label" }}
+            style={{borderRadius: '10px'}}
+          >
+            <MenuItem value={10}>Male</MenuItem>
+            <MenuItem value={20}>Female</MenuItem>
+          </Select>
+          {/* <FormHelperText>Without label</FormHelperText> */}
+        </ThemeProvider>
+      </FormControl>
+    </div>
+  );
+};
 
-                />
-            </div>
-        </div>
-    );
-}
-
-WeekSelection.displayName = 'WeekSelection';
+WeekSelection.displayName = "WeekSelection";
 
 export default WeekSelection;

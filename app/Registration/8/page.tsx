@@ -10,12 +10,41 @@ import ProgressStatusBar from "@/components/auth/Registration/ProgressStatusBar"
 import InputField from "@/components/auth/Registration/InputField";
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
-import GenderSelection from "@/components/auth/Registration/GenderSelection";
 import Relationship from "@/components/auth/Registration/RelationshipSelection";
 import BackBtn from "@/components/auth/Registration/BackBtn";
 import OptionalLbl from "@/components/auth/Registration/OptionalLbl";
-import DaysOfWeekCom from "@/components/auth/Registration/DaysOfWeekCom";
 import TimeEntryEditor from "@/components/auth/Registration/TimeEntryEditor";
+import TimeEntryContext from "@/contexts/TimeEntryContext";
+import CustomSelection from "@/components/auth/Registration/CustomSelection";
+import CheckMarkSelection from "@/components/auth/Registration/CheckMarkSelection";
+
+interface Time {
+  hour: string;
+  minute: string;
+}
+
+const hoursPerDayItems = [
+  "5 hrs",
+  "6 hrs",
+  "7 hrs",
+  "8 hrs",
+  "9 hrs",
+  "10 hrs",
+  "11 hrs",
+  "12 hrs",
+  "13 hrs",
+  "14 hrs",
+  "15 hrs",
+  "16 hrs",
+  "17 hrs",
+  "18 hrs",
+  "19 hrs",
+  "20 hrs",
+  "21 hrs",
+  "22 hrs",
+  "23 hrs",
+  "24 hrs",
+];
 
 const Login = () => {
   const router = useRouter();
@@ -35,11 +64,25 @@ const Login = () => {
   const [emergencyPhone, setEmergencyPhone] = useState<string>("");
   const [formIndex, setFormIndex] = useState<number>(1);
 
+  const [dayOfWeek, setDayOfWeek] = useState<string[]>([]);
+  const [timeFrom, setTimeFrom] = useState<string>("");
+  const [timeTo, setTimeTo] = useState<string>("");
+
+  const contextValue = {
+    dayOfWeek,
+    setDayOfWeek,
+    timeFrom,
+    setTimeFrom,
+    timeTo,
+    setTimeTo,
+  };
+
+
   return (
-    <>
-      <WithRightBG imgpathname="/images/registration_img_1.png">
+    <TimeEntryContext.Provider value={contextValue}>
+      <WithRightBG imgpathname="/images/registration_img_8.png">
         <LogoImg onClicked={() => router.push("/")} />
-        <div className="flex ml-8 mt-[145px] absolute">
+        <div className="flex ml-8 mt-[145px] fixed">
           <BackBtn onClicked={() => router.push("/Registration/7")} />
         </div>
         <ProgressStatusBar completeness={8} hasBack={true} />
@@ -64,15 +107,32 @@ const Login = () => {
             <div className="text-base text-textdarkColor font-arial font-bold mt-6">
               Set up your schedule
             </div>
-            <div style={{ width: "60%" }}>
+            <div className="text-left" style={{ width: "60%" }}>
               <div className="w-full mt-6 grid gap-[14px] grid-cols-2 sm:grid-cols-1 lg:grid-cols-1">
-                <DaysOfWeekCom />
-                <InputField
+                <CheckMarkSelection
+                  name="Days of the Week"
+                  label="Select days"
+                  items={[
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday",
+                  ]}
+                />
+                {/* <InputField
                   type="text"
                   title="Hours per Day"
                   placholder="3hrs"
                   value={days}
                   handleChange={setDays}
+                /> */}
+                <CustomSelection
+                  label="5 hrs"
+                  name="Hours per Day"
+                  items={hoursPerDayItems}
                 />
               </div>
               <div
@@ -80,12 +140,6 @@ const Login = () => {
                 className="text-xs text-distlineColor font-arial mt-6"
               >
                 Set up your schedule
-              </div>
-              <div
-                style={{ textAlign: "left" }}
-                className="text-xs text-primary font-arial mt-[9px]"
-              >
-                Customize time
               </div>
               <TimeEntryEditor />
             </div>
@@ -96,7 +150,7 @@ const Login = () => {
           <ContinueBtn onClicked={() => router.push("/Registration/9")} />
         </div>
       </WithRightBG>
-    </>
+    </TimeEntryContext.Provider>
   );
 };
 

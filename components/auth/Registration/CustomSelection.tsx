@@ -2,6 +2,7 @@
 
 import {
   FormControl,
+  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -22,35 +23,55 @@ const theme = createTheme({
   },
 });
 
-const GenderSelection: FC = () => {
-  const [gender, setGender] = React.useState("80");
+type customSelectionProps = {
+  name: string;
+  label: string;
+  items?: string[]; // Make the 'items' prop optional
+  onChange?: (value: string) => void; // Make this optional
+};
+
+const CustomSelection: FC<customSelectionProps> = ({
+  name,
+  label,
+  items,
+  onChange = () => {}, // Provide a default empty function as the value
+}) => {
+  const [value, setValue] = React.useState("");
 
   const handleChange = (event: SelectChangeEvent) => {
-    setGender(event.target.value);
+    const selectedValue = event.target.value;
+    setValue(selectedValue);
+    onChange(selectedValue);
+    console.log(event.target.value);
   };
 
   return (
     <div>
       <div className="text-xs font-arial font-normal text-distlineColor">
-        {"Gender"}
+        {name}
       </div>
       <FormControl fullWidth={true} sx={{ my: 1, minWidth: 120 }}>
+        <InputLabel
+          id="select-value-label"
+          shrink={false}
+          sx={{ "&.Mui-focused": { color: "transparent" } }}
+        >
+          {value ? "" : label}
+        </InputLabel>
         <ThemeProvider theme={theme}>
           <Select
-            value={gender}
+            value={value}
             onChange={handleChange}
             displayEmpty
             inputProps={{ "aria-label": "Without label" }}
             style={{ borderRadius: "6px" }}
           >
-            <MenuItem value={10}>Son</MenuItem>
-            <MenuItem value={20}>Daugther</MenuItem>
-            <MenuItem value={30}>Wife</MenuItem>
-            <MenuItem value={40}>Brother</MenuItem>
-            <MenuItem value={50}>Family friend</MenuItem>
-            <MenuItem value={60}>Guardian</MenuItem>
-            <MenuItem value={70}>Manager</MenuItem>
-            <MenuItem value={80}>Others</MenuItem>
+            {Array.isArray(items) && // Check if 'items' is an array
+              items.map((item) => (
+                <MenuItem key={item} value={item}>
+                  {item}
+                </MenuItem>
+              ))}
           </Select>
           {/* <FormHelperText>Without label</FormHelperText> */}
         </ThemeProvider>
@@ -59,6 +80,6 @@ const GenderSelection: FC = () => {
   );
 };
 
-GenderSelection.displayName = "GenderSelection";
+CustomSelection.displayName = "CustomSelection";
 
-export default GenderSelection;
+export default CustomSelection;

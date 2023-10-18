@@ -88,8 +88,8 @@ const CreateAccount = ({ passStatus }: { passStatus: string }) => {
             <Image
               alt="eye_icon"
               src={showPassword ? eye_slash_icon : eye_icon}
-              width={25}
-              height={25}
+              width={12}
+              height={12}
             />
           </button>
         </div>

@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter, usePathname } from "next/navigation";
-import { Children, useState } from "react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import WithRightBG from "@/components/auth/WithRightBG";
 import LogoImg from "@/components/auth/LogoImg";
@@ -10,8 +9,8 @@ import ProgressStatusBar from "@/components/auth/Registration/ProgressStatusBar"
 import InputField from "@/components/auth/Registration/InputField";
 import SaveExitBtn from "@/components/auth/Registration/SaveExitBtn";
 import ContinueBtn from "@/components/auth/Registration/ContinueBtn";
-import GenderSelection from "@/components/auth/Registration/GenderSelection";
-import Relationship from "@/components/auth/Registration/RelationshipSelection";
+import DatePickerCom from "@/components/auth/Registration/DatePickerCom";
+import CustomSelection from "@/components/auth/Registration/CustomSelection";
 
 const Login = () => {
   const router = useRouter();
@@ -30,6 +29,9 @@ const Login = () => {
   const [emergencyPhone, setEmergencyPhone] = useState<string>("");
   const [formIndex, setFormIndex] = useState<number>(1);
 
+  const genderItems = ["Prefer not to say", "Male", "Female"];
+  const relationshipItems = ["Son", "Daughter", "Wife", "Brother", "Family friend", "Guardian", "Manger", "Others"];
+
   return (
     <>
       <WithRightBG imgpathname="/images/registration_img_1.png">
@@ -45,7 +47,7 @@ const Login = () => {
             </div>
             <div className="flex justify-center  mt-6">
               <div className=" text-xs text-textdarkColor font-arial leading-normal">
-                {" "}
+                {" "} 
                 Are you filling this out for{" "}
               </div>
               <div className="flex items-center ml-2">
@@ -54,11 +56,10 @@ const Login = () => {
                   type="radio"
                   value=""
                   name="role-radio"
-                  className="accent-[#CB5A6F] w-4 h-4 text-primary bg-white focus:ring-red-500 dark:border-distlineColor"
+                  className="accent-[#CB5A6F] w-4 h-4"
                   onChange={() => setIsYourself(!isYourself)}
                 />
                 <label className="ml-2 text-xs text-distlineColor dark:text-gray-300 font-arial">
-                  {" "}
                   Yourself
                 </label>
               </div>
@@ -68,11 +69,10 @@ const Login = () => {
                   type="radio"
                   value=""
                   name="role-radio"
-                  className="accent-[#CB5A6F] w-4 h-4 text-primary bg-white focus:ring-primary  dark:border-distlineColor"
+                  className="accent-[#CB5A6F] w-4 h-4"
                   onChange={() => setIsYourself(!isYourself)}
                 />
                 <label className="ml-2 text-xs text-distlineColor dark:text-gray-300 font-arial">
-                  {" "}
                   Somebody
                 </label>
               </div>
@@ -101,14 +101,8 @@ const Login = () => {
               handleChange={setName}
             />
             <div className="grid grid-cols-2 mt-8 gap-7 items-center sm:grid-cols-1">
-              <InputField
-                type="date"
-                title="Birthday"
-                placholder=""
-                value={date}
-                handleChange={setDate}
-              />
-              <GenderSelection />
+              <DatePickerCom title="Desired Start Date" />
+              <div><CustomSelection name="Gender" label="Select" items={genderItems} /></div>
             </div>
             <div className="mt-7">
               <InputField
@@ -121,7 +115,7 @@ const Login = () => {
             </div>
             {!isYourself && (
               <div className="mt-7">
-                <Relationship />
+                <CustomSelection name="Relationship" label="Choose an option" items={relationshipItems} />
               </div>
             )}
             <div className="mt-7">
@@ -197,7 +191,7 @@ const Login = () => {
         <div className="mx-[90px] text-primary text-base font-arial font-bold">
           Add another Emergency Contact +
         </div>
-        <div className="flex justify-between mx-8 my-auto ">
+        <div className="flex justify-between mx-8 mt-2 ">
           <SaveExitBtn onClicked={() => {}} />
           <ContinueBtn onClicked={() => router.push("/Registration/2")} />
         </div>

@@ -138,7 +138,7 @@ const Login = () => {
   return (
     <>
       <LogoImg onClicked={() => router.push("/")} />
-      <div className="flex ml-8 mt-0 absolute">
+      <div className="flex ml-8 mt-0 fixed">
         <BackBtn onClicked={() => router.push("/Registration/1")} />
       </div>
       <ProgressStatusBar completeness={2} hasBack={true} />
@@ -152,7 +152,7 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-2 md:grid-cols-2 mx-9">
+      <div className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-2 mx-9">
         {carePlanData.map((item, index) => (
           <CarePlanBox
             key={index.toString()}
