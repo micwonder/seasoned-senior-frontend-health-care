@@ -1,16 +1,17 @@
-import * as React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import creation_success from "@/public/icons/creation_success.svg";
-import router from "next/router";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const style = {};
 
 export default function BasicModal() {
-  const [open, setOpen] = React.useState(false);
+  const router = useRouter();
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -63,7 +64,12 @@ export default function BasicModal() {
               priority={true}
             />
           </div>
-          <div className="cursor-pointer font-arial text-[18px] border border-primary bg-white text-primary rounded-lg p-4 mt-16">
+          <div
+            className="cursor-pointer font-arial text-[18px] border border-primary bg-white text-primary rounded-lg p-4 mt-16"
+            onClick={() => {
+              router.push("/dashboard/dashboard");
+            }}
+          >
             Proceed to dashboard
           </div>
         </Box>

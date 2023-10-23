@@ -124,10 +124,10 @@ const Login = () => {
             }}
             className="font-arial"
           >
-            <div className="mt-4 text-textdarkColor font-[16px] ledding-[400]">
+            <div className="mt-4 text-textdarkColor text-[16px] ledding-[400]">
               You selected yes, please specify
             </div>
-            <div className="mt-2 font-[14px] text-distlineColor ledding-[400]">
+            <div className="mt-2 text-[14px] text-distlineColor ledding-[400]">
               This will help us match you with caregivers based on cultural
               preference
             </div>

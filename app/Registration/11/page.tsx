@@ -69,9 +69,9 @@ const Login = () => {
             </div>
             <div className="text-[20px] text-distlineColor font-arial mt-[14px] mx-7">
               1.1 The Agency agrees to provide senior home care services as
-              outlined in the client&#39;s individualized care plan, which will be
-              developed and agreed upon between the Agency and the Client. These
-              services may include but are not limited to, assistance with
+              outlined in the client&#39;s individualized care plan, which will
+              be developed and agreed upon between the Agency and the Client.
+              These services may include but are not limited to, assistance with
               activities of daily living, medication reminders, meal
               preparation, light housekeeping, and companionship.
               <br />
@@ -186,7 +186,14 @@ const Login = () => {
           </div>
           <br />
           <br />
-          <div className="text-distlineColor text-[20px] font-bold" style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+          <div
+            className="text-distlineColor text-[20px] font-bold"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
             <input
               type="checkbox"
               className="my-2 accent-[#CB5A6F] w-5 h-5 text-textdarkColor bg-gray-100 border-gray-300 "
@@ -201,9 +208,7 @@ const Login = () => {
           </div>
           <br />
           <br />
-          
-            {/* <SaveExitBtn onClicked={() => {}} /> */}
-            <BasicModal />
+          <BasicModal />
         </div>
       </div>
     </>
