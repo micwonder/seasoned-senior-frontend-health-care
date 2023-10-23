@@ -60,7 +60,7 @@ const CustomizedLineChart = () => {
     },
     interaction: {
       intersect: false,
-      axis: "x",
+      axis: "x" as const,
     },
     plugins: {
       tooltip: {
@@ -68,8 +68,8 @@ const CustomizedLineChart = () => {
         titleColor: "#000", // Set the color of the tooltip title
         bodyColor: "#000", // Set the color of the tooltip body
         displayColors: false, // Hide the color boxes in the tooltip
-        yAlign: "bottom", // Use this to control the placement of the tooltip relative to its point
-        mode: "index", // Show tooltip for all datasets when hovering over the chart
+        yAlign: "bottom" as const, // Use this to control the placement of the tooltip relative to its point
+        mode: "index" as const, // Show tooltip for all datasets when hovering over the chart
         callbacks: {
           label: function (context: any) {
             let label = context.dataset.label || "";
