@@ -1,21 +1,40 @@
 "use client";
 
-import ActiveTimesheets from "@/components/dashboard/ActiveTimesheets";
-import AppointmentCard from "@/components/dashboard/AppointmentCard";
-import CalendarCollapse from "@/components/dashboard/CalendarCollapse";
-import CaregiversTableCard from "@/components/dashboard/CaregiversTableCard";
+import { lazy, Suspense, useState } from "react";
 import ClientDashboardLayout from "@/components/dashboard/ClientDashboardLayout";
-import MessagePreview from "@/components/dashboard/MessagePreview";
-import MoneySpentCard from "@/components/dashboard/MoneySpentCard";
-import UpcomingEventsPreview from "@/components/dashboard/UpcomingEventsPreview";
-import UpcomingInterviews from "@/components/dashboard/UpcomingInterviews";
-import UpcomingVisitsCard from "@/components/dashboard/UpcomingVisitsCard";
 import { Collapse } from "@mui/material";
-import { useState } from "react";
+
+// Lazy load the components
+const ActiveTimesheets = lazy(
+  () => import("@/components/dashboard/ActiveTimesheets")
+);
+const AppointmentCard = lazy(
+  () => import("@/components/dashboard/AppointmentCard")
+);
+const CalendarCollapse = lazy(
+  () => import("@/components/dashboard/CalendarCollapse")
+);
+const CaregiversTableCard = lazy(
+  () => import("@/components/dashboard/CaregiversTableCard")
+);
+const MessagePreview = lazy(
+  () => import("@/components/dashboard/MessagePreview")
+);
+const MoneySpentCard = lazy(
+  () => import("@/components/dashboard/MoneySpentCard")
+);
+const UpcomingEventsPreview = lazy(
+  () => import("@/components/dashboard/UpcomingEventsPreview")
+);
+const UpcomingInterviews = lazy(
+  () => import("@/components/dashboard/UpcomingInterviews")
+);
+const UpcomingVisitsCard = lazy(
+  () => import("@/components/dashboard/UpcomingVisitsCard")
+);
 
 const ClientDashboard = () => {
   const [calendarChecked, setCalendarChecked] = useState<boolean>(true);
-
   const handleSetChecked = () => setCalendarChecked(!calendarChecked);
 
   return (
@@ -28,22 +47,26 @@ const ClientDashboard = () => {
           >
             <Collapse in={calendarChecked} collapsedSize={70}>
               <CalendarCollapse handleSetChecked={handleSetChecked} />
-              <UpcomingVisitsCard />
+              <Suspense fallback={<div>Loading...</div>}>
+                <UpcomingVisitsCard />
+              </Suspense>
             </Collapse>
           </div>
           <div
             className="flex gap-[15px] flex-col items-start"
             style={{ flex: 1 }}
           >
-            <AppointmentCard />
-            <MoneySpentCard />
-            <CaregiversTableCard />
-            <ActiveTimesheets />
-            <MessagePreview />
-            <div className="flex flex-row gap-[18px]">
-              <UpcomingInterviews />
-              <UpcomingEventsPreview />
-            </div>
+            <Suspense fallback={<div>Loading...</div>}>
+              <AppointmentCard />
+              <MoneySpentCard />
+              <CaregiversTableCard />
+              <ActiveTimesheets />
+              <MessagePreview />
+              <div className="flex flex-row gap-[18px]">
+                <UpcomingInterviews />
+                <UpcomingEventsPreview />
+              </div>
+            </Suspense>
           </div>
         </div>
       </ClientDashboardLayout>

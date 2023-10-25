@@ -29,6 +29,7 @@ const upcomingVisitItems = [
 const UpcomingVisitsCard = () => {
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF2F588";
+    event.currentTarget.style.paddingLeft = "14px";
   };
 
   const handleMouseLeave = (
@@ -36,6 +37,7 @@ const UpcomingVisitsCard = () => {
     index: number
   ) => {
     event.currentTarget.style.backgroundColor = index % 2 ? "" : "#FAFAFB";
+    event.currentTarget.style.paddingLeft = "13px";
   };
 
   return (
@@ -48,7 +50,7 @@ const UpcomingVisitsCard = () => {
         {upcomingVisitItems.map((item, index) => {
           return (
             <div
-              key={index}
+              key={`upcoming_visit_items_${index}`}
               className="py-2 px-[13px] flex flex-row gap-[16px] items-center rounded-md"
               style={{ backgroundColor: `${index % 2 ? "" : "#FAFAFB"}` }}
               onMouseEnter={handleMouseEnter}
@@ -59,7 +61,7 @@ const UpcomingVisitsCard = () => {
                 src={sm_sm_avatar}
                 width={64}
                 style={{
-                  height: "64px",
+                  height: "auto",
                   border: "2px solid rgba(255, 114, 140, 0.99)",
                 }}
                 className="rounded-xl"

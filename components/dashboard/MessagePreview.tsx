@@ -50,7 +50,11 @@ const MessagePreview = () => {
         <ThemeProvider theme={theme}>
           {messageItems.map((item, index) => {
             return (
-              <MessagePreviewItem item={item} index={index} key={item.name} />
+              <MessagePreviewItem
+                item={item}
+                index={index}
+                key={`message_prev_${index}`}
+              />
             );
           })}
         </ThemeProvider>

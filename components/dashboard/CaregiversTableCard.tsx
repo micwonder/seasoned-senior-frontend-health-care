@@ -1,8 +1,10 @@
-import React, { MouseEventHandler } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import Image from "next/image";
 import sm_avatar from "@/public/avatars/sample.png";
-import TableCollapseArrow from "@/public/icons/table_collapse_arrow";
 import recommend_logo from "@/public/icons/recommend_logo.svg";
+import TableCollapseArrow from "@/public/icons/table_collapse_arrow";
+import { Button, ThemeProvider, createTheme } from "@mui/material";
+import CaregiversTableModal from "./Modals/CaregiversTableModal";
 
 const pastCaregiversItems = [
   {
@@ -10,6 +12,18 @@ const pastCaregiversItems = [
     hourlyCharge: "$12-69",
     totalHourSpent: "40hr 45min",
     totalPaid: "$3,460",
+  },
+  {
+    name: "Betty A.",
+    hourlyCharge: "$15-40",
+    totalHourSpent: "60hr 53min",
+    totalPaid: "$3,000",
+  },
+  {
+    name: "Sky Grey",
+    hourlyCharge: "$10-57",
+    totalHourSpent: "64hr 20min",
+    totalPaid: "$1,500",
   },
   {
     name: "Betty A.",
@@ -41,11 +55,28 @@ const pastCaregiversItems = [
     totalHourSpent: "111hr 43min",
     totalPaid: "$4,550",
   },
+  {
+    name: "James Harden",
+    hourlyCharge: "$12-43",
+    totalHourSpent: "54hr 39min",
+    totalPaid: "$1,211",
+  },
+  {
+    name: "Yisrael Adesanya",
+    hourlyCharge: "$12-65",
+    totalHourSpent: "111hr 43min",
+    totalPaid: "$4,550",
+  },
 ];
 
 const CaregiversTableCard = () => {
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF2F588";
+    event.currentTarget.style.paddingLeft = "1px";
   };
 
   const handleMouseLeave = (
@@ -53,15 +84,33 @@ const CaregiversTableCard = () => {
     index: number
   ) => {
     event.currentTarget.style.backgroundColor = index % 2 ? "" : "#FAFAFB";
+    event.currentTarget.style.paddingLeft = "0px";
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#CB5A6F",
+        dark: "#CB5A6F",
+        // light: will be calculated from palette.primary.main,
+        // dark: will be calculated from palette.primary.main,
+        // contrastText: will be calculated to contrast with palette.primary.main
+      },
+    },
+  });
+
   return (
-    <div className="w-[670px] bg-white shadow-sm rounded-xl">
+    <div className="w-[670px] bg-white shadow-sm rounded-xl h-[410px] overflow-hidden">
       <div className="mx-[12px] mt-[25px] flex flex-row justify-between">
         <div className="text-textdarkColor text-[16px] font-bold">
           Past Caregivers
         </div>
-        <div className="text-primary text-[12px] font-bold">See more</div>
+        <ThemeProvider theme={theme}>
+          <Button className="text-[12px]" size="small" onClick={handleOpen}>
+            See more
+          </Button>
+        </ThemeProvider>
+        {/* <div className="text-primary text-[12px] font-bold">See more</div> */}
       </div>
       <div className="flex flex-col items-center">
         <div className="text-textdarkColor text-[12px] text-center w-[600px]">
@@ -95,7 +144,7 @@ const CaregiversTableCard = () => {
                 <div
                   className="flex flex-row h-[50px] items-center rounded-md"
                   style={{ backgroundColor: `${index % 2 ? "" : "#FAFAFB"}` }}
-                  key={index}
+                  key={`caregiver_item_${index}`}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={(event) => handleMouseLeave(event, index)}
                 >
@@ -113,7 +162,7 @@ const CaregiversTableCard = () => {
                         src={sm_avatar}
                         width={34}
                         className="rounded-[50%] mr-[5px]"
-                        style={{ height: "34px" }}
+                        style={{ height: "auto" }}
                         priority={false}
                       />
                       {item.name}
@@ -128,6 +177,11 @@ const CaregiversTableCard = () => {
           </div>
         </div>
       </div>
+      <CaregiversTableModal
+        open={open}
+        handleClose={handleClose}
+        pastCaregiversItems={pastCaregiversItems}
+      />
     </div>
   );
 };

@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import mdmd_avatar from "@/public/avatars/sample.png";
 import ClockIcon from "@/public/icons/clock_icon";
 import { useRouter } from "next/navigation";
 import DashboardPrimaryBtn from "./DashboardPrimaryBtn";
 import SmRoundedBtn from "./SmRoundedBtn";
-import { text } from "stream/consumers";
 import CustomRatingCom from "./CustomRatingCom";
-import { Typography } from "@mui/material";
 import reaction_like from "@/public/icons/reaction_like.svg";
 import reaction_dislike from "@/public/icons/reaction_unlike.svg";
+import AppointmentRescheduleModal from "./Modals/AppointmentRescheduleModal";
 
 const AppointmentCard = () => {
-  const router = useRouter();
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
   return (
     <div className="bg-white flex flex-col pt-[19px] px-[14px] pb-[11px] w-[670px] shadow-sm rounded-xl">
       <span className="font-bold text-[16px]">Upcoming Care Visit</span>
@@ -26,7 +28,7 @@ const AppointmentCard = () => {
               className="rounded-xl"
               style={{
                 border: "2px solid rgba(255, 114, 140, 0.99)",
-                height: "80px",
+                width: "auto",
               }}
               alt="appointment card avatar"
               src={mdmd_avatar}
@@ -37,9 +39,16 @@ const AppointmentCard = () => {
               <div className="flex flex-row items-center mb-[16px]">
                 <span className="font-bold text-[18px]">Frank Sergio</span>
                 <div className="flex flex-row ml-8 gap-1">
-                  {["Housekeeping", "Meal Preparation", "+3"].map((item) => {
-                    return <SmRoundedBtn key={item} value={item} />;
-                  })}
+                  {["Housekeeping", "Meal Preparation", "+3"].map(
+                    (item, index) => {
+                      return (
+                        <SmRoundedBtn
+                          key={`sm_rounded_btn_${index}`}
+                          value={item}
+                        />
+                      );
+                    }
+                  )}
                 </div>
               </div>
               <div>
@@ -55,7 +64,7 @@ const AppointmentCard = () => {
               </div>
               <div className="flex flex-row items-center">
                 <CustomRatingCom />
-                <div className="text-bannerTextColor ml-8 text-[14px]">
+                <div className="text-bannerTextColor ml-8 text-[14px] underline">
                   Reviews
                 </div>
                 <Image
@@ -75,7 +84,7 @@ const AppointmentCard = () => {
           </div>
           <div className="mt-[20px] py-[10px] px-[24px] gap-[34px] flex flex-row items-center border border-distlineColor rounded-xl">
             <div className="flex items-center">
-              <ClockIcon color="#828282" width={24} height={24}/>
+              <ClockIcon color="#828282" width={24} height={24} />
               <div className="ml-[8px] text-distlineColor text-[16px]">
                 Mon, Aug 30, 09:00am - 3:30pm
               </div>
@@ -83,12 +92,14 @@ const AppointmentCard = () => {
             <div className="flex justify-center">
               <DashboardPrimaryBtn
                 btnValue="RESCHEDULE APPOINTMENT"
-                onClicked={() => router.push("/")}
+                onClicked={handleOpen}
               />
             </div>
           </div>
         </div>
       </div>
+
+      <AppointmentRescheduleModal open={open} handleClose={handleClose} />
     </div>
   );
 };

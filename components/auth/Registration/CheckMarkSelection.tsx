@@ -75,8 +75,8 @@ const CheckMarkSelection: FC<checkMarkSelectionProps> = ({
             style={{ borderRadius: "6px" }}
           >
             {Array.isArray(items) && // Check if 'items' is an array
-              items.map((item) => (
-                <MenuItem key={item} value={item}>
+              items.map((item, index) => (
+                <MenuItem key={`menu_item_${index}`} value={item}>
                   <Checkbox checked={selectionValue.indexOf(item) > -1} />
                   <ListItemText primary={item} />
                 </MenuItem>

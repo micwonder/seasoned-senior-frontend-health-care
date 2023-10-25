@@ -67,8 +67,8 @@ const CustomSelection: FC<customSelectionProps> = ({
             style={{ borderRadius: "6px" }}
           >
             {Array.isArray(items) && // Check if 'items' is an array
-              items.map((item) => (
-                <MenuItem key={item} value={item}>
+              items.map((item, index) => (
+                <MenuItem key={`men_item_${index}`} value={item}>
                   {item}
                 </MenuItem>
               ))}

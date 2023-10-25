@@ -225,7 +225,7 @@ const SelectOption = () => {
               <div className="justify-center sm:gap-[10px] lg:gap-[10px] xl:gap-[10px] gap-[39px] grid grid-cols-3 xl:grid-cols-1 lg:grid-cols-1 md:grid-cols-3 sm:grid-cols-1 mt-[-11px] my-[-15px]">
                 {comMethodData.map((item, index) => (
                   <ComMethodSel
-                    key={index.toString()}
+                    key={`com_method_sel_${index}`}
                     title={item.title}
                     status={item.id === selectedComMethodID ? true : false}
                     onClick={(e) => {

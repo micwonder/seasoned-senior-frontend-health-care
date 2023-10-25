@@ -22,7 +22,7 @@ const ClientDashboardLayout = ({
         >
           <ClientDashboardSideBar selected={selected} />
           <div
-            style={{ borderLeft: "1px solid #C4C4C4"}}
+            style={{ borderLeft: "1px solid #C4C4C4" }}
             className="flex flex-col"
           >
             <div className="flex flex-row items-center h-[100px]">
@@ -34,10 +34,10 @@ const ClientDashboardLayout = ({
               </div>
               <div className="flex flex-row absolute right-[80px] items-center">
                 <Image
-                  style={{ borderRadius: "50%", height: '66px'}}
+                  style={{ borderRadius: "50%", height: "auto" }}
                   alt="md-avatar"
                   src={md_avatar}
-                  width="66"
+                  width={66}
                 />
                 <div className="ml-[15px] flex flex-col text-distlineColor">
                   <span className="text-[16px] font-bold text-textdarkColor">

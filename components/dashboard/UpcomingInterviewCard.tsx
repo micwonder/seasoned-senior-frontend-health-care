@@ -33,7 +33,7 @@ const UpcomingInterviewCard: React.FC<{ guest: number[] }> = ({ guest }) => {
           alt="app_logo"
           src={app_logo}
           width={66}
-          style={{ height: "66px" }}
+          style={{ height: "auto" }}
         />
       </div>
       <div className="flex flex-col gap-[9px] w-[50%]">
@@ -46,11 +46,11 @@ const UpcomingInterviewCard: React.FC<{ guest: number[] }> = ({ guest }) => {
             return (
               <Image
                 className="rounded-[50%] mr-[-8px]"
-                key={index}
+                key={`upcoming_intv_image_${index}`}
                 alt={item.toString()}
                 src={sm_sm_avatar}
                 width={38}
-                style={{ height: "38px", border: "2px solid white" }}
+                style={{ height: "auto", border: "2px solid white" }}
               />
             );
           })}
@@ -59,7 +59,7 @@ const UpcomingInterviewCard: React.FC<{ guest: number[] }> = ({ guest }) => {
             alt="me"
             src={sm_sm_avatar}
             width={38}
-            style={{ height: "38px", border: "2px solid white" }}
+            style={{ height: "auto", border: "2px solid white" }}
           />
         </div>
       </div>

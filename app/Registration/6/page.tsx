@@ -56,7 +56,14 @@ const Login = () => {
         <ProgressStatusBar completeness={6} hasBack={true} />
         {/* <OptionalLbl /> */}
         <div className="px-8 mx-auto mt-8 sm:w-full">
-          <div className="text-center" style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+          <div
+            className="text-center"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
             <div className=" text-[32px] text-textdarkColor font-arial font-bold">
               Communication and Family Involvement
             </div>
@@ -73,7 +80,7 @@ const Login = () => {
               <div className="mt-6">
                 {comMethodData.map((item, index) => (
                   <ComMethodSel
-                    key={index.toString()}
+                    key={`communication_method_selection_${index}`}
                     title={item.title}
                     status={item.id === selectedComMethodID ? true : false}
                     onClick={(e) => {

@@ -5,7 +5,7 @@ import sm_avatar from "@/public/avatars/sample.png";
 
 const sampleLineColors = ["#4285F4", "#30A64A", "#DC0035", "#766D5A"];
 
-const EventPreviewItem: React.FC<{
+const EventItem: React.FC<{
   item: {
     date: Date;
     name: string;
@@ -36,56 +36,58 @@ const EventPreviewItem: React.FC<{
 
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF2F588";
-    event.currentTarget.style.paddingLeft = "25px";
+    event.currentTarget.style.paddingLeft = "22px";
   };
 
   const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF";
-    event.currentTarget.style.paddingLeft = "24px";
+    event.currentTarget.style.paddingLeft = "20px";
   };
 
   return (
     <div
-      className="flex flex-row px-[24px] gap-[5px] items-center h-[120px] rounded-md"
+      className="flex flex-row px-[20px] gap-[5px] rounded-md"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={(event) => handleMouseLeave(event)}
     >
-      <div className="flex flex-row gap-4 items-center">
-        <div className="flex flex-col w-[8%] text-center">
+      <div className="flex flex-row gap-4">
+        <div className="flex flex-col w-[8%] text-center gap-4">
           <div className="text-[12px]">{formatDate(item.date).month}</div>
           <div className="text-[24px]">{formatDate(item.date).day}</div>
         </div>
         <VerticalLine
           className="w-[3%]"
-          height={120}
+          height={80}
           color={sampleLineColors[index % 4]}
         />
-        <div className="flex flex-col justify-start h-[120px]">
-          <div className="text-[17px]">{item.name}</div>
-          <div className="text-[12px] w-[80%] text-distlineColor line-clamp-3">
+        <div className="flex flex-col g-[8px]">
+          <div className="text-[18px]">{item.name}</div>
+          <div className="text-[12px] w-[88%] text-textxdarkColor line-clamp-3">
             {item.content}
           </div>
-          <div className="flex flex-row gap-[50px] items-center">
-            <div className="text-[14px]">{item.period}</div>
-            <div className="flex flex-row gap-[4px]">
-              {item.guest.map((guest_number, guest_index) => {
-                return (
-                  <Image
-                    key={`event_prev_image_${index}_${guest_index}`}
-                    alt={item.name}
-                    src={sm_avatar}
-                    width={27}
-                    className="rounded-[50%]"
-                    style={{ height: "auto" }}
-                  />
-                );
-              })}
-            </div>
-          </div>
+        </div>
+      </div>
+      <div className="flex flex-col">
+        <div className="text-[14px]" style={{ width: "max-content" }}>
+          {item.period}
+        </div>
+        <div className="flex flex-row gap-[5px]">
+          {item.guest.map((guest_number, guest_index) => {
+            return (
+              <Image
+                key={`event_prev_image_modal_${index}_${guest_index}`}
+                alt={item.name}
+                src={sm_avatar}
+                width={32}
+                className="rounded-[50%]"
+                style={{ height: "auto" }}
+              />
+            );
+          })}
         </div>
       </div>
     </div>
   );
 };
 
-export default EventPreviewItem;
+export default EventItem;

@@ -18,7 +18,8 @@ const HeaderWithSearchBtn = () => {
             src={app_logo}
             onClick={() => router.push("/")}
             width={135}
-            priority={true}
+            priority={false}
+            style={{ height: "auto" }}
           />
           <div className="text-[14px] mt-2">CLIENT PORTAL</div>
         </div>
@@ -35,6 +36,7 @@ const HeaderWithSearchBtn = () => {
             width={32}
             priority={true}
             style={{
+              height: "auto",
               borderRadius: "50%",
               border: "0.6px solid rgba(255, 114, 140, 0.99)",
             }}
@@ -42,7 +44,7 @@ const HeaderWithSearchBtn = () => {
           <span className="text-[16px] font-bold text-textdarkColor">
             Gabby
           </span>
-          <CollapseDown color="#000" width={25} height={26}/>
+          <CollapseDown color="#000" width={25} height={26} />
         </div>
       </div>
     </>

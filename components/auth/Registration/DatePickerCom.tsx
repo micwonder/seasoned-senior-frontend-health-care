@@ -42,8 +42,8 @@ function ActionList(props: PickersActionBarProps) {
   return (
     // Propagate the className such that CSS selectors can be applied
     <List className={className}>
-      {actions.map(({ text, method }) => (
-        <ListItem key={text} disablePadding>
+      {actions.map(({ text, method }, index) => (
+        <ListItem key={`list_item_${index}`} disablePadding>
           <ListItemButton onClick={method}>
             <ListItemText primary={text} />
           </ListItemButton>

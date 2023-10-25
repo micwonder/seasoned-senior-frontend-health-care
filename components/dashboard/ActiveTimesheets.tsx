@@ -22,6 +22,7 @@ const activeTimesheetItems = [
 const ActiveTimesheets = () => {
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF2F588";
+    event.currentTarget.style.paddingLeft = "21px";
   };
 
   const handleMouseLeave = (
@@ -29,6 +30,7 @@ const ActiveTimesheets = () => {
     index: number
   ) => {
     event.currentTarget.style.backgroundColor = index % 2 ? "" : "#FAFAFB";
+    event.currentTarget.style.paddingLeft = "20px";
   };
 
   return (
@@ -52,7 +54,7 @@ const ActiveTimesheets = () => {
                 style={{
                   backgroundColor: `${index % 2 ? "" : "FAFAFB"}`,
                 }}
-                key={index}
+                key={`active_timesheet_item_${index}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={(event) => handleMouseLeave(event, index)}
               >

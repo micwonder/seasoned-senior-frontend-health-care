@@ -78,8 +78,12 @@ const ClientDashboardSideBar = ({ selected }: { selected: string }) => {
     <>
       <ThemeProvider theme={theme}>
         <div className="bg-white pt-[22px] pb-[64px] sm:hidden md:hidden w-[300px] flex flex-col">
-          {combinedList.map((item) => (
-            <ListItem className="px-3" key={item.itemName} disablePadding>
+          {combinedList.map((item, index) => (
+            <ListItem
+              className="px-3"
+              key={`sidebar_list_item_${index}`}
+              disablePadding
+            >
               <ListItemButton selected={item.itemName === selected}>
                 <div className="m-2">
                   <item.iconUrl

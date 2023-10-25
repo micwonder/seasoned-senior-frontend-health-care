@@ -26,14 +26,22 @@ const TimePickerCom = ({ title }: { title: string }) => {
       <div className="text-left text-xs font-arial font-normal text-distlineColor">
         {title}
       </div>
-      <FormControl 
-            style={{ borderRadius: "6px" }} fullWidth={true} sx={{ my: 1, minWidth: 120 }}>
+      <FormControl
+        style={{ borderRadius: "6px" }}
+        fullWidth={true}
+        sx={{ my: 1, minWidth: 120 }}
+      >
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           {/* <DemoContainer components={["TimePicker"]}> */}
           <ThemeProvider theme={theme}>
             <TimePicker
               label=""
               sx={[
+                {
+                  svg: { color: "#E5ACB7" },
+                  input: { color: "#828282" },
+                  label: { color: "#E5ACB7" },
+                },
                 {
                   backgroundColor: "white",
                 },

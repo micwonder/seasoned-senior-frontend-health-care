@@ -117,7 +117,10 @@ const UpcomingInterviews = () => {
         <HorizontalLine strokeWidth={1.5} width={600} color="#C4C4C4" />
         {interviewItems.map((item, index) => {
           return (
-            <div className="flex flex-row items-center" key={index}>
+            <div
+              className="flex flex-row items-center"
+              key={`intv_items_${index}`}
+            >
               <div className={!item.guest ? "mb-[20px] mt-[5px]" : ""}>
                 {item.time}
               </div>

@@ -101,7 +101,7 @@ const Login = () => {
           <div className="mt-4 w-[60%]">
             {comMethodData.map((item, index) => (
               <ComMethodSel
-                key={index.toString()}
+                key={`communication_method_sel_${index}`}
                 title={item.title}
                 status={item.id === selectedComMethodID ? true : false}
                 onClick={(e) => {
@@ -150,11 +150,12 @@ const Login = () => {
             senior?
             <ThemeProvider theme={theme}>
               <div className="mt-4 w-full">
-              <MinHeightTextarea
-                rows={5}
-                cols={30}
-                placeholder="Leave a detailed note"
-              /></div>
+                <MinHeightTextarea
+                  rows={5}
+                  cols={30}
+                  placeholder="Leave a detailed note"
+                />
+              </div>
             </ThemeProvider>
           </div>
         </div>

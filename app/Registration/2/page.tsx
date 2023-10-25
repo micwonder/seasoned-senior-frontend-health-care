@@ -155,7 +155,7 @@ const Login = () => {
       <div className="mt-6 grid grid-cols-3 gap-4 sm:grid-cols-1 md:grid-cols-2 mx-9">
         {carePlanData.map((item, index) => (
           <CarePlanBox
-            key={index.toString()}
+            key={`careplan_box_${index}`}
             title={item.title}
             description={item.description}
             thumbnail={item.thumbnail}

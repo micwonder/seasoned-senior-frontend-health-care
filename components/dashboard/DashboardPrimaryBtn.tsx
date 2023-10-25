@@ -13,7 +13,7 @@ const DashboardPrimaryBtn = ({
   return (
     <button
       type="submit"
-      className="block bg-[#CB5A6F] hover:bg-primaryHover focus:bg-primaryDisabled 
+      className="block bg-[#CB5A6F] hover:bg-primaryHover active:bg-primaryDisabled 
                     text-white text-[14px] rounded-lg px-4 py-3 text-loginBtnTextSize font-arial"
       onClick={() => onClicked()}
     >

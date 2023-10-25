@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 
 const MessagePreviewItem: React.FC<{
   item: {
-  date: Date;
+    date: Date;
     name: string;
     avatar: StaticImageData;
     status: number;
@@ -35,16 +35,17 @@ const MessagePreviewItem: React.FC<{
 
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF2F588";
+    event.currentTarget.style.paddingLeft = "1px";
   };
 
   const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement>) => {
     event.currentTarget.style.backgroundColor = "#FFF";
+    event.currentTarget.style.paddingLeft = "0px";
   };
 
   return (
     <div
       className="flex flex-row gap-[5px] items-center h-[70px] rounded-md"
-      key={index}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={(event) => handleMouseLeave(event)}
     >
@@ -59,7 +60,7 @@ const MessagePreviewItem: React.FC<{
             src={item.avatar}
             width={54}
             className="rounded-[50%]"
-            style={{ height: "54px" }}
+            style={{ height: "auto" }}
           />
           <div className="ml-[-13px]">
             <StatusEllipse

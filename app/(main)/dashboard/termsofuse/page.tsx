@@ -126,7 +126,7 @@ const Termsofuse = async () => {
       </>
     );
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return null;
   }
 };
