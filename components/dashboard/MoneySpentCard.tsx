@@ -3,8 +3,8 @@ import CustomizedLineChart from "./CustomizedLineChart";
 
 const MoneySpentCard = () => {
   return (
-    <div className="bg-white flex flex-row w-[670px] shadow-sm rounded-xl">
-      <div className="mt-2 w-[160px] h-[274px] flex flex-col justify-around">
+    <div className="bg-white flex flex-row w-[670px] shadow-sm rounded-xl items-center justify-center ">
+      <div className="mt-2 w-[140px] h-[274px] flex flex-col justify-around">
         <div className="pl-3 font-bold text-[16px] text-textdarkColor">
           Money spent
         </div>
@@ -28,7 +28,6 @@ const MoneySpentCard = () => {
             </div>
           </div>
           <hr style={{ width: "100%", textAlign: "left", marginLeft: "0" }} />
-
           <div className="flex flex-col items-start gap-[10px]">
             <div className="flex flex-col items-start gap-[8px] font-bold p-[5px]">
               <span className="text-[10px] text-distlineColor">
@@ -40,7 +39,9 @@ const MoneySpentCard = () => {
           </div>
         </div>
       </div>
-      <CustomizedLineChart />
+      <div>
+        <CustomizedLineChart />
+      </div>
     </div>
   );
 };

@@ -7,7 +7,8 @@ import CaregiversTableCard from "@/components/dashboard/CaregiversTableCard";
 import ClientDashboardLayout from "@/components/dashboard/ClientDashboardLayout";
 import MessagePreview from "@/components/dashboard/MessagePreview";
 import MoneySpentCard from "@/components/dashboard/MoneySpentCard";
-import UpcomingInterviewsEvents from "@/components/dashboard/UpcomingInterviewsEvents";
+import UpcomingEventsPreview from "@/components/dashboard/UpcomingEventsPreview";
+import UpcomingInterviews from "@/components/dashboard/UpcomingInterviews";
 import UpcomingVisitsCard from "@/components/dashboard/UpcomingVisitsCard";
 import { Collapse } from "@mui/material";
 import { useState } from "react";
@@ -20,9 +21,9 @@ const ClientDashboard = () => {
   return (
     <>
       <ClientDashboardLayout selected="Dashboard">
-        <div className="flex flex-row mx-2 ">
+        <div className="flex flex-row m-3">
           <div
-            className="bg-white rounded-2xl absolute right-[8px] 3xl:right-[67px]"
+            className="bg-white rounded-2xl absolute right-[8px] 3xl:right-[67px] 4xl:right-[67px]"
             style={{ border: "0.882px solid #D2D2D2", zIndex: 50 }}
           >
             <Collapse in={calendarChecked} collapsedSize={70}>
@@ -39,7 +40,10 @@ const ClientDashboard = () => {
             <CaregiversTableCard />
             <ActiveTimesheets />
             <MessagePreview />
-            <UpcomingInterviewsEvents />
+            <div className="flex flex-row gap-[18px]">
+              <UpcomingInterviews />
+              <UpcomingEventsPreview />
+            </div>
           </div>
         </div>
       </ClientDashboardLayout>

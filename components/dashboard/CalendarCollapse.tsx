@@ -3,7 +3,7 @@ import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DateCalendar } from "@mui/x-date-pickers/DateCalendar";
-import { ThemeProvider, createTheme } from "@mui/material";
+import { IconButton, ThemeProvider, createTheme } from "@mui/material";
 import CollapseDown from "@/public/icons/collapse_down";
 import { MouseEventHandler, useState } from "react";
 
@@ -24,12 +24,12 @@ export default function CalendarCollapse(props: {
 }) {
   const [selectedDate, setSelectedDate] = useState<Dayjs | null>(dayjs());
   return (
-    <div className="mx-[8px] 2xl:mx-[30px] 3xl:mx-[30px] mt-[22px]">
-      <div className="flex flex-row justify-between">
+    <div className="mx-[8px] 2xl:mx-[30px] 3xl:mx-[30px] 4xl:mx-[30px] mt-[16px]">
+      <div className="flex flex-row justify-between items-center">
         <div className="text-[16px] font-bold text-textdarkColor">Calendar</div>
-        <button onClick={props.handleSetChecked}>
+        <IconButton onClick={props.handleSetChecked} size="small">
           <CollapseDown color="#5F647E" width={22} height={22} />
-        </button>
+        </IconButton>
       </div>
       <div>
         <ThemeProvider theme={theme}>

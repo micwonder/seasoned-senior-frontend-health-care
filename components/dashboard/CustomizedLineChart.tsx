@@ -93,7 +93,7 @@ const CustomizedLineChart = () => {
   return (
     <div
       className="flex flex-col justify-center items-center w-full"
-      style={{ borderLeft: "0.614px solid #C4C4C4" }}
+      style={{ borderLeft: "0.614px solid #C4C4C4", paddingLeft: "5px" }}
     >
       <div>
         <Line data={data} width={510} height={260} options={options} />

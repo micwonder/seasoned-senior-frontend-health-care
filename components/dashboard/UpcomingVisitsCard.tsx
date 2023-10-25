@@ -28,7 +28,7 @@ const upcomingVisitItems = [
 
 const UpcomingVisitsCard = () => {
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.currentTarget.style.backgroundColor = "#FFF2F5";
+    event.currentTarget.style.backgroundColor = "#FFF2F588";
   };
 
   const handleMouseLeave = (
@@ -49,7 +49,7 @@ const UpcomingVisitsCard = () => {
           return (
             <div
               key={index}
-              className="py-2 px-[13px] flex flex-row gap-[16px] items-center"
+              className="py-2 px-[13px] flex flex-row gap-[16px] items-center rounded-md"
               style={{ backgroundColor: `${index % 2 ? "" : "#FAFAFB"}` }}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={(event) => handleMouseLeave(event, index)}

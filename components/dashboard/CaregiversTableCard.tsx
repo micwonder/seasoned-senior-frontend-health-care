@@ -45,7 +45,7 @@ const pastCaregiversItems = [
 
 const CaregiversTableCard = () => {
   const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.currentTarget.style.backgroundColor = "#FFF2F5";
+    event.currentTarget.style.backgroundColor = "#FFF2F588";
   };
 
   const handleMouseLeave = (
@@ -57,7 +57,7 @@ const CaregiversTableCard = () => {
 
   return (
     <div className="w-[670px] bg-white shadow-sm rounded-xl">
-      <div className="mx-[12px] mt-[25px] mb-[10px] flex flex-row justify-between">
+      <div className="mx-[12px] mt-[25px] flex flex-row justify-between">
         <div className="text-textdarkColor text-[16px] font-bold">
           Past Caregivers
         </div>
@@ -89,11 +89,11 @@ const CaregiversTableCard = () => {
               <TableCollapseArrow />
             </div>
           </div>
-          <div className="flex flex-col cursor-pointer">
+          <div className="flex flex-col cursor-pointer mb-[10px]">
             {pastCaregiversItems.map((item, index) => {
               return (
                 <div
-                  className="flex flex-row h-[50px] items-center"
+                  className="flex flex-row h-[50px] items-center rounded-md"
                   style={{ backgroundColor: `${index % 2 ? "" : "#FAFAFB"}` }}
                   key={index}
                   onMouseEnter={handleMouseEnter}
