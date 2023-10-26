@@ -5,7 +5,7 @@ import TableCollapseArrow from "@/public/icons/table_collapse_arrow";
 import sm_avatar from "@/public/avatars/sample.png";
 import RecommendLogo from "@/public/icons/recommend_logo";
 import EventItem from "../EventItem";
-import { Backdrop, Fade } from "@mui/material";
+import { Backdrop, DialogTitle, Fade } from "@mui/material";
 
 type UpcomingEventsModalProps = {
   open: boolean;
@@ -27,7 +27,7 @@ export default function UpcomingEventsModal({
   return (
     <Modal
       open={open}
-      onClose={handleClose}
+      // onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
       closeAfterTransition
@@ -38,6 +38,7 @@ export default function UpcomingEventsModal({
         },
       }}
     >
+      <DialogTitle>Hello</DialogTitle>
       <Fade in={open}>
         <Box
           sx={{
